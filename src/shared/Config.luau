@@ -60,6 +60,33 @@ Config.HOOP = { mult = 5, cooldown = 2, ballLife = 10 }
 Config.BAR = { minRate = 4, maxRate = 12 }
 Config.BED = { period = 5, mult = 0.5 }
 
+-- 2차: 펫 (구역 키를 넘으면 해금)
+Config.PETS = {
+	{ id = "cat", name = "시장 고양이", minHeight = 0, mult = 1.1, radius = 8 },
+	{ id = "otter", name = "남한강 수달", minHeight = 1000, mult = 1.25, radius = 14 },
+	{ id = "squirrel", name = "용문산 다람쥐", minHeight = 100000, mult = 1.5, radius = 20 },
+}
+
+-- 2차: 구역 보스
+Config.BOSSES = {
+	{ zone = 1, name = "물맑은시장 대왕 호떡", maxHp = 3000, attackEvery = 2.5, shockwave = false },
+	{ zone = 2, name = "남한강 대왕 메기", maxHp = 20000, attackEvery = 2.0, shockwave = true },
+	{ zone = 3, name = "용문산 구름 용", maxHp = 100000, attackEvery = 1.4, shockwave = true },
+}
+Config.BOSS = {
+	timeLimit = 90,
+	retryDelay = 30,
+	maxHitsPerSec = 8,
+	rewardMult = 200, -- 그 구역 최고 음식 × 200
+	minShare = 0.05,
+	rewardCooldown = 600,
+	respawn = 60,
+	stun = 2,
+}
+
+-- 2차: 하이파이브
+Config.HIGHFIVE = { offerTime = 10, cooldown = 60, duration = 30 }
+
 Config.AUTOSAVE = 60 -- 초
 Config.BOARD_REFRESH = 60 -- 초
 
