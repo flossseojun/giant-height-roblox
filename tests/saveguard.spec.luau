@@ -1,0 +1,26 @@
+local H = require("./harness")
+local SaveGuard = require("../src/shared/Logic/SaveGuard")
+local describe, it, expect = H.describe, H.it, H.expect
+
+describe("SaveGuard", function()
+	it("loadFailedBlocksSave", function()
+		local g = SaveGuard.new()
+		expect(g.canSave()).toBe(false)
+		g.markLoaded(false)
+		expect(g.canSave()).toBe(false)
+	end)
+	it("loaded allows save", function()
+		local g = SaveGuard.new()
+		g.markLoaded(true)
+		expect(g.canSave()).toBe(true)
+	end)
+	it("cleanHeight rejects bad saved values", function()
+		expect(SaveGuard.cleanHeight(nil, 150)).toBe(150)
+		expect(SaveGuard.cleanHeight({ height = "abc" }, 150)).toBe(150)
+		expect(SaveGuard.cleanHeight({ height = 0 / 0 }, 150)).toBe(150)
+		expect(SaveGuard.cleanHeight({ height = 50 }, 150)).toBe(150)
+		expect(SaveGuard.cleanHeight({ height = 1234 }, 150)).toBe(1234)
+	end)
+end)
+
+return nil
