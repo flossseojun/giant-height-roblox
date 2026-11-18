@@ -1,0 +1,5829 @@
+{
+ "className": "Model",
+ "children": [
+  {
+   "name": "1_놀이터",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "Floor",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       240,
+       4,
+       240
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         -2,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Grass",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.47058823529411764,
+       0.7843137254901961,
+       0.37254901960784315
+      ]
+     }
+    },
+    {
+     "name": "ZoneArea",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       240,
+       1100,
+       240
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         500,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "ZoneArea"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 1
+     }
+    },
+    {
+     "name": "FoodSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "FoodSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -35.515314609634466,
+           2,
+           -70.38880653682041
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           30.428389764834506,
+           2,
+           -86.19684460782338
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           7.233812068228538,
+           2,
+           -27.077114350422754
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -89.1074167654191,
+           2,
+           1.4990438109871196
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn5",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -86.71714660735682,
+           2,
+           -82.5122565098768
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn6",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -15.216931468869186,
+           2,
+           65.89338833388287
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn7",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -75.84152463223144,
+           2,
+           -55.79502473522587
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn8",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           25.69053763696681,
+           2,
+           90.25812279933233
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn9",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           96.01302928753269,
+           2,
+           -91.40893158746033
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn10",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           72.2672413442138,
+           2,
+           -42.41476787553406
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn11",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -38.61006426105003,
+           2,
+           63.73107399859834
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn12",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -64.3655618073342,
+           2,
+           16.450592994353194
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn13",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           28.004955335518712,
+           2,
+           -25.724655386492586
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn14",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           9.62528428704685,
+           2,
+           -88.14174264537805
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn15",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -37.46793045203883,
+           2,
+           17.24927168313997
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn16",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -9.438029723651686,
+           2,
+           -40.36697343228164
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn17",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           59.346903474934216,
+           2,
+           40.11727783988155
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn18",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           5.079615168388609,
+           2,
+           75.62771910760327
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn19",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           46.25617035094626,
+           2,
+           -42.751746598138396
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "FoodSpawn20",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2,
+         2,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -70.15991781244223,
+           2,
+           -2.225038944077591
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "MilkRainSpot",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         1,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "MilkRainSpot"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 1
+     }
+    },
+    {
+     "name": "Basketball",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Pole",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         1,
+         19,
+         1
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -72.0,
+           7.5,
+           69.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.35294117647058826,
+         0.35294117647058826,
+         0.39215686274509803
+        ]
+       }
+      },
+      {
+       "name": "Backboard",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         8,
+         6,
+         0.5
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -72.0,
+           18,
+           69.5
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Rim",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         0.4,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -72.0,
+           15,
+           72.0
+          ],
+          "orientation": [
+           [
+            0,
+            -1,
+            0
+           ],
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0.2,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         0.47058823529411764,
+         0.11764705882352941
+        ],
+        "Shape": "Cylinder"
+       }
+      },
+      {
+       "name": "HoopSensor",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4,
+         1,
+         4
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -72.0,
+           14.5,
+           72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "Hoop"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "BallRack",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4,
+         3,
+         4
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -62.0,
+           1.5,
+           82.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Wood",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.35294117647058826,
+         0.1568627450980392
+        ],
+        "Tags": [
+         "BallRack"
+        ]
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "PullupBar",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "PostA",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         0.6,
+         7,
+         0.6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           68.0,
+           3.5,
+           72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "PostB",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         0.6,
+         7,
+         0.6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           76.0,
+           3.5,
+           72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "Bar",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         8,
+         0.4,
+         0.4
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           72.0,
+           7,
+           72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.7843137254901961,
+         0.8235294117647058
+        ],
+        "Tags": [
+         "Bar"
+        ],
+        "Shape": "Cylinder"
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      }
+     ]
+    },
+    {
+     "name": "Beds",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Bed1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         5,
+         2,
+         9
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           66.0,
+           1,
+           -72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "Pillow1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4,
+         0.8,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           66.0,
+           2.4,
+           -75.3
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Bed2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         5,
+         2,
+         9
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           78.0,
+           1,
+           -72.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 1
+       }
+      },
+      {
+       "name": "Pillow2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4,
+         0.8,
+         2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           78.0,
+           2.4,
+           -75.3
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "2_운동장",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "Floor",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       280,
+       4,
+       280
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         -2,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Ground",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.8431372549019608,
+       0.5882352941176471,
+       0.3333333333333333
+      ]
+     }
+    },
+    {
+     "name": "ZoneArea",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       280,
+       1100,
+       280
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         500,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "ZoneArea"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 2
+     }
+    },
+    {
+     "name": "FoodSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "FoodSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           151.62154685755735,
+           6,
+           39.56436945688975
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           322.22706773325365,
+           6,
+           17.17570115324071
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           348.3123813426249,
+           6,
+           -43.806584978127646
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           278.7913520472422,
+           6,
+           -10.300506077907652
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn5",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           339.9604219765497,
+           6,
+           104.58899356938687
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn6",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           253.90792896110037,
+           6,
+           38.60859872764343
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn7",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           294.6047065849077,
+           6,
+           115.97616496255233
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn8",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           147.70680067867443,
+           6,
+           -9.00926866229507
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn9",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           181.9249787188193,
+           6,
+           -90.05906913789664
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn10",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           156.26607942672422,
+           6,
+           63.08839888873687
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn11",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           172.82082021879452,
+           6,
+           -59.360991114485756
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn12",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           234.351370176935,
+           6,
+           87.35844831450561
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn13",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           271.6282666306776,
+           6,
+           90.17187597904373
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn14",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           207.8846343736686,
+           6,
+           -19.92225915180849
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn15",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           367.65837917233074,
+           6,
+           -82.10340295793117
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn16",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           280.9618480778265,
+           6,
+           -55.80199514098388
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn17",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           229.24844034483942,
+           6,
+           15.603455815743388
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn18",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           366.5686320835024,
+           6,
+           44.804108158382
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn19",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           301.4422593921227,
+           6,
+           -104.90087151376454
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "FoodSpawn20",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         6,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           353.9701639656303,
+           6,
+           65.84882421406833
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "MilkRainSpot",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         1,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "MilkRainSpot"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 2
+     }
+    },
+    {
+     "name": "Basketball",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Pole",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         52,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           176.0,
+           20.0,
+           75.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.35294117647058826,
+         0.35294117647058826,
+         0.39215686274509803
+        ]
+       }
+      },
+      {
+       "name": "Backboard",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         18,
+         1.5
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           176.0,
+           49,
+           76.5
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Rim",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         1.2000000000000002,
+         18,
+         18
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           176.0,
+           40,
+           84.0
+          ],
+          "orientation": [
+           [
+            0,
+            -1,
+            0
+           ],
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0.2,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         0.47058823529411764,
+         0.11764705882352941
+        ],
+        "Shape": "Cylinder"
+       }
+      },
+      {
+       "name": "HoopSensor",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         3,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           176.0,
+           38.5,
+           84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "Hoop"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "BallRack",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         9,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           206.0,
+           4.5,
+           114.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Wood",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.35294117647058826,
+         0.1568627450980392
+        ],
+        "Tags": [
+         "BallRack"
+        ]
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "PullupBar",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "PostA",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         1.7999999999999998,
+         21,
+         1.7999999999999998
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           332.0,
+           10.5,
+           84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "PostB",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         1.7999999999999998,
+         21,
+         1.7999999999999998
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           356.0,
+           10.5,
+           84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "Bar",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         1.2000000000000002,
+         1.2000000000000002
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           344.0,
+           21,
+           84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.7843137254901961,
+         0.8235294117647058
+        ],
+        "Tags": [
+         "Bar"
+        ],
+        "Shape": "Cylinder"
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "Beds",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Bed1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         15,
+         6,
+         27
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           326.0,
+           3,
+           -84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "Pillow1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         2.4000000000000004,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           326.0,
+           7.199999999999999,
+           -93.9
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Bed2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         15,
+         6,
+         27
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           362.0,
+           3,
+           -84.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 2
+       }
+      },
+      {
+       "name": "Pillow2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         2.4000000000000004,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           362.0,
+           7.199999999999999,
+           -93.9
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "3_구름위",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "Floor",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       400,
+       4,
+       400
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         298,
+         800
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Snow",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.9607843137254902,
+       0.9803921568627451,
+       1.0
+      ]
+     }
+    },
+    {
+     "name": "ZoneArea",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       400,
+       1100,
+       860
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         500,
+         570
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "ZoneArea"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 3
+     }
+    },
+    {
+     "name": "FoodSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "FoodSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           385.8364298691841,
+           312,
+           900.0853687220462
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           223.83931271546626,
+           312,
+           766.0568876596117
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           126.78846348666895,
+           312,
+           845.1212940703982
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           112.91526806387904,
+           312,
+           654.6287989232563
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn5",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           162.14443030991126,
+           312,
+           686.5338710914248
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn6",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           206.2580271500674,
+           312,
+           649.6654029071296
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn7",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           92.07838271885583,
+           312,
+           682.8250172458878
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn8",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           126.09202765559243,
+           312,
+           754.1729338036158
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn9",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           100.56829791982497,
+           312,
+           925.7756787976034
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn10",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           298.32717989692884,
+           312,
+           681.9129630711795
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn11",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           176.75860620317798,
+           312,
+           748.7228874740438
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn12",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           377.2428072988306,
+           312,
+           965.6825144927839
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn13",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           248.57245827773775,
+           312,
+           794.5684445558666
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn14",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           207.1256416496486,
+           312,
+           720.9583156169725
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn15",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           370.4954070488443,
+           312,
+           686.243373136881
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn16",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           274.50593509639043,
+           312,
+           641.0862771178486
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn17",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           269.444772155271,
+           312,
+           960.7764175535749
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn18",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           382.07721017732877,
+           312,
+           865.9221200650214
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn19",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           148.126123603537,
+           312,
+           891.3711372230824
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "FoodSpawn20",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         12,
+         12,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           270.95104555760736,
+           312,
+           893.7624434896276
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      }
+     ]
+    },
+    {
+     "name": "MilkRainSpot",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         301,
+         800
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "MilkRainSpot"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 3
+     }
+    },
+    {
+     "name": "Basketball",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Pole",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         6,
+         104,
+         6
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           140.0,
+           340.0,
+           902.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.35294117647058826,
+         0.35294117647058826,
+         0.39215686274509803
+        ]
+       }
+      },
+      {
+       "name": "Backboard",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         48,
+         36,
+         3.0
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           140.0,
+           398,
+           905.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Rim",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         2.4000000000000004,
+         36,
+         36
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           140.0,
+           380,
+           920.0
+          ],
+          "orientation": [
+           [
+            0,
+            -1,
+            0
+           ],
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0.2,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         0.47058823529411764,
+         0.11764705882352941
+        ],
+        "Shape": "Cylinder"
+       }
+      },
+      {
+       "name": "HoopSensor",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         6,
+         24
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           140.0,
+           377.0,
+           920.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "Hoop"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "BallRack",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         18,
+         24
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           200.0,
+           309.0,
+           980.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Wood",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.35294117647058826,
+         0.1568627450980392
+        ],
+        "Tags": [
+         "BallRack"
+        ]
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      }
+     ]
+    },
+    {
+     "name": "PullupBar",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "PostA",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3.5999999999999996,
+         42,
+         3.5999999999999996
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           356.0,
+           321.0,
+           920.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "PostB",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3.5999999999999996,
+         42,
+         3.5999999999999996
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           404.0,
+           321.0,
+           920.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "Bar",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         48,
+         2.4000000000000004,
+         2.4000000000000004
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           380.0,
+           342,
+           920.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.7843137254901961,
+         0.8235294117647058
+        ],
+        "Tags": [
+         "Bar"
+        ],
+        "Shape": "Cylinder"
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      }
+     ]
+    },
+    {
+     "name": "Beds",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Bed1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         30,
+         12,
+         54
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           344.0,
+           306,
+           680.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "Pillow1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         4.800000000000001,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           344.0,
+           314.4,
+           660.2
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Bed2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         30,
+         12,
+         54
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           416.0,
+           306,
+           680.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 3
+       }
+      },
+      {
+       "name": "Pillow2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         24,
+         4.800000000000001,
+         12
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           416.0,
+           314.4,
+           660.2
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Gates",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "Wall1A",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       80,
+       120
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         120,
+         40,
+         -80
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Brick",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.9803921568627451,
+       0.9019607843137255,
+       0.47058823529411764
+      ]
+     }
+    },
+    {
+     "name": "Wall1B",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       80,
+       120
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         120,
+         40,
+         80
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Brick",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.9803921568627451,
+       0.9019607843137255,
+       0.47058823529411764
+      ]
+     }
+    },
+    {
+     "name": "Gate2",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       60,
+       40
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         120,
+         30,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "ForceField",
+      "Transparency": 0.2,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       1.0,
+       0.35294117647058826,
+       0.6274509803921569
+      ],
+      "Tags": [
+       "ZoneGate"
+      ]
+     },
+     "attributes": {
+      "Zone": 2
+     }
+    },
+    {
+     "name": "Gate2Top",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       20,
+       40
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         120,
+         70,
+         0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "Brick",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.9803921568627451,
+       0.9019607843137255,
+       0.47058823529411764
+      ]
+     }
+    },
+    {
+     "name": "RainbowBridge",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       60,
+       4,
+       549.1812087098392
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         148.32477880632277,
+         370.0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0.8376105968386142,
+          0.5462677805469224
+         ],
+         [
+          0,
+          -0.5462677805469224,
+          0.8376105968386142
+         ]
+        ]
+       }
+      },
+      "Material": "Neon",
+      "Transparency": 0.1,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       1.0,
+       0.6666666666666666,
+       0.8627450980392157
+      ]
+     }
+    },
+    {
+     "name": "Gate3",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       60,
+       80,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         40,
+         143
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "ForceField",
+      "Transparency": 0.2,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.5490196078431373,
+       0.47058823529411764,
+       1.0
+      ],
+      "Tags": [
+       "ZoneGate"
+      ]
+     },
+     "attributes": {
+      "Zone": 3
+     }
+    }
+   ]
+  },
+  {
+   "name": "Lobby",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "GlobalBoard",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       30,
+       16,
+       1
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         10,
+         -70
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.11764705882352941,
+       0.11764705882352941,
+       0.17647058823529413
+      ],
+      "Tags": [
+       "GlobalBoard"
+      ]
+     }
+    },
+    {
+     "name": "SpawnLocation",
+     "className": "SpawnLocation",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       12,
+       1,
+       12
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         0,
+         0.5,
+         40
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Color": [
+       1.0,
+       1.0,
+       1.0
+      ],
+      "Material": "Neon",
+      "Duration": 0,
+      "TopSurface": "Smooth"
+     }
+    }
+   ]
+  }
+ ]
+}

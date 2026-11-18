@@ -16,3 +16,9 @@ Claude는 로블록스를 직접 실행할 수 없어서, 여기 있는 건 서�
 - [ ] 2-7 캐릭터 리셋(Esc → Reset)해도 크기가 그대로다
 - [ ] 2-8 Publish(File → Publish to Roblox) 후 Home 탭 → Game Settings → Security → **Enable Studio Access to API Services** 켜기 → Play로 키 올리고 Stop → 다시 Play 했을 때 키가 남아 있다
 - [ ] 2-9 (2-8 전에) API 접근을 안 켠 상태에선 "저장 불러오기 실패" 알림이 뜨고 게임은 정상 동작한다
+
+## 3. 기본 맵 (한 번만)
+- [ ] 3-1 Baseplate 게임에서 원래 있던 **Baseplate**와 **SpawnLocation**을 지운다 (Explorer에서 선택 → Delete)
+- [ ] 3-2 프로젝트 폴더의 **`map/BaseMap.rbxm`** 을 스튜디오 화면으로 끌어다 놓는다 → Workspace 안에 BaseMap이 생긴다
+- [ ] 3-3 Play 하면 1구역(초록 놀이터)에서 시작하고, 주황 운동장, 분홍 무지개 다리, 하얀 구름 섬이 보인다
+- [ ] 3-4 이제부터 맵은 서준이 마음대로 꾸며도 돼. 단, 이름 앞에 "Sensor"나 투명한 상자(FoodSpawn, ZoneArea 등)는 지우지 말고 위치만 옮기기

@@ -1,0 +1,6 @@
+{
+  "name": "BaseMap",
+  "tree": {
+    "$path": "map/BaseMap.model.json"
+  }
+}
