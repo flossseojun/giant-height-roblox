@@ -4,6 +4,7 @@ local Services = script.Services
 local order = {
 	"HeightService",
 	"FoodService",
+	"ZoneService",
 }
 
 for _, name in order do

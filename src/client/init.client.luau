@@ -1,6 +1,7 @@
 -- 클라이언트 시작점
 local order = {
 	"Hud",
+	"Gates",
 }
 
 for _, name in order do
