@@ -73,6 +73,7 @@ function ZoneService.start()
 		player:SetAttribute("Unlocked", b)
 		if b > a then
 			Remotes.notify(player, Config.ZONES[b].name .. " 문이 열렸어요!")
+			Remotes.sfx(player, "title")
 		end
 	end)
 	Players.PlayerRemoving:Connect(function(p)

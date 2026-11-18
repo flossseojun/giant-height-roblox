@@ -95,12 +95,20 @@ ZONES = [
     dict(id=1, name="1_양평읍", center=(0, 0, 0), size=(240, 240), color=rgb(185, 185, 180), material="Concrete", k=1),
     dict(id=2, name="2_두물머리", center=(260, 0, 0), size=(280, 280), color=rgb(110, 185, 90), material="Grass", k=3),
     dict(id=3, name="3_용문산", center=(260, 300, 800), size=(400, 400), color=rgb(70, 140, 70), material="Grass", k=6),
+    dict(id=4, name="4_밤하늘", center=(260, 800, 1750), size=(500, 500), color=rgb(30, 30, 70), material="SmoothPlastic", k=8),
 ]
 AREAS = {
     1: ((0, 500, 0), (240, 1100, 240)),
     2: ((260, 500, 0), (280, 1100, 280)),
     3: ((260, 500, 570), (400, 1100, 860)),
+    4: ((260, 900, 1500), (500, 1400, 1000)),
 }
+# 별자리: (id, 이름, 중심 오프셋, 점들) — 점 순서대로 밟기
+CONSTELLATIONS = [
+    ("bigdipper", "북두칠성", (-130, 0), [(-60, 40), (-20, 40), (-20, 0), (-60, 0), (10, -20), (40, -40), (80, -50)]),
+    ("cassiopeia", "카시오페이아", (60, 60), [(-60, 0), (-30, -30), (0, 0), (30, -30), (60, 0)]),
+    ("orion", "오리온", (-60, -150), [(-30, 50), (30, 50), (-10, 0), (0, 0), (10, 0), (30, -50), (-30, -50)]),
+]
 # 보스 자리 (구역 안쪽 빈 곳)
 BOSS = {1: (40, -40), 2: (200, 40), 3: (340, 820)}
 WATER = rgb(90, 160, 220)
@@ -135,7 +143,7 @@ def decorations(z):
         out.append(folder("MulmalgeunMarket", stalls))
         out.append(sign("MarketSign", (-80, top + 14, 46), (40, 6, 1), "물맑은시장", rgb(200, 60, 50),
                         faces=("Front", "Back")))
-        avoid += [(-110, -50, -50, 50), (-20, 20, -75, -65), (-10, 10, 30, 50)]
+        avoid += [(-110, -50, -50, 50), (-20, 52, -75, -65), (-10, 10, 30, 50)]
     elif zid == 2:
         out.append(deco("NamhanRiver", (260, top + 0.1, -126), (280, 0.4, 28), WATER, "Glass", transparent=0.3,
                         collide=False))
@@ -159,6 +167,38 @@ def decorations(z):
             deco("Mast", (150, top + 11, -126), (1, 18, 1), rgb(100, 70, 40), "Wood"),
             deco("Sail", (151, top + 12, -126), (0.4, 12, 7), rgb(230, 190, 110), "Fabric"),
         ]))
+    elif zid == 4:
+        out.append(sign("NightSign", (260, top + 14, 1515), (50, 10, 1), "양평 밤하늘", rgb(40, 40, 90),
+                        text_color=rgb(255, 240, 150), faces=("Front", "Back")))
+        stars = []
+        for i in range(60):
+            stars.append(deco(f"Star{i}", (260 + random.uniform(-260, 260), top + random.uniform(40, 220),
+                                           1750 + random.uniform(-260, 260)),
+                              (3, 3, 3), rgb(255, 245, 190), "Neon", shape="Ball", collide=False))
+        out.append(folder("FloatingStars", stars))
+        for cid, cname, (ox, oz), pts in CONSTELLATIONS:
+            kids = []
+            world = [(260 + ox + x, 1750 + oz + z) for x, z in pts]
+            for i, (x, zz) in enumerate(world):
+                kids.append(part(f"Star{i + 1}", (x, top + 0.8, zz), (1.6, 16, 16), rgb(255, 230, 120), "Neon",
+                                 transparent=0.15, collide=False, shape="Cylinder", orient=CYL_UP,
+                                 tags=["StarPoint"],
+                                 attrs={"Constellation": cid, "Index": i + 1, "Total": len(world),
+                                        "DisplayName": cname, "Zone": 4},
+                                 extra={"CanTouch": True, "CanQuery": False},
+                                 children=[surface_text(str(i + 1), "Right", rgb(60, 40, 120), ppu=8)]))
+            for i in range(len(world) - 1):
+                (x0, z0), (x1, z1) = world[i], world[i + 1]
+                L = math.hypot(x1 - x0, z1 - z0)
+                c, sn = (x1 - x0) / L, -(z1 - z0) / L
+                kids.append(deco(f"Line{i + 1}", ((x0 + x1) / 2, top + 0.3, (z0 + z1) / 2), (L, 0.4, 1.2),
+                                 rgb(180, 170, 255), "Neon", collide=False, orient=[[c, 0, sn], [0, 1, 0], [-sn, 0, c]]))
+            xs, zs = [x for x, _ in world], [z for _, z in world]
+            avoid.append((min(xs) - 12, max(xs) + 12, min(zs) - 12, max(zs) + 12))
+            out.append(folder(cname, kids))
+            out.append(sign(f"{cid}Sign", (260 + ox, top + 6, 1750 + oz + max(z for _, z in pts) + 18), (30, 6, 1),
+                            cname + " (1번부터 순서대로!)", rgb(40, 40, 90), text_color=rgb(255, 240, 150),
+                            faces=("Front", "Back")))
     else:
         out.append(sign("SummitSign", (260, top + 14, 640), (50, 10, 1), "용문산 정상 1,157m", rgb(90, 70, 50),
                         faces=("Front", "Back")))
@@ -207,10 +247,11 @@ def zone_folder(z):
     bx, bz = spots["bar"]
     ex, ez = spots["beds"]
     pad = 14 * k
-    bsx, bsz = BOSS[zid]
     avoid += [(hx - pad, hx + pad + 10 * k, hz - pad, hz + pad + 10 * k), (bx - pad, bx + pad, bz - pad, bz + pad),
-              (ex - pad, ex + pad, ez - pad, ez + pad), (cx - 8, cx + 8, cz - 8, cz + 8),
-              (bsx - 12 * k, bsx + 12 * k, bsz - 12 * k, bsz + 12 * k)]
+              (ex - pad, ex + pad, ez - pad, ez + pad), (cx - 8, cx + 8, cz - 8, cz + 8)]
+    if zid in BOSS:
+        bsx, bsz = BOSS[zid]
+        avoid.append((bsx - 12 * k, bsx + 12 * k, bsz - 12 * k, bsz + 12 * k))
 
     foods, tries = [], 0
     while len(foods) < 20 and tries < 5000:
@@ -228,9 +269,10 @@ def zone_folder(z):
         for i, (x, zz) in enumerate(foods)
     ]))
     kids.append(sensor("MilkRainSpot", (cx, top + 1, cz), (4, 1, 4), "MilkRainSpot", zid))
-    kids.append(sensor("BossSpawn", (bsx, top + 0.5, bsz), (4, 1, 4), "BossSpawn", zid))
+    if zid in BOSS:
+        kids.append(sensor("BossSpawn", (bsx, top + 0.5, bsz), (4, 1, 4), "BossSpawn", zid))
 
-    rim_y = top + {1: 15, 2: 40, 3: 80}[zid]
+    rim_y = top + {1: 15, 2: 40, 3: 80, 4: 110}[zid]
     kids.append(folder("Basketball", [
         part("Pole", (hx, (rim_y + top) / 2, hz - 3 * k), (1 * k, rim_y - top + 4 * k, 1 * k), rgb(90, 90, 100), "Metal"),
         part("Backboard", (hx, rim_y + 3 * k, hz - 2.5 * k), (8 * k, 6 * k, 0.5 * k), rgb(255, 255, 255)),
@@ -278,11 +320,23 @@ def gates():
     out.append(part("Gate3", (260, 40, 143), (60, 80, 4), rgb(150, 230, 150), "ForceField", transparent=0.2,
                     tags=["ZoneGate"], attrs={"Zone": 3}))
     out.append(sign("TrailSign", (260, 92, 141), (40, 10, 1), "용문산 등산로", rgb(90, 70, 50)))
+    # 용문산 → 밤하늘 은하수 다리
+    z0, z1, y0, y1 = 1000, 1500, 300, 800
+    length = math.hypot(z1 - z0, y1 - y0)
+    a = math.atan2(y1 - y0, z1 - z0)
+    c, s = math.cos(a), math.sin(a)
+    out.append(part("MilkyWayBridge", (260, (y0 + y1) / 2 - 2 * c, (z0 + z1) / 2), (60, 4, length), rgb(170, 150, 255),
+                    "Neon", orient=[[1, 0, 0], [0, c, s], [0, -s, c]], transparent=0.15))
+    out.append(part("Gate4", (260, 340, 997), (60, 80, 4), rgb(120, 100, 255), "ForceField", transparent=0.2,
+                    tags=["ZoneGate"], attrs={"Zone": 4}))
+    out.append(sign("MilkyWaySign", (260, 392, 995), (40, 10, 1), "은하수 다리", rgb(40, 40, 90),
+                    text_color=rgb(255, 240, 150)))
     return folder("Gates", out)
 
 
 def lobby():
     board = part("GlobalBoard", (0, 10, -70), (30, 16, 1), rgb(30, 30, 45), tags=["GlobalBoard"])
+    weekly = part("WeeklyBoard", (34, 10, -70), (30, 16, 1), rgb(45, 30, 45), tags=["WeeklyBoard"])
     spawn = {
         "name": "SpawnLocation", "className": "SpawnLocation",
         "properties": {
@@ -291,7 +345,7 @@ def lobby():
             "Color": rgb(255, 255, 255), "Material": "Neon", "Duration": 0, "TopSurface": "Smooth",
         },
     }
-    return folder("Lobby", [board, spawn])
+    return folder("Lobby", [board, weekly, spawn])
 
 
 model = {"className": "Model", "children": [zone_folder(z) for z in ZONES] + [gates(), lobby()]}

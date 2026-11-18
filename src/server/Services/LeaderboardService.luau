@@ -8,6 +8,8 @@ local Config = require(ReplicatedStorage.Shared.Config)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Format = require(ReplicatedStorage.Shared.Logic.Format)
 local Titles = require(ReplicatedStorage.Shared.Logic.Titles)
+local Week = require(ReplicatedStorage.Shared.Logic.Week)
+local DataService = require(script.Parent.DataService)
 local Remotes = require(script.Parent.Remotes)
 local HeightService = require(script.Parent.HeightService)
 
@@ -57,9 +59,9 @@ local function headTag(player: Player, char: Model)
 end
 
 ---------------------------------------------------------------- 역대 순위판
-local function boardLabels(): { TextLabel }
+local function boardLabels(tag: string): { TextLabel }
 	local labels = {}
-	for _, board in CollectionService:GetTagged("GlobalBoard") do
+	for _, board in CollectionService:GetTagged(tag) do
 		if board:IsA("BasePart") and board:IsDescendantOf(workspace) then
 			for _, face in { Enum.NormalId.Front, Enum.NormalId.Back } do
 				local name = "Board_" .. face.Name
@@ -106,28 +108,31 @@ local function nameOf(userId: number): string
 	return n
 end
 
-local function refreshBoard()
-	local labels = boardLabels()
+-- tag 판에 store의 상위 10명을 표시. value(p): 그 플레이어 점수
+local function refreshBoard(tag: string, store: OrderedDataStore?, title: string, value: (Player) -> number)
+	local labels = boardLabels(tag)
 	if #labels == 0 then
 		return
 	end
-	if not ordered then
+	if not store then
 		for _, l in labels do
-			l.Text = "역대 키 순위\n(게임을 Publish하면 보여요)"
+			l.Text = title .. "\n(게임을 Publish하면 보여요)"
 		end
 		return
 	end
-	local store = ordered :: OrderedDataStore
+	local st = store :: OrderedDataStore
 	for _, p in Players:GetPlayers() do
-		local v = math.min(math.floor(HeightService.get(p)), 2 ^ 53)
-		pcall(function()
-			store:SetAsync("u_" .. p.UserId, v)
-		end)
+		if p:GetAttribute("Height") ~= nil then
+			local v = math.min(math.floor(value(p)), 2 ^ 53)
+			pcall(function()
+				st:SetAsync("u_" .. p.UserId, v)
+			end)
+		end
 	end
 	local ok, pages = pcall(function()
-		return store:GetSortedAsync(false, 10)
+		return st:GetSortedAsync(false, 10)
 	end)
-	local lines = { "역대 키 순위 TOP 10" }
+	local lines = { title }
 	if ok and pages then
 		for i, entry in pages:GetCurrentPage() do
 			local uid = tonumber(string.sub(entry.key, 3)) or 0
@@ -142,6 +147,24 @@ local function refreshBoard()
 	end
 end
 
+local weekStores: { [number]: OrderedDataStore } = {}
+local function weekStore(key: number): OrderedDataStore?
+	if not weekStores[key] then
+		pcall(function()
+			weekStores[key] = DataStoreService:GetOrderedDataStore("GiantHeight_Week_v1_" .. key)
+		end)
+	end
+	return weekStores[key]
+end
+
+local function refreshAll()
+	refreshBoard("GlobalBoard", ordered, "역대 키 순위 TOP 10", HeightService.get)
+	local key = Week.key(os.time())
+	refreshBoard("WeeklyBoard", weekStore(key), "이번 주 성장 순위 TOP 10", function(p)
+		return Week.gain(DataService.extra(p), HeightService.get(p), key)
+	end)
+end
+
 function LeaderboardService.start()
 	HeightService.onChanged(function(player, old, new)
 		local t = Titles.crossed(old, new, Config.TITLES)
@@ -149,6 +172,7 @@ function LeaderboardService.start()
 			return
 		end
 		Remotes.notify(player, "칭호 획득: " .. t.name)
+		Remotes.sfx(player, "title")
 		if t.announce then
 			Remotes.notifyAll(player.DisplayName .. "님이 [" .. t.name .. "]이(가) 되었어요!")
 		end
@@ -168,7 +192,7 @@ function LeaderboardService.start()
 	task.spawn(function()
 		task.wait(5)
 		while true do
-			refreshBoard()
+			refreshAll()
 			task.wait(Config.BOARD_REFRESH)
 		end
 	end)

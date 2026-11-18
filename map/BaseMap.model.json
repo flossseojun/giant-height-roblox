@@ -10659,6 +10659,8081 @@
    ]
   },
   {
+   "name": "4_밤하늘",
+   "className": "Folder",
+   "children": [
+    {
+     "name": "Floor",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       500,
+       4,
+       500
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         798,
+         1750
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.11764705882352941,
+       0.11764705882352941,
+       0.27450980392156865
+      ]
+     }
+    },
+    {
+     "name": "ZoneArea",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       500,
+       1400,
+       1000
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         900,
+         1500
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "ZoneArea"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 4
+     }
+    },
+    {
+     "name": "Decor",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "NightSign",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         50,
+         10,
+         1
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           260,
+           814,
+           1515
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.1568627450980392,
+         0.1568627450980392,
+         0.35294117647058826
+        ],
+        "CanQuery": false
+       },
+       "children": [
+        {
+         "name": "SignFront",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Front",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "양평 밤하늘",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        },
+        {
+         "name": "SignBack",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Back",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "양평 밤하늘",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "FloatingStars",
+       "className": "Folder",
+       "children": [
+        {
+         "name": "Star0",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             73.7051524869562,
+             934.3318282598675,
+             1985.424975059687
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             68.95463789813357,
+             987.6390619106611,
+             1754.5470638973661
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             461.16832299971827,
+             966.6006669829334,
+             1610.3194735862444
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             466.8069617122078,
+             927.5053181568868,
+             1502.9138896071458
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             1.8670452682597443,
+             928.5052997073967,
+             1724.3953562588845
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             157.0145414630699,
+             865.3272996463821,
+             1668.8592761425316
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star6",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             164.36058359498426,
+             991.2415860566376,
+             1490.9055185971017
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star7",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             390.3817014090848,
+             991.0399430370832,
+             1552.421500747935
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star8",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             481.72740714092095,
+             968.3442418434463,
+             1958.8146128114468
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star9",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             150.71313866727314,
+             906.9999598838085,
+             1694.3076786613744
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star10",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             519.372103008519,
+             946.0517979692826,
+             1677.5688484401708
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star11",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             222.5874307225743,
+             889.5279454720463,
+             1515.099410309878
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star12",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             52.8891261431657,
+             990.2416790958946,
+             1638.5240588350669
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star13",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             486.506741921868,
+             884.8784489541273,
+             1628.1785677883415
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star14",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             265.7007536598497,
+             874.1728284893412,
+             1684.141628207819
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star15",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             497.2059376718757,
+             999.1679799945804,
+             1912.2203790848016
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star16",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             328.0658180119221,
+             1004.4162997426893,
+             1979.1636351358857
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star17",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             285.59863705774114,
+             969.5230647512067,
+             1515.727537910655
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star18",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             380.82328359529913,
+             921.1548761329392,
+             1881.3873648051747
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star19",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             335.13516941762714,
+             891.5174976542854,
+             1515.4679905935432
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star20",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             481.92406420451596,
+             862.9160376693108,
+             1735.5357254723508
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star21",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             178.70468338212322,
+             893.5989357980616,
+             1874.2969025980499
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star22",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             507.67401173312413,
+             886.8304298305338,
+             1831.117569536759
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star23",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             156.43487134020512,
+             940.3179064422673,
+             1695.0712444057026
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star24",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             87.01288323452036,
+             869.0982530529104,
+             1598.093710991103
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star25",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             471.0991533260778,
+             929.4736413588344,
+             1604.4131311442907
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star26",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             471.25488290990745,
+             1019.3655204524443,
+             1723.9794306625424
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star27",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             72.58995327985551,
+             874.6332772369341,
+             1537.1715442153918
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star28",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             177.81672156642765,
+             856.3969811608775,
+             1614.3458219730762
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star29",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             134.3459354405581,
+             942.5311936168785,
+             1951.3707587900944
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star30",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             389.82195595443295,
+             914.3006985553415,
+             1705.2194576549311
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star31",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             272.5674342304659,
+             907.8358464586971,
+             1665.8656122617253
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star32",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             32.270949326722814,
+             889.9529424560856,
+             1993.1963365322017
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star33",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             65.45437691443897,
+             930.6112345700012,
+             1817.4059910398885
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star34",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             448.68790150648937,
+             878.8733653475915,
+             1630.9308581525897
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star35",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             129.19589787700465,
+             911.956284614224,
+             1721.846364025437
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star36",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             496.05065913683416,
+             992.7630617214814,
+             1943.9033128573074
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star37",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             11.341465310517322,
+             845.8038288096784,
+             1858.9461281681001
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star38",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             465.7621900603891,
+             925.188289987226,
+             1795.3317750596157
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star39",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             0.09291766607537966,
+             910.4737972277621,
+             1971.9501823383835
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star40",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             429.3063872641916,
+             993.9832812865619,
+             1995.5653833855258
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star41",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             129.201947206376,
+             859.6282798072999,
+             1570.276760452058
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star42",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             271.6301156981402,
+             962.7735111087582,
+             1979.5750909239468
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star43",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             375.3023502567554,
+             956.5226615397,
+             1887.6962848405628
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star44",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             237.80902180225965,
+             939.2701646673313,
+             1510.5640545540327
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star45",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             406.7952813605883,
+             881.8638292140425,
+             1968.358456936089
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star46",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             335.6630037114862,
+             894.680807093071,
+             1556.5427610707716
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star47",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             130.93285258629643,
+             954.5323975290171,
+             1853.262597003571
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star48",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             58.30899575137559,
+             852.6633435045396,
+             1762.7070746618588
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star49",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             303.1033064401516,
+             909.8547505360748,
+             1606.2631774772208
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star50",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             312.5516665026475,
+             841.8830951805841,
+             1646.7910766461082
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star51",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             239.5591260855935,
+             1012.6091949414034,
+             1825.1793324686128
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star52",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             459.5624950977113,
+             925.5547596121578,
+             1612.0794102880445
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star53",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             128.47035985608426,
+             1012.9105613688068,
+             1856.4199046628028
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star54",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             159.84687051743666,
+             843.9217291395421,
+             1749.121327252099
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star55",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             350.72089624797957,
+             915.6028569832189,
+             1623.7731835132618
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star56",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             347.0246253955934,
+             1006.528949041957,
+             1607.9287580872372
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star57",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             17.730660154132863,
+             900.849282661824,
+             1708.6895599097486
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star58",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             354.93467514296077,
+             875.6543348820181,
+             1904.4733929030435
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Star59",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           3,
+           3,
+           3
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             384.34719532339165,
+             930.8781097243566,
+             1596.7136652600893
+            ],
+            "orientation": [
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9607843137254902,
+           0.7450980392156863
+          ],
+          "Shape": "Ball",
+          "CanQuery": false
+         }
+        }
+       ]
+      },
+      {
+       "name": "북두칠성",
+       "className": "Folder",
+       "children": [
+        {
+         "name": "Star1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             70,
+             800.8,
+             1790
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 1,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "1",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             110,
+             800.8,
+             1790
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 2,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "2",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             110,
+             800.8,
+             1750
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 3,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "3",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             70,
+             800.8,
+             1750
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 4,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "4",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             140,
+             800.8,
+             1730
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 5,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "5",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star6",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             170,
+             800.8,
+             1710
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 6,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "6",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star7",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             210,
+             800.8,
+             1700
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "bigdipper",
+          "Index": 7,
+          "Total": 7,
+          "DisplayName": "북두칠성",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "7",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Line1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           40.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             90.0,
+             800.3,
+             1790.0
+            ],
+            "orientation": [
+             [
+              1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           40.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             110.0,
+             800.3,
+             1770.0
+            ],
+            "orientation": [
+             [
+              0.0,
+              0,
+              1.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -1.0,
+              0,
+              0.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           40.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             90.0,
+             800.3,
+             1750.0
+            ],
+            "orientation": [
+             [
+              -1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              -1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           72.80109889280519,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             105.0,
+             800.3,
+             1740.0
+            ],
+            "orientation": [
+             [
+              0.9615239476408232,
+              0,
+              0.274721127897378
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.274721127897378,
+              0,
+              0.9615239476408232
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           36.05551275463989,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             155.0,
+             800.3,
+             1720.0
+            ],
+            "orientation": [
+             [
+              0.8320502943378437,
+              0,
+              0.5547001962252291
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.5547001962252291,
+              0,
+              0.8320502943378437
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line6",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           41.23105625617661,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             190.0,
+             800.3,
+             1705.0
+            ],
+            "orientation": [
+             [
+              0.9701425001453319,
+              0,
+              0.24253562503633297
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.24253562503633297,
+              0,
+              0.9701425001453319
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        }
+       ]
+      },
+      {
+       "name": "bigdipperSign",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         30,
+         6,
+         1
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           130,
+           806,
+           1808
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.1568627450980392,
+         0.1568627450980392,
+         0.35294117647058826
+        ],
+        "CanQuery": false
+       },
+       "children": [
+        {
+         "name": "SignFront",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Front",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "북두칠성 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        },
+        {
+         "name": "SignBack",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Back",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "북두칠성 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "카시오페이아",
+       "className": "Folder",
+       "children": [
+        {
+         "name": "Star1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             260,
+             800.8,
+             1810
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "cassiopeia",
+          "Index": 1,
+          "Total": 5,
+          "DisplayName": "카시오페이아",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "1",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             290,
+             800.8,
+             1780
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "cassiopeia",
+          "Index": 2,
+          "Total": 5,
+          "DisplayName": "카시오페이아",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "2",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             320,
+             800.8,
+             1810
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "cassiopeia",
+          "Index": 3,
+          "Total": 5,
+          "DisplayName": "카시오페이아",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "3",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             350,
+             800.8,
+             1780
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "cassiopeia",
+          "Index": 4,
+          "Total": 5,
+          "DisplayName": "카시오페이아",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "4",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             380,
+             800.8,
+             1810
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "cassiopeia",
+          "Index": 5,
+          "Total": 5,
+          "DisplayName": "카시오페이아",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "5",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Line1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           42.42640687119285,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             275.0,
+             800.3,
+             1795.0
+            ],
+            "orientation": [
+             [
+              0.7071067811865475,
+              0,
+              0.7071067811865475
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.7071067811865475,
+              0,
+              0.7071067811865475
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           42.42640687119285,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             305.0,
+             800.3,
+             1795.0
+            ],
+            "orientation": [
+             [
+              0.7071067811865475,
+              0,
+              -0.7071067811865475
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0.7071067811865475,
+              0,
+              0.7071067811865475
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           42.42640687119285,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             335.0,
+             800.3,
+             1795.0
+            ],
+            "orientation": [
+             [
+              0.7071067811865475,
+              0,
+              0.7071067811865475
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.7071067811865475,
+              0,
+              0.7071067811865475
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           42.42640687119285,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             365.0,
+             800.3,
+             1795.0
+            ],
+            "orientation": [
+             [
+              0.7071067811865475,
+              0,
+              -0.7071067811865475
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              0.7071067811865475,
+              0,
+              0.7071067811865475
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        }
+       ]
+      },
+      {
+       "name": "cassiopeiaSign",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         30,
+         6,
+         1
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           320,
+           806,
+           1828
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.1568627450980392,
+         0.1568627450980392,
+         0.35294117647058826
+        ],
+        "CanQuery": false
+       },
+       "children": [
+        {
+         "name": "SignFront",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Front",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "카시오페이아 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        },
+        {
+         "name": "SignBack",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Back",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "카시오페이아 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "오리온",
+       "className": "Folder",
+       "children": [
+        {
+         "name": "Star1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             170,
+             800.8,
+             1650
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 1,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "1",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             230,
+             800.8,
+             1650
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 2,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "2",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             190,
+             800.8,
+             1600
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 3,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "3",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             200,
+             800.8,
+             1600
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 4,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "4",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             210,
+             800.8,
+             1600
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 5,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "5",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star6",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             230,
+             800.8,
+             1550
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 6,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "6",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Star7",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           1.6,
+           16,
+           16
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             170,
+             800.8,
+             1550
+            ],
+            "orientation": [
+             [
+              0,
+              -1,
+              0
+             ],
+             [
+              1,
+              0,
+              0
+             ],
+             [
+              0,
+              0,
+              1
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0.15,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           1.0,
+           0.9019607843137255,
+           0.47058823529411764
+          ],
+          "Tags": [
+           "StarPoint"
+          ],
+          "Shape": "Cylinder",
+          "CanTouch": true,
+          "CanQuery": false
+         },
+         "attributes": {
+          "Constellation": "orion",
+          "Index": 7,
+          "Total": 7,
+          "DisplayName": "오리온",
+          "Zone": 4
+         },
+         "children": [
+          {
+           "name": "SignRight",
+           "className": "SurfaceGui",
+           "properties": {
+            "Face": "Right",
+            "SizingMode": "PixelsPerStud",
+            "PixelsPerStud": 8
+           },
+           "children": [
+            {
+             "name": "Text",
+             "className": "TextLabel",
+             "properties": {
+              "Text": "7",
+              "TextScaled": true,
+              "Font": "FredokaOne",
+              "TextColor3": [
+               0.23529411764705882,
+               0.1568627450980392,
+               0.47058823529411764
+              ],
+              "TextStrokeTransparency": 0.4,
+              "BackgroundTransparency": 1,
+              "Size": {
+               "UDim2": [
+                [
+                 1,
+                 0
+                ],
+                [
+                 1,
+                 0
+                ]
+               ]
+              }
+             }
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "name": "Line1",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           60.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             200.0,
+             800.3,
+             1650.0
+            ],
+            "orientation": [
+             [
+              1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line2",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           64.03124237432849,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             210.0,
+             800.3,
+             1625.0
+            ],
+            "orientation": [
+             [
+              -0.6246950475544243,
+              0,
+              0.7808688094430304
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.7808688094430304,
+              0,
+              -0.6246950475544243
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line3",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           10.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             195.0,
+             800.3,
+             1600.0
+            ],
+            "orientation": [
+             [
+              1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line4",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           10.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             205.0,
+             800.3,
+             1600.0
+            ],
+            "orientation": [
+             [
+              1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line5",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           53.85164807134504,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             220.0,
+             800.3,
+             1575.0
+            ],
+            "orientation": [
+             [
+              0.3713906763541037,
+              0,
+              0.9284766908852593
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.9284766908852593,
+              0,
+              0.3713906763541037
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        },
+        {
+         "name": "Line6",
+         "className": "Part",
+         "properties": {
+          "Anchored": true,
+          "Size": [
+           60.0,
+           0.4,
+           1.2
+          ],
+          "CFrame": {
+           "CFrame": {
+            "position": [
+             200.0,
+             800.3,
+             1550.0
+            ],
+            "orientation": [
+             [
+              -1.0,
+              0,
+              0.0
+             ],
+             [
+              0,
+              1,
+              0
+             ],
+             [
+              -0.0,
+              0,
+              -1.0
+             ]
+            ]
+           }
+          },
+          "Material": "Neon",
+          "Transparency": 0,
+          "CanCollide": false,
+          "TopSurface": "Smooth",
+          "BottomSurface": "Smooth",
+          "Color": [
+           0.7058823529411765,
+           0.6666666666666666,
+           1.0
+          ],
+          "CanQuery": false
+         }
+        }
+       ]
+      },
+      {
+       "name": "orionSign",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         30,
+         6,
+         1
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           200,
+           806,
+           1668
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.1568627450980392,
+         0.1568627450980392,
+         0.35294117647058826
+        ],
+        "CanQuery": false
+       },
+       "children": [
+        {
+         "name": "SignFront",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Front",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "오리온 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        },
+        {
+         "name": "SignBack",
+         "className": "SurfaceGui",
+         "properties": {
+          "Face": "Back",
+          "SizingMode": "PixelsPerStud",
+          "PixelsPerStud": 12
+         },
+         "children": [
+          {
+           "name": "Text",
+           "className": "TextLabel",
+           "properties": {
+            "Text": "오리온 (1번부터 순서대로!)",
+            "TextScaled": true,
+            "Font": "FredokaOne",
+            "TextColor3": [
+             1.0,
+             0.9411764705882353,
+             0.5882352941176471
+            ],
+            "TextStrokeTransparency": 0.4,
+            "BackgroundTransparency": 1,
+            "Size": {
+             "UDim2": [
+              [
+               1,
+               0
+              ],
+              [
+               1,
+               0
+              ]
+             ]
+            }
+           }
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "FoodSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "FoodSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           258.22118637145525,
+           816,
+           1618.6715495327114
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           109.60265259788687,
+           816,
+           1561.773027465795
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           207.0311203129054,
+           816,
+           1679.3129456477072
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           167.5186998689208,
+           816,
+           1687.616081211544
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn5",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           395.24335263411126,
+           816,
+           1721.6287202899107
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn6",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           64.63884200827223,
+           816,
+           1566.2835761711149
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn7",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           230.57399527889567,
+           816,
+           1747.2590143660982
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn8",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           153.86915513320147,
+           816,
+           1567.1878708363274
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn9",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           348.1038918218686,
+           816,
+           1727.7245032246453
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn10",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           288.09136683061473,
+           816,
+           1696.6478357218484
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn11",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           153.92023308582077,
+           816,
+           1643.042924694059
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn12",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           66.95198348381012,
+           816,
+           1663.344535662345
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn13",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           100.07098407420727,
+           816,
+           1619.6207358852564
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn14",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           458.6453754285612,
+           816,
+           1784.941381525605
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn15",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           56.23043732130577,
+           816,
+           1771.6500996041943
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn16",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           111.27246697349008,
+           816,
+           1658.9839028415247
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn17",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           252.74932393506842,
+           816,
+           1562.417310291609
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn18",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           226.43018327242788,
+           816,
+           1784.7023575357252
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn19",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           416.63988180664336,
+           816,
+           1773.175650976673
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "FoodSpawn20",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         16,
+         16,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           64.19312427258308,
+           816,
+           1602.733197824717
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "FoodSpawn"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      }
+     ]
+    },
+    {
+     "name": "MilkRainSpot",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       4,
+       1,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         801,
+         1750
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 1,
+      "CanCollide": false,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Tags": [
+       "MilkRainSpot"
+      ],
+      "CanTouch": true,
+      "CanQuery": false
+     },
+     "attributes": {
+      "Zone": 4
+     }
+    },
+    {
+     "name": "Basketball",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Pole",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         8,
+         142,
+         8
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           110.0,
+           855.0,
+           1876.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.35294117647058826,
+         0.35294117647058826,
+         0.39215686274509803
+        ]
+       }
+      },
+      {
+       "name": "Backboard",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         64,
+         48,
+         4.0
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           110.0,
+           934,
+           1880.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ]
+       }
+      },
+      {
+       "name": "Rim",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3.2,
+         48,
+         48
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           110.0,
+           910,
+           1900.0
+          ],
+          "orientation": [
+           [
+            0,
+            -1,
+            0
+           ],
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 0.2,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         0.47058823529411764,
+         0.11764705882352941
+        ],
+        "Shape": "Cylinder"
+       }
+      },
+      {
+       "name": "HoopSensor",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         32,
+         8,
+         32
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           110.0,
+           906.0,
+           1900.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Tags": [
+         "Hoop"
+        ],
+        "CanTouch": true,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "BallRack",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         32,
+         24,
+         32
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           190.0,
+           812.0,
+           1980.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Wood",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.35294117647058826,
+         0.1568627450980392
+        ],
+        "Tags": [
+         "BallRack"
+        ]
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      }
+     ]
+    },
+    {
+     "name": "PullupBar",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "PostA",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4.8,
+         56,
+         4.8
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           378.0,
+           828.0,
+           1900.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "PostB",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         4.8,
+         56,
+         4.8
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           442.0,
+           828.0,
+           1900.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.3137254901960784,
+         0.3137254901960784,
+         0.35294117647058826
+        ]
+       }
+      },
+      {
+       "name": "Bar",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         64,
+         3.2,
+         3.2
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           410.0,
+           856,
+           1900.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Metal",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.7843137254901961,
+         0.7843137254901961,
+         0.8235294117647058
+        ],
+        "Tags": [
+         "Bar"
+        ],
+        "Shape": "Cylinder"
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      }
+     ]
+    },
+    {
+     "name": "Beds",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "Bed1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         40,
+         16,
+         72
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           362.0,
+           808,
+           1600.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "Pillow1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         32,
+         6.4,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           362.0,
+           819.2,
+           1573.6
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "CanQuery": false
+       }
+      },
+      {
+       "name": "Bed2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         40,
+         16,
+         72
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           458.0,
+           808,
+           1600.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         0.47058823529411764,
+         0.5882352941176471,
+         1.0
+        ],
+        "Tags": [
+         "Bed"
+        ]
+       },
+       "attributes": {
+        "Zone": 4
+       }
+      },
+      {
+       "name": "Pillow2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         32,
+         6.4,
+         16
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           458.0,
+           819.2,
+           1573.6
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "Fabric",
+        "Transparency": 0,
+        "CanCollide": true,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "CanQuery": false
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
    "name": "Gates",
    "className": "Folder",
    "children": [
@@ -11051,6 +19126,198 @@
        ]
       }
      ]
+    },
+    {
+     "name": "MilkyWayBridge",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       60,
+       4,
+       707.1067811865476
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         548.5857864376269,
+         1250.0
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          0.7071067811865476,
+          0.7071067811865475
+         ],
+         [
+          0,
+          -0.7071067811865475,
+          0.7071067811865476
+         ]
+        ]
+       }
+      },
+      "Material": "Neon",
+      "Transparency": 0.15,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.6666666666666666,
+       0.5882352941176471,
+       1.0
+      ]
+     }
+    },
+    {
+     "name": "Gate4",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       60,
+       80,
+       4
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         340,
+         997
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "ForceField",
+      "Transparency": 0.2,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.47058823529411764,
+       0.39215686274509803,
+       1.0
+      ],
+      "Tags": [
+       "ZoneGate"
+      ]
+     },
+     "attributes": {
+      "Zone": 4
+     }
+    },
+    {
+     "name": "MilkyWaySign",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       40,
+       10,
+       1
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         260,
+         392,
+         995
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.1568627450980392,
+       0.1568627450980392,
+       0.35294117647058826
+      ],
+      "CanQuery": false
+     },
+     "children": [
+      {
+       "name": "SignFront",
+       "className": "SurfaceGui",
+       "properties": {
+        "Face": "Front",
+        "SizingMode": "PixelsPerStud",
+        "PixelsPerStud": 12
+       },
+       "children": [
+        {
+         "name": "Text",
+         "className": "TextLabel",
+         "properties": {
+          "Text": "은하수 다리",
+          "TextScaled": true,
+          "Font": "FredokaOne",
+          "TextColor3": [
+           1.0,
+           0.9411764705882353,
+           0.5882352941176471
+          ],
+          "TextStrokeTransparency": 0.4,
+          "BackgroundTransparency": 1,
+          "Size": {
+           "UDim2": [
+            [
+             1,
+             0
+            ],
+            [
+             1,
+             0
+            ]
+           ]
+          }
+         }
+        }
+       ]
+      }
+     ]
     }
    ]
   },
@@ -11106,6 +19373,57 @@
       ],
       "Tags": [
        "GlobalBoard"
+      ]
+     }
+    },
+    {
+     "name": "WeeklyBoard",
+     "className": "Part",
+     "properties": {
+      "Anchored": true,
+      "Size": [
+       30,
+       16,
+       1
+      ],
+      "CFrame": {
+       "CFrame": {
+        "position": [
+         34,
+         10,
+         -70
+        ],
+        "orientation": [
+         [
+          1,
+          0,
+          0
+         ],
+         [
+          0,
+          1,
+          0
+         ],
+         [
+          0,
+          0,
+          1
+         ]
+        ]
+       }
+      },
+      "Material": "SmoothPlastic",
+      "Transparency": 0,
+      "CanCollide": true,
+      "TopSurface": "Smooth",
+      "BottomSurface": "Smooth",
+      "Color": [
+       0.17647058823529413,
+       0.11764705882352941,
+       0.17647058823529413
+      ],
+      "Tags": [
+       "WeeklyBoard"
       ]
      }
     },

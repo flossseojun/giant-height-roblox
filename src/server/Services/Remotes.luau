@@ -30,4 +30,13 @@ function Remotes.notifyAll(text: string)
 	Remotes.get("Notify"):FireAllClients(text)
 end
 
+-- 효과음 신호 (클라이언트가 Config.SOUNDS에서 골라 재생)
+function Remotes.sfx(player: Player, name: string, extra: any?)
+	Remotes.get("Sfx"):FireClient(player, name, extra)
+end
+
+function Remotes.sfxAll(name: string, extra: any?)
+	Remotes.get("Sfx"):FireAllClients(name, extra)
+end
+
 return Remotes

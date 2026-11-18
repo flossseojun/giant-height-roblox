@@ -129,6 +129,7 @@ local function onPlayerAdded(player: Player)
 		return
 	end
 	heights[player] = data.height
+	player:SetAttribute("TutorialDone", DataService.extra(player).tutorial == true or data.height >= 1000)
 	player:SetAttribute("Unlocked", Zones.highestUnlocked(data.height, Config.ZONES))
 	refreshDisplay(player)
 
@@ -174,6 +175,11 @@ function HeightService.start()
 	end)
 	Remotes.get("Gained")
 	Remotes.get("Notify")
+	Remotes.get("Sfx")
+	Remotes.get("TutorialDone").OnServerEvent:Connect(function(player)
+		DataService.extra(player).tutorial = true
+		player:SetAttribute("TutorialDone", true)
+	end)
 end
 
 return HeightService

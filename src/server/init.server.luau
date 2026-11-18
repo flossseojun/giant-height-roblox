@@ -13,6 +13,7 @@ local order = {
 	"PetService",
 	"BossService",
 	"HighFiveService",
+	"ConstellationService",
 }
 
 for _, name in order do

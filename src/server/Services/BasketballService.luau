@@ -117,6 +117,7 @@ local function setupHoop(sensor: Instance)
 		local zone = Config.ZONES[Util.zoneOf(sensor)] or Config.ZONES[1]
 		HeightService.add(owner, Zones.bestGain(zone) * Config.HOOP.mult, "hoop")
 		Remotes.notify(owner, "골!!")
+		Remotes.sfx(owner, "goal")
 		local fx = Instance.new("ParticleEmitter")
 		fx.Rate = 0
 		fx.Speed = NumberRange.new(10, 20)

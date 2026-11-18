@@ -8,6 +8,9 @@ local order = {
 	"PetClient",
 	"BossClient",
 	"HighFiveClient",
+	"SoundFx",
+	"World",
+	"Tutorial",
 }
 
 for _, name in order do

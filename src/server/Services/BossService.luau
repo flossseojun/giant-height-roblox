@@ -150,6 +150,7 @@ local function knock(player: Player, from: Vector3)
 	away = Vector3.new(away.X, 0, away.Z)
 	away = if away.Magnitude > 0.01 then away.Unit else Vector3.new(1, 0, 0)
 	knockRemote:FireClient(player, away, Config.BOSS.stun)
+	Remotes.sfx(player, "knock")
 end
 
 local function syrupAttack(target: Player, floorY: number, k: number)
@@ -245,6 +246,7 @@ local function runBoss(spawn: BasePart)
 		local scale = Growth.heightToScale(HeightService.get(player), Config.SCALE_K, Config.MAX_SCALE)
 		if fight.hit(player.UserId, BossFight.damageFor(scale), now) then
 			hitters[player.UserId] = true
+			Remotes.sfx(player, "bossHit")
 			if before == "idle" then
 				Remotes.notifyAll(player.DisplayName .. "님이 " .. cfg.name .. "에게 도전! 90초 안에 잡아라!")
 			end
@@ -295,6 +297,7 @@ local function runBoss(spawn: BasePart)
 						end
 					end
 					Remotes.notifyAll(table.concat(names, ", ") .. " — " .. cfg.name .. " 처치!")
+					Remotes.sfxAll("victory")
 					model.Parent = nil
 					task.delay(Config.BOSS.respawn, function()
 						fight.reset()

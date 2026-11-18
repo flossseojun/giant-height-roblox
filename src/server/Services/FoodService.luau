@@ -3,6 +3,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
 local FoodSpawner = require(ReplicatedStorage.Shared.Logic.FoodSpawner)
+local Market = require(ReplicatedStorage.Shared.Logic.Market)
+local Players = game:GetService("Players")
+local Remotes = require(script.Parent.Remotes)
 local HeightService = require(script.Parent.HeightService)
 local Util = require(script.Parent.Util)
 
@@ -18,8 +21,16 @@ local COLORS = {
 	bibimbap = Color3.fromRGB(230, 150, 60),
 	ginkgo = Color3.fromRGB(250, 210, 60),
 	spring = Color3.fromRGB(150, 220, 255),
+	starmilk = Color3.fromRGB(220, 230, 255),
+	starcandy = Color3.fromRGB(255, 150, 220),
+	meteor = Color3.fromRGB(255, 140, 60),
 	golden_milk = Color3.fromRGB(255, 200, 40),
 }
+
+-- 오늘이 물맑은시장 장날인지 (한국 시간)
+function FoodService.isMarketDay(): boolean
+	return Market.isMarketDay(Market.kstDay(os.time()))
+end
 
 local folder = Instance.new("Folder")
 folder.Name = "Foods"
@@ -69,6 +80,7 @@ function FoodService.makeEdible(p: BasePart, food, slot, onEaten: (Player) -> ()
 		end
 		edible[p] = nil
 		HeightService.add(player, food.gain, food.id)
+		Remotes.sfx(player, if food.golden then "golden" else "eat")
 		onEaten(player)
 	end
 	edible[p] = eat
@@ -94,6 +106,10 @@ local function runSpawn(spawnPart: BasePart)
 			return
 		end
 		local food = FoodSpawner.pick(zone, math.random(), math.random(), Config.GOLDEN_CHANCE, Config.GOLDEN_MULT)
+		if zone.id == 1 and FoodService.isMarketDay() then
+			food.gain *= Config.MARKET_DAY_MULT
+			food.name = food.name .. " ×" .. Config.MARKET_DAY_MULT
+		end
 		local p = FoodService.makeFoodPart(food, size)
 		p.CFrame = spawnPart.CFrame
 		slot.reset()
@@ -115,6 +131,20 @@ local function runSpawn(spawnPart: BasePart)
 end
 
 function FoodService.start()
+	-- 장날 알림 + 화면 배지용 표시
+	task.spawn(function()
+		while true do
+			workspace:SetAttribute("MarketDay", FoodService.isMarketDay())
+			task.wait(60)
+		end
+	end)
+	Players.PlayerAdded:Connect(function(p)
+		task.delay(8, function()
+			if p.Parent and FoodService.isMarketDay() then
+				Remotes.notify(p, "오늘은 물맑은시장 장날! 양평읍 음식 ×" .. Config.MARKET_DAY_MULT)
+			end
+		end)
+	end)
 	Util.eachTagged("FoodSpawn", function(inst)
 		if inst:IsA("BasePart") then
 			runSpawn(inst)

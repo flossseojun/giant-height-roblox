@@ -79,6 +79,7 @@ function HighFiveService.start()
 		for _, pl in { player, from } do
 			HeightService.setBoostUntil(pl, untilT)
 			Remotes.notify(pl, "하이파이브! " .. Config.HIGHFIVE.duration .. "초 동안 성장 ×2")
+			Remotes.sfx(pl, "highfive")
 		end
 	end)
 end

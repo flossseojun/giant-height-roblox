@@ -105,6 +105,26 @@ Config.MARKET_DAY_MULT = 2
 -- 별자리 따라 걷기 (4구역)
 Config.CONSTELLATION = { timeLimit = 40, rewardMult = 40, cooldown = 120 }
 
+-- 효과음: 로블록스에 기본으로 들어 있는 소리(rbxasset://)로 시작.
+-- 더 좋은 소리로 바꾸려면 Creator Store(오디오)에서 고른 뒤 "rbxassetid://숫자"로 바꾸면 됨.
+-- pitch: 음 높이, volume: 크기
+Config.SOUNDS = {
+	eat = { id = "rbxasset://sounds/electronicpingshort.wav", volume = 0.4, pitch = 1.2, jitter = 0.15 },
+	golden = { id = "rbxasset://sounds/electronicpingshort.wav", volume = 0.7, pitch = 1.8, double = true },
+	goal = { id = "rbxasset://sounds/electronicpingshort.wav", volume = 0.8, pitch = 0.9, double = true },
+	title = { id = "rbxasset://sounds/swoosh.wav", volume = 0.6, pitch = 1.3 },
+	bossHit = { id = "rbxasset://sounds/clickfast.wav", volume = 0.6, pitch = 0.8, jitter = 0.2 },
+	knock = { id = "rbxasset://sounds/uuhhh.mp3", volume = 0.7, pitch = 1.0 },
+	victory = { id = "rbxasset://sounds/electronicpingshort.wav", volume = 0.8, pitch = 1.5, double = true },
+	rainWarn = { id = "rbxasset://sounds/button.wav", volume = 0.6, pitch = 0.9, double = true },
+	rainStart = { id = "rbxasset://sounds/impact_water.mp3", volume = 0.6, pitch = 1.0 },
+	highfive = { id = "rbxasset://sounds/clickfast.wav", volume = 0.8, pitch = 1.4, double = true },
+	star = { id = "rbxasset://sounds/electronicpingshort.wav", volume = 0.6, pitch = 1.0 },
+	notify = { id = "rbxasset://sounds/button.wav", volume = 0.15, pitch = 1.2 },
+	footstep = { id = "rbxasset://sounds/action_jump_land.mp3", volume = 0.8, pitch = 0.45 },
+}
+Config.BGM = "" -- 배경음악: Creator Store 음악 "rbxassetid://숫자"를 넣으면 계속 재생
+
 Config.AUTOSAVE = 60 -- 초
 Config.BOARD_REFRESH = 60 -- 초
 

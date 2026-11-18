@@ -63,7 +63,20 @@ function DataService.load(player: Player): (boolean, { height: number })
 	return ok, { height = SaveGuard.cleanHeight(data, Config.START_HEIGHT) }
 end
 
+local saving: { [Player]: boolean } = {}
+
 function DataService.save(player: Player)
+	-- 이미 저장 중이면 끝날 때까지 기다렸다가, 그때의 최신 값으로 저장
+	local t = os.clock()
+	while saving[player] and os.clock() - t < 30 do
+		task.wait(0.1)
+	end
+	saving[player] = true
+	DataService._saveNow(player)
+	saving[player] = nil
+end
+
+function DataService._saveNow(player: Player)
 	local guard = guards[player]
 	if not (store and guard and guard.canSave() and getHeight) then
 		return

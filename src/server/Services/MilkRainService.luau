@@ -11,8 +11,8 @@ local Util = require(script.Parent.Util)
 
 local MilkRainService = {}
 
-local RADIUS = { 40, 80, 120 } -- 구역별 비 내리는 범위(스터드)
-local DROP_SIZE = { 2.5, 6, 12 }
+local RADIUS = { 40, 80, 120, 160 } -- 구역별 비 내리는 범위(스터드)
+local DROP_SIZE = { 2.5, 6, 12, 16 }
 
 local folder = Instance.new("Folder")
 folder.Name = "MilkRain"
@@ -79,11 +79,13 @@ function MilkRainService.start()
 				if spot then
 					local zone = Config.ZONES[Util.zoneOf(spot)] or Config.ZONES[1]
 					Remotes.notifyAll(Config.RAIN.warn .. "초 뒤 " .. zone.name .. "에 우유 비가 내려요!")
+					Remotes.sfxAll("rainWarn")
 				end
 			elseif phase == "raining" and rainedCycle ~= math.floor(elapsed / interval) then
 				rainedCycle = math.floor(elapsed / interval)
 				if spot and spot.Parent then
 					Remotes.notifyAll("우유 비다!!")
+					Remotes.sfxAll("rainStart")
 					task.spawn(rain, spot)
 				end
 				spot = nil

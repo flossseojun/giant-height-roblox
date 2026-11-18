@@ -19,6 +19,16 @@ function BallClient.start()
 		end
 		local cam = workspace.CurrentCamera
 		local ray = cam:ScreenPointToRay(input.Position.X, input.Position.Y)
+		-- 보스를 클릭한 거면 공은 던지지 않음 (보스 공격과 겹치지 않게)
+		local bosses = workspace:FindFirstChild("Bosses")
+		if bosses then
+			local params = RaycastParams.new()
+			params.FilterType = Enum.RaycastFilterType.Include
+			params.FilterDescendantsInstances = { bosses }
+			if workspace:Raycast(ray.Origin, ray.Direction * 2000, params) then
+				return
+			end
+		end
 		throwRemote:FireServer(ray.Direction)
 	end)
 end
