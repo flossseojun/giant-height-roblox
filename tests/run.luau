@@ -3,6 +3,7 @@ local H = require("./harness")
 
 local specs = {
 	"./config.spec",
+	"./logic.spec",
 }
 
 for _, path in specs do
