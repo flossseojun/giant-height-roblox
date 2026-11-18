@@ -26,6 +26,7 @@ expected = {}
 for z in (1, 2, 3):
     expected.update({("FoodSpawn", z): 20, ("ZoneArea", z): 1, ("MilkRainSpot", z): 1, ("Hoop", z): 1,
                      ("BallRack", z): 1, ("Bar", z): 1, ("Bed", z): 2})
+expected.update({("BossSpawn", z): 1 for z in (1, 2, 3)})
 expected.update({("ZoneGate", 2): 1, ("ZoneGate", 3): 1, ("GlobalBoard", None): 1})
 
 bad = [(k, v, count.get(k, 0)) for k, v in expected.items() if count.get(k, 0) != v]

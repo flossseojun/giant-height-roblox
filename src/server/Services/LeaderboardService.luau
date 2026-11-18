@@ -7,6 +7,8 @@ local CollectionService = game:GetService("CollectionService")
 local Config = require(ReplicatedStorage.Shared.Config)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Format = require(ReplicatedStorage.Shared.Logic.Format)
+local Titles = require(ReplicatedStorage.Shared.Logic.Titles)
+local Remotes = require(script.Parent.Remotes)
 local HeightService = require(script.Parent.HeightService)
 
 local LeaderboardService = {}
@@ -43,9 +45,9 @@ local function headTag(player: Player, char: Model)
 		local h = HeightService.get(player)
 		local s = Growth.heightToScale(h, Config.SCALE_K, Config.MAX_SCALE)
 		-- 크기를 스터드 단위로: 몸이 커지면 이름표도 커짐
-		bb.Size = UDim2.fromScale(7 * s, 1.6 * s)
+		bb.Size = UDim2.fromScale(7 * s, 2.4 * s)
 		bb.StudsOffsetWorldSpace = Vector3.new(0, 2.2 * s, 0)
-		l.Text = player.DisplayName .. "  " .. Format.height(h)
+		l.Text = "[" .. Titles.forHeight(h, Config.TITLES).name .. "]\n" .. player.DisplayName .. "  " .. Format.height(h)
 	end
 	local conn = player:GetAttributeChangedSignal("Height"):Connect(refresh)
 	bb.Destroying:Connect(function()
@@ -141,6 +143,16 @@ local function refreshBoard()
 end
 
 function LeaderboardService.start()
+	HeightService.onChanged(function(player, old, new)
+		local t = Titles.crossed(old, new, Config.TITLES)
+		if not t then
+			return
+		end
+		Remotes.notify(player, "칭호 획득: " .. t.name)
+		if t.announce then
+			Remotes.notifyAll(player.DisplayName .. "님이 [" .. t.name .. "]이(가) 되었어요!")
+		end
+	end)
 	local function onPlayer(p: Player)
 		p.CharacterAdded:Connect(function(c)
 			headTag(p, c)

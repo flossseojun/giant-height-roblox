@@ -8,37 +8,47 @@ Config.SCALE_K = 1.5 -- 클수록 몸이 빨리 커짐
 Config.ZONES = {
 	{
 		id = 1,
-		name = "동네 놀이터",
+		name = "양평읍 시내",
 		minHeight = 0,
 		color = Color3 and Color3.fromRGB(140, 220, 110) or nil,
 		foods = {
-			{ id = "anchovy", name = "멸치", gain = 1 },
-			{ id = "milk", name = "우유", gain = 2 },
-			{ id = "egg", name = "계란", gain = 3 },
+			{ id = "milk", name = "시장 우유", gain = 1 },
+			{ id = "eggbread", name = "계란빵", gain = 2 },
+			{ id = "hotteok", name = "호떡", gain = 3 },
 		},
 	},
 	{
 		id = 2,
-		name = "학교 운동장",
+		name = "두물머리",
 		minHeight = 1000,
 		color = Color3 and Color3.fromRGB(230, 160, 90) or nil,
 		foods = {
-			{ id = "soymilk", name = "두유", gain = 15 },
-			{ id = "cheese", name = "치즈", gain = 20 },
-			{ id = "chicken", name = "닭가슴살", gain = 30 },
+			{ id = "corn", name = "찐 옥수수", gain = 15 },
+			{ id = "lotusdog", name = "연잎 핫도그", gain = 20 },
+			{ id = "hanwoo", name = "개군 한우", gain = 30 },
 		},
 	},
 	{
 		id = 3,
-		name = "구름 위",
+		name = "용문산",
 		minHeight = 100000,
 		color = Color3 and Color3.fromRGB(170, 215, 255) or nil,
 		foods = {
-			{ id = "starcandy", name = "별사탕", gain = 200 },
-			{ id = "cloudmilk", name = "구름우유", gain = 300 },
-			{ id = "rainbowegg", name = "무지개 계란", gain = 500 },
+			{ id = "bibimbap", name = "산채비빔밥", gain = 200 },
+			{ id = "ginkgo", name = "은행", gain = 300 },
+			{ id = "spring", name = "신비한 약수", gain = 500 },
 		},
 	},
+}
+
+-- 칭호 (announce = 처음 넘으면 서버 전체 알림)
+Config.TITLES = {
+	{ minHeight = 0, name = "양평 새싹" },
+	{ minHeight = 1000, name = "강변 산책러" },
+	{ minHeight = 100000, name = "등산가" },
+	{ minHeight = 115700, name = "용문산보다 큰 사람", announce = true }, -- 용문산 1,157m
+	{ minHeight = 884886, name = "에베레스트 정복자", announce = true }, -- 8,848.86m
+	{ minHeight = 1e8, name = "지구 밖 거인", announce = true }, -- 1,000km
 }
 
 Config.GOLDEN_CHANCE = 0.02

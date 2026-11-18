@@ -9,15 +9,15 @@ local Util = require(script.Parent.Util)
 local FoodService = {}
 
 local COLORS = {
-	anchovy = Color3.fromRGB(170, 200, 220),
 	milk = Color3.fromRGB(255, 255, 255),
-	egg = Color3.fromRGB(255, 235, 180),
-	soymilk = Color3.fromRGB(240, 225, 170),
-	cheese = Color3.fromRGB(255, 205, 60),
-	chicken = Color3.fromRGB(240, 190, 150),
-	starcandy = Color3.fromRGB(255, 150, 220),
-	cloudmilk = Color3.fromRGB(200, 235, 255),
-	rainbowegg = Color3.fromRGB(180, 140, 255),
+	eggbread = Color3.fromRGB(240, 200, 120),
+	hotteok = Color3.fromRGB(190, 120, 60),
+	corn = Color3.fromRGB(255, 220, 70),
+	lotusdog = Color3.fromRGB(120, 170, 90),
+	hanwoo = Color3.fromRGB(200, 70, 70),
+	bibimbap = Color3.fromRGB(230, 150, 60),
+	ginkgo = Color3.fromRGB(250, 210, 60),
+	spring = Color3.fromRGB(150, 220, 255),
 	golden_milk = Color3.fromRGB(255, 200, 40),
 }
 
