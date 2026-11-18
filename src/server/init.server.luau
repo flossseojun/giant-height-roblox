@@ -6,6 +6,7 @@ local order = {
 	"FoodService",
 	"ZoneService",
 	"MilkRainService",
+	"BarService",
 }
 
 for _, name in order do

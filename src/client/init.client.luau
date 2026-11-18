@@ -2,6 +2,7 @@
 local order = {
 	"Hud",
 	"Gates",
+	"BarClient",
 }
 
 for _, name in order do

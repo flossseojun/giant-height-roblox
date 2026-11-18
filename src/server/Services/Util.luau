@@ -4,6 +4,12 @@ local Players = game:GetService("Players")
 
 local Util = {}
 
+-- 지금 다른 활동 중인지 ("bar", "bed" 등). 한 번에 하나만.
+Util.busy = {} :: { [Player]: string? }
+Players.PlayerRemoving:Connect(function(p)
+	Util.busy[p] = nil
+end)
+
 -- 닿은 파트가 어느 플레이어의 몸인지 (액세서리 포함)
 function Util.playerFromPart(part: Instance?): Player?
 	local node = part
