@@ -25,11 +25,21 @@ function DataService.setHeightGetter(fn: (Player) -> number)
 	getHeight = fn
 end
 
+-- 클라이언트 화면이 준비될 시간을 주고 알림
+local function warnLater(player: Player)
+	task.delay(4, function()
+		if player.Parent then
+			Remotes.notify(player, "저장 불러오기 실패 — 이번 판 기록은 저장되지 않아요")
+		end
+	end)
+end
+
 function DataService.load(player: Player): (boolean, { height: number })
 	local guard = SaveGuard.new()
 	guards[player] = guard
 	if not store then
 		guard.markLoaded(false)
+		warnLater(player)
 		return false, { height = Config.START_HEIGHT }
 	end
 	local data
@@ -45,7 +55,7 @@ function DataService.load(player: Player): (boolean, { height: number })
 	end
 	guard.markLoaded(ok)
 	if not ok then
-		Remotes.notify(player, "저장 불러오기 실패 — 이번 판 기록은 저장되지 않아요")
+		warnLater(player)
 	end
 	return ok, { height = SaveGuard.cleanHeight(data, Config.START_HEIGHT) }
 end
