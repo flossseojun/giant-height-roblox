@@ -172,7 +172,8 @@ local function buildPicker()
 	end)
 
 	local function refresh()
-		local h = heightOf(player)
+		local bestAttr = player:GetAttribute("Best")
+		local h = math.max(heightOf(player), if type(bestAttr) == "number" then bestAttr else 0)
 		local current = player:GetAttribute("Pet")
 		for _, pet in Config.PETS do
 			local b = buttons[pet.id]

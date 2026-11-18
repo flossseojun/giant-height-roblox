@@ -7,6 +7,7 @@ local HighFive = require(ReplicatedStorage.Shared.Logic.HighFive)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local HeightService = require(script.Parent.HeightService)
 local Remotes = require(script.Parent.Remotes)
+local QuestService = require(script.Parent.QuestService)
 
 local HighFiveService = {}
 
@@ -80,6 +81,7 @@ function HighFiveService.start()
 			HeightService.setBoostUntil(pl, untilT)
 			Remotes.notify(pl, "하이파이브! " .. Config.HIGHFIVE.duration .. "초 동안 성장 ×2")
 			Remotes.sfx(pl, "highfive")
+			QuestService.record(pl, "highfive", 1)
 		end
 	end)
 end

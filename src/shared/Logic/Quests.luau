@@ -10,7 +10,7 @@ end
 
 -- 성장 출처(source) → 미션 종류
 local SPECIAL = { golden_milk = true, rainmilk = true, hoop = true, bar = true, bed = true, boss = true, star = true,
-	highfive = true, debug = true }
+	highfive = true, debug = true, quest = true }
 function Quests.kindOf(source: string): string
 	if SPECIAL[source] then
 		return source

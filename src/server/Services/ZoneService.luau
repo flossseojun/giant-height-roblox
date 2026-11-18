@@ -35,8 +35,8 @@ end
 
 local function check(player: Player)
 	local root = Util.root(player)
-	if not root then
-		return
+	if not root or Util.busy[player] == "ride" then
+		return -- 어깨에 탄 동안은 검사 안 함 (내리면 다시 검사)
 	end
 	local z = zoneAt(root.Position)
 	if not z then

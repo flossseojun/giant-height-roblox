@@ -15,7 +15,7 @@ local PetService = {}
 
 local function equip(player: Player, id: any, quiet: boolean?)
 	local pet = Pets.find(Config.PETS, id)
-	if not pet or not Pets.isUnlocked(pet, HeightService.get(player)) then
+	if not pet or not Pets.isUnlocked(pet, HeightService.best(player)) then
 		return
 	end
 	DataService.extra(player).pet = pet.id
@@ -63,7 +63,7 @@ function PetService.start()
 	-- 새 구역이 열려 새 펫을 얻으면 알려 줌
 	HeightService.onChanged(function(player, old, new)
 		for _, pet in Config.PETS do
-			if old < pet.minHeight and new >= pet.minHeight then
+			if old < pet.minHeight and new >= pet.minHeight and HeightService.rebirths(player) == 0 then
 				Remotes.notify(player, "새 펫 " .. pet.name .. " 획득! 왼쪽 '펫' 버튼에서 데려가세요")
 			end
 		end

@@ -14,6 +14,9 @@ local order = {
 	"BossService",
 	"HighFiveService",
 	"ConstellationService",
+	"RebirthService",
+	"QuestService",
+	"CarryService",
 }
 
 for _, name in order do

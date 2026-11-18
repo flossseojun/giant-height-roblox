@@ -34,7 +34,7 @@ end
 local function rain(spot: BasePart)
 	local zid = Util.zoneOf(spot)
 	local zone = Config.ZONES[zid] or Config.ZONES[1]
-	local food = { id = "milk", name = "우유", gain = MilkRain.dropGain(zone, Config.RAIN.mult), golden = false }
+	local food = { id = "rainmilk", name = "우유", gain = MilkRain.dropGain(zone, Config.RAIN.mult), golden = false }
 	local r = RADIUS[zid] or 40
 	local size = DROP_SIZE[zid] or 2.5
 	for _ = 1, Config.RAIN.count do

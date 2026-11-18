@@ -25,6 +25,7 @@ local COLORS = {
 	starcandy = Color3.fromRGB(255, 150, 220),
 	meteor = Color3.fromRGB(255, 140, 60),
 	golden_milk = Color3.fromRGB(255, 200, 40),
+	rainmilk = Color3.fromRGB(255, 255, 255),
 }
 
 -- 오늘이 물맑은시장 장날인지 (한국 시간)

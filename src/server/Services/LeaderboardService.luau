@@ -49,7 +49,9 @@ local function headTag(player: Player, char: Model)
 		-- 크기를 스터드 단위로: 몸이 커지면 이름표도 커짐
 		bb.Size = UDim2.fromScale(7 * s, 2.4 * s)
 		bb.StudsOffsetWorldSpace = Vector3.new(0, 2.2 * s, 0)
-		l.Text = "[" .. Titles.forHeight(h, Config.TITLES).name .. "]\n" .. player.DisplayName .. "  " .. Format.height(h)
+		local r = HeightService.rebirths(player)
+		local reb = if r > 0 then "환생 " .. r .. " · " else ""
+		l.Text = "[" .. reb .. Titles.forHeight(h, Config.TITLES).name .. "]\n" .. player.DisplayName .. "  " .. Format.height(h)
 	end
 	local conn = player:GetAttributeChangedSignal("Height"):Connect(refresh)
 	bb.Destroying:Connect(function()
@@ -158,14 +160,19 @@ local function weekStore(key: number): OrderedDataStore?
 end
 
 local function refreshAll()
-	refreshBoard("GlobalBoard", ordered, "역대 키 순위 TOP 10", HeightService.get)
+	refreshBoard("GlobalBoard", ordered, "역대 최고 키 순위 TOP 10", HeightService.best)
 	local key = Week.key(os.time())
 	refreshBoard("WeeklyBoard", weekStore(key), "이번 주 성장 순위 TOP 10", function(p)
-		return Week.gain(DataService.extra(p), HeightService.get(p), key)
+		return Week.total(DataService.extra(p), key)
 	end)
 end
 
 function LeaderboardService.start()
+	HeightService.onGain(function(player, amount, source)
+		if source ~= "debug" then
+			Week.add(DataService.extra(player), amount, Week.key(os.time()))
+		end
+	end)
 	HeightService.onChanged(function(player, old, new)
 		local t = Titles.crossed(old, new, Config.TITLES)
 		if not t then

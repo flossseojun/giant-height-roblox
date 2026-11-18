@@ -8,6 +8,8 @@ local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local Format = require(ReplicatedStorage.Shared.Logic.Format)
 local Boost = require(ReplicatedStorage.Shared.Logic.Boost)
+local Rebirth = require(ReplicatedStorage.Shared.Logic.Rebirth)
+local CatchUp = require(ReplicatedStorage.Shared.Logic.CatchUp)
 local Remotes = require(script.Parent.Remotes)
 local DataService = require(script.Parent.DataService)
 
@@ -18,6 +20,7 @@ local appliedScale: { [Player]: number } = {}
 local listeners: { (Player, number, number) -> () } = {}
 local petMult: { [Player]: number } = {}
 local boostUntil: { [Player]: number } = {}
+local gainListeners: { (Player, number, string) -> () } = {}
 
 local function scaleFor(h: number): number
 	return Growth.heightToScale(h, Config.SCALE_K, Config.MAX_SCALE)
@@ -89,8 +92,49 @@ function HeightService.setBoostUntil(player: Player, t: number)
 	player:SetAttribute("BoostEnd", t)
 end
 
+-- 서버 1등 키
+local function topHeight(): number
+	local top = 0
+	for _, h in heights do
+		top = math.max(top, h)
+	end
+	return top
+end
+
+function HeightService.rebirths(player: Player): number
+	local r = DataService.extra(player).rebirths
+	return if type(r) == "number" then r else 0
+end
+
+-- 지금까지 가장 컸던 키 (환생해도 유지: 펫 해금·역대 순위에 씀)
+function HeightService.best(player: Player): number
+	local b = DataService.extra(player).best
+	return math.max(if type(b) == "number" then b else 0, HeightService.get(player))
+end
+
+function HeightService.catchUp(player: Player): number
+	return CatchUp.multiplier(HeightService.get(player), topHeight())
+end
+
 function HeightService.multiplier(player: Player): number
 	return Boost.multiplier(petMult[player] or 1, boostUntil[player] or 0, workspace:GetServerTimeNow())
+		* Rebirth.multiplier(HeightService.rebirths(player), Config.REBIRTH.step)
+		* HeightService.catchUp(player)
+end
+
+-- 성장할 때마다 (최종 증가량, 출처) 알림 — 일일 미션·주간 순위가 씀
+function HeightService.onGain(fn: (Player, number, string) -> ())
+	table.insert(gainListeners, fn)
+end
+
+-- 키를 직접 정함 (환생용). 몸 크기도 다시 적용
+function HeightService.setHeight(player: Player, h: number)
+	if heights[player] == nil then
+		return
+	end
+	heights[player] = h
+	refreshDisplay(player)
+	applyBody(player, true)
 end
 
 function HeightService.add(player: Player, amount: number, source: string)
@@ -109,6 +153,14 @@ function HeightService.add(player: Player, amount: number, source: string)
 	refreshDisplay(player)
 	applyBody(player)
 	Remotes.get("Gained"):FireClient(player, amount, source)
+	local extra = DataService.extra(player)
+	if type(extra.best) ~= "number" or new > extra.best then
+		extra.best = new
+		player:SetAttribute("Best", new)
+	end
+	for _, fn in gainListeners do
+		task.spawn(fn, player, amount, source)
+	end
 	for _, fn in listeners do
 		task.spawn(fn, player, old, new)
 	end
@@ -129,6 +181,8 @@ local function onPlayerAdded(player: Player)
 		return
 	end
 	heights[player] = data.height
+	player:SetAttribute("Rebirths", HeightService.rebirths(player))
+	player:SetAttribute("Best", HeightService.best(player))
 	player:SetAttribute("TutorialDone", DataService.extra(player).tutorial == true or data.height >= 1000)
 	player:SetAttribute("Unlocked", Zones.highestUnlocked(data.height, Config.ZONES))
 	refreshDisplay(player)
@@ -158,6 +212,15 @@ local function onPlayerRemoving(player: Player)
 end
 
 function HeightService.start()
+	-- 따라잡기 보너스 표시용
+	task.spawn(function()
+		while true do
+			task.wait(2)
+			for p in heights do
+				p:SetAttribute("CatchUp", HeightService.catchUp(p))
+			end
+		end
+	end)
 	DataService.setHeightGetter(HeightService.get)
 	DataService.start(Players)
 	Players.PlayerAdded:Connect(onPlayerAdded)
