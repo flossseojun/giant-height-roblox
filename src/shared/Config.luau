@@ -125,6 +125,29 @@ Config.SOUNDS = {
 }
 Config.BGM = "" -- 배경음악: Creator Store 음악 "rbxassetid://숫자"를 넣으면 계속 재생
 
+-- 환생: 용문산(115,700cm) × (환생 횟수 + 1) 이상이면 가능, 한 번마다 영구 성장 +50%
+Config.REBIRTH = { base = 115700, step = 0.5 }
+
+-- 일일 미션 (하나 깰 때마다: 내가 연 가장 높은 구역 최고 음식 × reward, 3개 다 깨면 × allBonus 추가)
+Config.QUESTS = {
+	perDay = 3,
+	reward = 100,
+	allBonus = 300,
+	pool = {
+		{ kind = "food", count = 30, name = "음식 30개 먹기" },
+		{ kind = "golden_milk", count = 1, name = "황금 우유 1개 먹기" },
+		{ kind = "hoop", count = 5, name = "농구 골 5번 넣기" },
+		{ kind = "bar", count = 20, name = "철봉에서 20초 버티기" },
+		{ kind = "bed", count = 6, name = "침대에서 30초 자기" },
+		{ kind = "rainmilk", count = 5, name = "우유 비 우유 5개 먹기" },
+		{ kind = "boss", count = 1, name = "보스 1번 잡기" },
+		{ kind = "highfive", count = 1, name = "친구와 하이파이브 1번" },
+	},
+}
+
+-- 어깨에 태우기: 상대가 나보다 몇 배 커야 탈 수 있나, 최대 몇 명
+Config.CARRY = { minRatio = 2, maxRiders = 2 }
+
 Config.AUTOSAVE = 60 -- 초
 Config.BOARD_REFRESH = 60 -- 초
 
