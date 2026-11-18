@@ -6,6 +6,7 @@ local order = {
 	"BallClient",
 	"BedClient",
 	"PetClient",
+	"BossClient",
 }
 
 for _, name in order do
