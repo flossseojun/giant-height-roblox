@@ -3,3 +3,5 @@ build/
 *.rbxl.lock
 *.rbxlx.lock
 sourcemap.json
+rojo.exe
+rojo.zip
