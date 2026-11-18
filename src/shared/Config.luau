@@ -39,6 +39,17 @@ Config.ZONES = {
 			{ id = "spring", name = "신비한 약수", gain = 500 },
 		},
 	},
+	{
+		id = 4,
+		name = "양평 밤하늘",
+		minHeight = 1000000, -- 10km
+		color = Color3 and Color3.fromRGB(40, 40, 90) or nil,
+		foods = {
+			{ id = "starmilk", name = "별빛 우유", gain = 2000 },
+			{ id = "starcandy", name = "별사탕", gain = 3000 },
+			{ id = "meteor", name = "별똥별 조각", gain = 5000 },
+		},
+	},
 }
 
 -- 칭호 (announce = 처음 넘으면 서버 전체 알림)
@@ -48,6 +59,7 @@ Config.TITLES = {
 	{ minHeight = 100000, name = "등산가" },
 	{ minHeight = 115700, name = "용문산보다 큰 사람", announce = true }, -- 용문산 1,157m
 	{ minHeight = 884886, name = "에베레스트 정복자", announce = true }, -- 8,848.86m
+	{ minHeight = 1000000, name = "별을 만지는 거인", announce = true }, -- 밤하늘 입장
 	{ minHeight = 1e8, name = "지구 밖 거인", announce = true }, -- 1,000km
 }
 
@@ -86,6 +98,12 @@ Config.BOSS = {
 
 -- 2차: 하이파이브
 Config.HIGHFIVE = { offerTime = 10, cooldown = 60, duration = 30 }
+
+-- 물맑은시장 장날(3·8일): 1구역 음식 배율
+Config.MARKET_DAY_MULT = 2
+
+-- 별자리 따라 걷기 (4구역)
+Config.CONSTELLATION = { timeLimit = 40, rewardMult = 40, cooldown = 120 }
 
 Config.AUTOSAVE = 60 -- 초
 Config.BOARD_REFRESH = 60 -- 초

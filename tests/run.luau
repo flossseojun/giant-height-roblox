@@ -10,6 +10,7 @@ local specs = {
 	"./barmash.spec",
 	"./titles.spec",
 	"./phase2.spec",
+	"./phase3.spec",
 }
 
 for _, path in specs do
