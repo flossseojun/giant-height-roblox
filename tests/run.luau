@@ -5,6 +5,7 @@ local specs = {
 	"./config.spec",
 	"./logic.spec",
 	"./saveguard.spec",
+	"./food.spec",
 }
 
 for _, path in specs do

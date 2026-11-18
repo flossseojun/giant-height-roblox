@@ -1,0 +1,30 @@
+local H = require("./harness")
+local Config = require("../src/shared/Config")
+local FoodSpawner = require("../src/shared/Logic/FoodSpawner")
+local describe, it, expect = H.describe, H.it, H.expect
+local Z = Config.ZONES
+
+describe("FoodSpawner", function()
+	it("golden milk under chance", function()
+		local f = FoodSpawner.pick(Z[1], 0.01, 0.5, Config.GOLDEN_CHANCE, Config.GOLDEN_MULT)
+		expect(f.golden).toBe(true)
+		expect(f.gain).toBe(30)
+		expect(f.name).toBe("황금 우유")
+	end)
+	it("normal food from the zone", function()
+		local f = FoodSpawner.pick(Z[2], 0.5, 0.0, Config.GOLDEN_CHANCE, Config.GOLDEN_MULT)
+		expect(f.golden).toBe(false)
+		expect(f.id).toBe("soymilk")
+		local g = FoodSpawner.pick(Z[2], 0.5, 0.999, Config.GOLDEN_CHANCE, Config.GOLDEN_MULT)
+		expect(g.id).toBe("chicken")
+	end)
+	it("claimOnce", function()
+		local s = FoodSpawner.newSlot()
+		expect(s.claim()).toBe(true)
+		expect(s.claim()).toBe(false)
+		s.reset()
+		expect(s.claim()).toBe(true)
+	end)
+end)
+
+return nil
