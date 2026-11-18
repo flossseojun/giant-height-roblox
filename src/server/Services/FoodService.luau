@@ -46,18 +46,40 @@ function FoodService.makeFoodPart(food, size: number): Part
 	return p
 end
 
+-- 먹을 수 있는 음식 파트 → 먹기 함수 (펫이 대신 먹을 때 씀)
+local edible: { [BasePart]: (Player) -> () } = {}
+
+function FoodService.tryEat(p: BasePart, player: Player)
+	local fn = edible[p]
+	if fn then
+		fn(player)
+	end
+end
+
+-- 지금 맵에 있는 음식 파트들
+function FoodService.edibleParts(): { [BasePart]: any }
+	return edible
+end
+
 -- 파트를 먹을 수 있게 연결: 한 명만 받고 onEaten 호출
 function FoodService.makeEdible(p: BasePart, food, slot, onEaten: (Player) -> ())
-	p.Touched:Connect(function(hit)
-		local player = Util.playerFromPart(hit)
-		if not player or not Util.root(player) then
+	local function eat(player: Player)
+		if not Util.root(player) or not slot.claim() then
 			return
 		end
-		if not slot.claim() then
-			return
-		end
+		edible[p] = nil
 		HeightService.add(player, food.gain, food.id)
 		onEaten(player)
+	end
+	edible[p] = eat
+	p.Destroying:Connect(function()
+		edible[p] = nil
+	end)
+	p.Touched:Connect(function(hit)
+		local player = Util.playerFromPart(hit)
+		if player then
+			eat(player)
+		end
 	end)
 end
 

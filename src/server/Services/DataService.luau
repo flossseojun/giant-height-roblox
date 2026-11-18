@@ -14,6 +14,7 @@ pcall(function()
 end)
 
 local guards: { [Player]: any } = {}
+local extras: { [Player]: { [string]: any } } = {}
 local getHeight: ((Player) -> number)? = nil
 
 local function key(player: Player): string
@@ -39,6 +40,7 @@ function DataService.load(player: Player): (boolean, { height: number })
 	guards[player] = guard
 	if not store then
 		guard.markLoaded(false)
+		extras[player] = {}
 		warnLater(player)
 		return false, { height = Config.START_HEIGHT }
 	end
@@ -54,6 +56,7 @@ function DataService.load(player: Player): (boolean, { height: number })
 		task.wait(attempt)
 	end
 	guard.markLoaded(ok)
+	extras[player] = if type(data) == "table" and type(data.extra) == "table" then data.extra else {}
 	if not ok then
 		warnLater(player)
 	end
@@ -68,7 +71,7 @@ function DataService.save(player: Player)
 	local h = (getHeight :: (Player) -> number)(player)
 	local ok, err = pcall(function()
 		(store :: DataStore):UpdateAsync(key(player), function()
-			return { height = h, v = 1 }
+			return { height = h, extra = extras[player] or {}, v = 1 }
 		end)
 	end)
 	if not ok then
@@ -76,8 +79,19 @@ function DataService.save(player: Player)
 	end
 end
 
+-- 키 말고 저장할 것들 (예: extra.pet). 바꾸면 다음 저장 때 같이 저장됨
+function DataService.extra(player: Player): { [string]: any }
+	local e = extras[player]
+	if not e then
+		e = {}
+		extras[player] = e
+	end
+	return e
+end
+
 function DataService.forget(player: Player)
 	guards[player] = nil
+	extras[player] = nil
 end
 
 function DataService.start(players: Players)

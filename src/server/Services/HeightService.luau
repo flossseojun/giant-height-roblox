@@ -7,6 +7,7 @@ local Config = require(ReplicatedStorage.Shared.Config)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local Format = require(ReplicatedStorage.Shared.Logic.Format)
+local Boost = require(ReplicatedStorage.Shared.Logic.Boost)
 local Remotes = require(script.Parent.Remotes)
 local DataService = require(script.Parent.DataService)
 
@@ -15,6 +16,8 @@ local HeightService = {}
 local heights: { [Player]: number } = {}
 local appliedScale: { [Player]: number } = {}
 local listeners: { (Player, number, number) -> () } = {}
+local petMult: { [Player]: number } = {}
+local boostUntil: { [Player]: number } = {}
 
 local function scaleFor(h: number): number
 	return Growth.heightToScale(h, Config.SCALE_K, Config.MAX_SCALE)
@@ -75,12 +78,30 @@ function HeightService.onChanged(fn: (Player, number, number) -> ())
 	table.insert(listeners, fn)
 end
 
+-- 펫 배율 (PetService가 설정)
+function HeightService.setPetMult(player: Player, m: number)
+	petMult[player] = m
+end
+
+-- 하이파이브 부스트 끝나는 시각 (서버 시간, workspace:GetServerTimeNow 기준)
+function HeightService.setBoostUntil(player: Player, t: number)
+	boostUntil[player] = t
+	player:SetAttribute("BoostEnd", t)
+end
+
+function HeightService.multiplier(player: Player): number
+	return Boost.multiplier(petMult[player] or 1, boostUntil[player] or 0, workspace:GetServerTimeNow())
+end
+
 function HeightService.add(player: Player, amount: number, source: string)
 	if heights[player] == nil then
 		return -- 아직 불러오는 중이거나 나간 플레이어
 	end
 	if type(amount) ~= "number" or amount ~= amount or amount <= 0 or amount == math.huge then
 		return
+	end
+	if source ~= "debug" then
+		amount *= HeightService.multiplier(player)
 	end
 	local old = heights[player]
 	local new = old + amount
@@ -131,6 +152,8 @@ local function onPlayerRemoving(player: Player)
 	DataService.forget(player)
 	heights[player] = nil
 	appliedScale[player] = nil
+	petMult[player] = nil
+	boostUntil[player] = nil
 end
 
 function HeightService.start()

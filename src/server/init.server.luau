@@ -10,6 +10,7 @@ local order = {
 	"BasketballService",
 	"BedService",
 	"LeaderboardService",
+	"PetService",
 }
 
 for _, name in order do
