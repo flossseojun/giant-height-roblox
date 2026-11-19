@@ -119,7 +119,9 @@ function Hud.start()
 		local debug = remotes:WaitForChild("DebugGrow")
 		local box = Instance.new("Frame")
 		box.BackgroundTransparency = 1
-		box.Position = UDim2.new(0, 8, 0.4, 0)
+		-- 왼쪽 아래 (펫·환생·미션 버튼과 안 겹치게)
+		box.AnchorPoint = Vector2.new(0, 1)
+		box.Position = UDim2.new(0, 8, 1, -20)
 		box.Size = UDim2.new(0, 90, 0, 150)
 		box.Parent = gui
 		local l2 = Instance.new("UIListLayout")

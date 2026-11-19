@@ -110,8 +110,8 @@ function Panels.start()
 	qb.Position = UDim2.new(0, 8, 0.25, 100)
 	qb.Size = UDim2.new(0, 70, 0, 44)
 	local qPanel = Instance.new("Frame")
-	qPanel.Position = UDim2.new(0, 86, 0.25, -10)
-	qPanel.Size = UDim2.new(0, 260, 0, 150)
+	qPanel.Position = UDim2.new(0, 86, 0.25, -22)
+	qPanel.Size = UDim2.new(0, 230, 0, 128)
 	qPanel.BackgroundColor3 = Color3.fromRGB(30, 50, 40)
 	qPanel.BackgroundTransparency = 0.15
 	qPanel.Visible = true
