@@ -16,7 +16,10 @@ function BossClient.start()
 			return
 		end
 		local s = math.sqrt(math.max(hum.WalkSpeed / 16, 1))
-		root.AssemblyLinearVelocity = away * 70 * s + Vector3.new(0, 45 * s, 0)
+		root.AssemblyLinearVelocity = away * 45 * s + Vector3.new(0, 25 * s, 0)
+		if stun <= 0 then
+			return
+		end
 		local until_ = os.clock() + stun
 		local alreadyStunned = stunnedUntil > os.clock()
 		stunnedUntil = until_

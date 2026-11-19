@@ -3,7 +3,6 @@ local order = {
 	"Hud",
 	"Gates",
 	"BarClient",
-	"BallClient",
 	"BedClient",
 	"PetClient",
 	"BossClient",

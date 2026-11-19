@@ -68,7 +68,7 @@ Config.GOLDEN_MULT = 10
 Config.FOOD_RESPAWN = 8 -- 초
 
 Config.RAIN = { interval = 180, warn = 10, count = 30, mult = 3, life = 20 }
-Config.HOOP = { mult = 5, cooldown = 2, ballLife = 10 }
+Config.HOOP = { mult = 5, cooldown = 3 } -- 덩크 1번 보상 = 구역 최고 음식 × mult
 Config.BAR = { minRate = 4, maxRate = 12 }
 Config.BED = { period = 5, mult = 0.5 }
 
@@ -93,7 +93,7 @@ Config.BOSS = {
 	minShare = 0.05,
 	rewardCooldown = 600,
 	respawn = 60,
-	stun = 2,
+	stun = 0, -- 맞으면 멈추는 시간(초). 0이면 밀려나기만 함
 }
 
 -- 2차: 하이파이브

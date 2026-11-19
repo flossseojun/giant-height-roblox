@@ -272,7 +272,7 @@ def zone_folder(z):
     if zid in BOSS:
         kids.append(sensor("BossSpawn", (bsx, top + 0.5, bsz), (4, 1, 4), "BossSpawn", zid))
 
-    rim_y = top + {1: 15, 2: 40, 3: 80, 4: 110}[zid]
+    rim_y = top + {1: 8, 2: 24, 3: 48, 4: 70}[zid]  # 점프하면 손이 닿는 높이 (덩크)
     kids.append(folder("Basketball", [
         part("Pole", (hx, (rim_y + top) / 2, hz - 3 * k), (1 * k, rim_y - top + 4 * k, 1 * k), rgb(90, 90, 100), "Metal"),
         part("Backboard", (hx, rim_y + 3 * k, hz - 2.5 * k), (8 * k, 6 * k, 0.5 * k), rgb(255, 255, 255)),
