@@ -131,6 +131,12 @@ def _rooftop(F, h, rnd, wall, parts, tank=True, hut=True):
                       "color": TANK[rnd.randrange(len(TANK))], "material": "SmoothPlastic"})
 
 
+def _sign_style(rnd):
+    bg = SIGN_BG[rnd.randrange(len(SIGN_BG))]
+    fg = rgb(30, 30, 30) if bg in (SIGN_BG[3], SIGN_BG[5]) else (1, 1, 1)
+    return bg, fg, SHOP_WORDS[rnd.randrange(len(SHOP_WORDS))]
+
+
 def _shop(F, n, rnd, street, parts):
     h = n * FLOOR
     wall = SHOP_WALL[rnd.randrange(len(SHOP_WALL))]
@@ -143,12 +149,17 @@ def _shop(F, n, rnd, street, parts):
     hd, fl = F.face_geo(sf)
     # 1층: 통유리 가게 + 간판 띠 + 차양
     parts.append(F.on_face("Storefront", sf, 0, 0.2, FLOOR * 0.62, fl - 2, 0.3, GLASS_DARK, "Glass"))
-    k = rnd.randrange(len(SIGN_BG))
-    bg = SIGN_BG[k]
-    fg = rgb(30, 30, 30) if bg in (SIGN_BG[3], SIGN_BG[5]) else (1, 1, 1)
-    word = SHOP_WORDS[rnd.randrange(len(SHOP_WORDS))]
-    parts.append(_labeled(F.on_face("SignBand", sf, 0, FLOOR * 0.66, FLOOR * 0.3, fl - 1, 0.4, bg, out=0.05),
-                          word, sf, fg, ppu=8))
+    # 1층을 가게 여러 칸으로 나눠 칸마다 간판 (글씨가 간판 폭에 맞게 크게 보이도록)
+    units = max(1, round(fl / 13))
+    uw = fl / units
+    for ui in range(units):
+        bg, fg, word = _sign_style(rnd)
+        along = -fl / 2 + uw * (ui + 0.5)
+        parts.append(_labeled(F.on_face("SignBand" if ui == 0 else f"SignBand{ui}", sf, along, FLOOR * 0.63,
+                                        FLOOR * 0.34, uw - 0.6, 0.4, bg, out=0.05), word, sf, fg, ppu=8))
+        if units > 1 and ui:
+            parts.append(F.on_face(f"ShopDivider{ui}", sf, -fl / 2 + uw * ui, 0, FLOOR * 0.97, 0.6, 0.5, wall,
+                                   out=0.05))
     # 위층: 층마다 관통 창 2~3칸 + 간판
     segs = 3 if max(F.w, F.d) > 22 else 2
     long_faces = "Z" if sf[1] == "Z" else "X"
@@ -161,16 +172,13 @@ def _shop(F, n, rnd, street, parts):
             parts.append(_through(F, f"Win{f}_{sgi}", y, FLOOR * 0.45, long_faces, 0, GLASS_DARK, u_off=uo,
                                   seg_w=seg_w))
         if f <= 2 and rnd.random() < 0.8:
-            k = rnd.randrange(len(SIGN_BG))
-            bg = SIGN_BG[k]
-            fg = rgb(30, 30, 30) if bg in (SIGN_BG[3], SIGN_BG[5]) else (1, 1, 1)
-            word = SHOP_WORDS[rnd.randrange(len(SHOP_WORDS))]
-            parts.append(_labeled(F.on_face(f"FloorSign{f}", sf, 0, f * FLOOR + FLOOR * 0.82, FLOOR * 0.16 + 0.6,
-                                            fl * 0.7, 0.4, bg, out=0.25), word, sf, fg, ppu=9))
+            bg, fg, word = _sign_style(rnd)
+            sw = min(fl * 0.6, 11)
+            along = (fl / 2 - sw / 2 - 1) * (1 if f % 2 else -1)
+            parts.append(_labeled(F.on_face(f"FloorSign{f}", sf, along, f * FLOOR + FLOOR * 0.74, FLOOR * 0.3,
+                                            sw, 0.4, bg, out=0.25), word, sf, fg, ppu=9))
     if n >= 3 and rnd.random() < 0.5:  # 모서리 세로 간판
-        bg = SIGN_BG[rnd.randrange(len(SIGN_BG))]
-        fg = rgb(30, 30, 30) if bg in (SIGN_BG[3], SIGN_BG[5]) else (1, 1, 1)
-        word = SHOP_WORDS[rnd.randrange(len(SHOP_WORDS))]
+        bg, fg, word = _sign_style(rnd)
         parts.append(_labeled(F.on_face("VSign", sf, fl / 2 - 1.5, FLOOR * 1.1, FLOOR * (n - 1.4), 2.2, 0.5, bg,
                                         out=0.6), "\n".join(word), sf, fg, ppu=9))
     _rooftop(F, h + 0.8, rnd, wall, parts)
