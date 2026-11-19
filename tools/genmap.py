@@ -14,7 +14,7 @@ import random
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import town1  # noqa: E402
+from osm.zone1 import build_zone1  # noqa: E402
 
 random.seed(7)
 ID = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
@@ -118,12 +118,18 @@ BOSS = {1: (40, -40), 2: (200, 40), 3: (340, 820)}
 WATER = rgb(90, 160, 220)
 
 
-TOWN1 = None  # zone_folder 전에 채움
+Z1 = None  # 아래에서 build_zone1()로 채움
+
+
+def ry(yaw):
+    """로컬 X축이 (cos yaw, 0, sin yaw)를 향하는 회전 (행 우선)"""
+    c, s = math.cos(-yaw), math.sin(-yaw)
+    return [[c, 0, s], [0, 1, 0], [-s, 0, c]]
 
 
 def facility_spots(z):
     if z["id"] == 1:
-        return TOWN1["spots"]
+        return Z1["spots"]
     cx, top, cz = z["center"]
     sx, sz = z["size"]
     return dict(hoop=(cx - 0.3 * sx, cz + 0.3 * sz), bar=(cx + 0.3 * sx, cz + 0.3 * sz),
@@ -136,9 +142,7 @@ def decorations(z):
     top = z["center"][1]
     out, avoid = [], []
     if zid == 1:
-        t = TOWN1
-        out += t["parts"]
-        avoid += t["avoid"]
+        pass  # 1구역 장식은 OSM 그룹으로 따로 넣음
     elif zid == 2:
         out.append(deco("NamhanRiver", (260, top + 0.1, -126), (280, 0.4, 28), WATER, "Glass", transparent=0.3,
                         collide=False))
@@ -236,7 +240,10 @@ def zone_folder(z):
     cx, top, cz = z["center"]
     sx, sz = z["size"]
     k, zid = z["k"], z["id"]
-    kids = [part("Floor", (cx, top - 2, cz), (sx, 4, sz), z["color"], z["material"])]
+    if zid == 1:
+        kids = [folder(name, items) for name, items in Z1["groups"].items()]
+    else:
+        kids = [part("Floor", (cx, top - 2, cz), (sx, 4, sz), z["color"], z["material"])]
     a_pos, a_size = AREAS[zid]
     kids.append(sensor("ZoneArea", a_pos, a_size, "ZoneArea", zid))
 
@@ -250,15 +257,12 @@ def zone_folder(z):
     pad = 14 * k
     avoid += [(hx - pad, hx + pad + 10 * k, hz - pad, hz + pad + 10 * k), (bx - pad, bx + pad, bz - pad, bz + pad),
               (ex - pad, ex + pad, ez - pad, ez + pad), (cx - 8, cx + 8, cz - 8, cz + 8)]
-    if zid == 1:
-        rx, rz = TOWN1["rain"]
-        avoid.append((rx - 8, rx + 8, rz - 8, rz + 8))
     if zid in BOSS:
         bsx, bsz = BOSS[zid]
         avoid.append((bsx - 12 * k, bsx + 12 * k, bsz - 12 * k, bsz + 12 * k))
 
-    foods, tries = [], 0
-    while len(foods) < 20 and tries < 5000:
+    foods, tries = (list(Z1["food"]) if zid == 1 else []), 0
+    while zid != 1 and len(foods) < 20 and tries < 5000:
         tries += 1
         x = cx + random.uniform(-0.42, 0.42) * sx
         zz = cz + random.uniform(-0.42, 0.42) * sz
@@ -267,12 +271,12 @@ def zone_folder(z):
         if any((x - fx) ** 2 + (zz - fz) ** 2 < (0.07 * sx) ** 2 for fx, fz in foods):
             continue
         foods.append((x, zz))
-    assert len(foods) == 20, f"zone {zid}: only {len(foods)} food spots"
+    assert len(foods) == (60 if zid == 1 else 20), f"zone {zid}: only {len(foods)} food spots"
     kids.append(folder("FoodSpawns", [
         sensor(f"FoodSpawn{i + 1}", (x, top + 2 * k, zz), (2 * k, 2 * k, 2 * k), "FoodSpawn", zid)
         for i, (x, zz) in enumerate(foods)
     ]))
-    rx, rz = TOWN1["rain"] if zid == 1 else (cx, cz)
+    rx, rz = Z1["rain"] if zid == 1 else (cx, cz)
     kids.append(sensor("MilkRainSpot", (rx, top + 1, rz), (4, 1, 4), "MilkRainSpot", zid))
     if zid in BOSS:
         kids.append(sensor("BossSpawn", (bsx, top + 0.5, bsz), (4, 1, 4), "BossSpawn", zid))
@@ -310,11 +314,6 @@ def zone_folder(z):
 def gates():
     out = []
     wall = rgb(240, 225, 190)
-    out.append(part("Wall1A", (120, 40, -80), (4, 80, 120), wall, "Brick"))
-    out.append(part("Wall1B", (120, 40, 80), (4, 80, 120), wall, "Brick"))
-    out.append(part("Gate2", (120, 30, 0), (4, 60, 40), rgb(120, 200, 255), "ForceField", transparent=0.2,
-                    tags=["ZoneGate"], attrs={"Zone": 2}))
-    out.append(part("Gate2Top", (120, 70, 0), (4, 20, 40), wall, "Brick"))
     z0, z1, y0, y1 = 140, 600, 0, 300
     length = math.hypot(z1 - z0, y1 - y0)
     a = math.atan2(y1 - y0, z1 - z0)
@@ -340,37 +339,85 @@ def gates():
 
 
 def lobby():
-    (bx1, by1, bz1), (bx2, by2, bz2) = TOWN1["boards"]
-    sx, sz = TOWN1["spawn"]
-    # 광장 서쪽 가장자리에서 광장 쪽(동쪽)을 바라보게 90° 돌림
-    face_east = [[0, 0, -1], [0, 1, 0], [1, 0, 0]]
-    board = part("GlobalBoard", (bx1, by1 + 1, bz1), (26, 13, 0.8), rgb(30, 35, 60), tags=["GlobalBoard"],
-                 orient=face_east)
-    weekly = part("WeeklyBoard", (bx2, by2 + 1, bz2), (26, 13, 0.8), rgb(60, 35, 60), tags=["WeeklyBoard"],
-                  orient=face_east)
+    (bx1, by1, bz1), (bx2, by2, bz2) = Z1["boards"]
+    sx, sz, syaw = Z1["spawn"]
+    # 순위판: 정면(Front, 로컬 −Z)이 스폰 쪽을 보게
+    face = ry(Z1["board_yaw"] + math.pi / 2)
+    board = part("GlobalBoard", (bx1, by1 + 1, bz1), (26, 13, 0.8), rgb(30, 35, 60), tags=["GlobalBoard"], orient=face)
+    weekly = part("WeeklyBoard", (bx2, by2 + 1, bz2), (26, 13, 0.8), rgb(60, 35, 60), tags=["WeeklyBoard"], orient=face)
     frames = []
     for i, (bx, by, bz) in enumerate(((bx1, by1 + 1, bz1), (bx2, by2 + 1, bz2))):
-        frames.append(deco(f"BoardFrame{i}", (bx - 0.6, by, bz), (1, 14.4, 27.4), rgb(150, 105, 65), "Wood"))
-        for dz in (-11, 11):
-            frames.append(deco(f"BoardPost{i}{dz}", (bx - 0.6, (by - 7) / 2, bz + dz), (1.2, by - 7, 1.2),
-                               rgb(120, 85, 55), "Wood"))
+        frames.append(deco(f"BoardPost{i}", (bx, (by - 6.5) / 2, bz), (1.2, by - 6.5, 1.2), rgb(120, 85, 55), "Wood"))
+    ax, az = (bx1 + bx2) / 2, (bz1 + bz2) / 2
+    frames.append(deco("OsmCredit", (ax, 3, az), (10, 3, 0.4), rgb(255, 255, 255), orient=face,
+                       children=[surface_text("지도 데이터 © OpenStreetMap contributors", f, rgb(40, 40, 40), ppu=20)
+                                 for f in ("Front", "Back")]))
+    # 스폰이 역을 바라봄: SpawnLocation 정면(로컬 −Z)을 syaw 방향으로
     spawn = {
         "name": "SpawnLocation", "className": "SpawnLocation",
         "properties": {
-            "Anchored": True, "Size": [12, 1, 12],
-            # 180° 돌려서 역(북쪽)을 바라보며 시작
-            "CFrame": {"CFrame": {"position": [sx, 0.5, sz], "orientation": [[-1, 0, 0], [0, 1, 0], [0, 0, -1]]}},
-            "Color": rgb(255, 255, 255), "Material": "Neon", "Duration": 0, "TopSurface": "Smooth",
+            "Anchored": True, "Size": [10, 1, 10],
+            "CFrame": {"CFrame": {"position": [sx, 0.5, sz], "orientation": ry(syaw + math.pi / 2)}},
+            "Color": rgb(230, 230, 230), "Material": "SmoothPlastic", "Transparency": 0.6, "Duration": 0,
+            "TopSurface": "Smooth",
         },
     }
     return folder("Lobby", [board, weekly, spawn] + frames)
 
 
-TOWN1 = town1.build({"part": part, "deco": deco, "sign": sign, "tree": tree, "folder": folder,
-                     "surface_text": surface_text, "rgb": rgb, "CYL_UP": CYL_UP})
-BOSS[1] = TOWN1["boss"]
+def translate(node, dx, dz):
+    p = node.get("properties", {})
+    if "CFrame" in p:
+        pos = p["CFrame"]["CFrame"]["position"]
+        p["CFrame"]["CFrame"]["position"] = [pos[0] + dx, pos[1], pos[2] + dz]
+    for c in node.get("children", []):
+        translate(c, dx, dz)
 
-model = {"className": "Model", "children": [zone_folder(z) for z in ZONES] + [gates(), lobby()]}
+
+def gate2_and_link():
+    """1구역 서쪽 큰길 끝의 2구역 문 + 2구역까지 이어지는 길"""
+    gx, gz, gw, gyaw = Z1["gate2"]
+    width = max(gw + 12, 40)
+    out = [part("Gate2", (gx, 30, gz), (4, 60, width), rgb(120, 200, 255), "ForceField", transparent=0.2,
+                tags=["ZoneGate"], attrs={"Zone": 2}),
+           part("Gate2Top", (gx, 64, gz), (4, 8, width + 8), rgb(240, 225, 190), "Brick"),
+           part("LinkRoad", (gx - LINK / 2, -2, gz), (LINK + 4, 4, width), rgb(70, 70, 75), "Asphalt")]
+    for s_ in (-1, 1):
+        out.append(part(f"Gate2Pillar{s_}", (gx, 34, gz + s_ * (width / 2 + 2)), (4, 68, 4), rgb(240, 225, 190), "Brick"))
+    return out
+
+
+LINK = 130  # 1구역 서쪽 끝 ~ 2구역 동쪽 끝 사이 길이 (4구역이 2구역보다 동쪽으로 110 더 넓어서 겹치지 않게)
+
+Z1 = build_zone1({"part": part, "deco": deco, "sign": sign, "folder": folder, "surface_text": surface_text,
+                  "rgb": rgb})
+x0, x1, z0, z1 = Z1["bounds"]
+ZONES[0]["center"] = ((x0 + x1) / 2, 0, (z0 + z1) / 2)
+ZONES[0]["size"] = (x1 - x0, z1 - z0)
+AREAS[1] = Z1["zone_area"]
+BOSS[1] = Z1["boss"]
+
+# 2·3·4구역은 디자인 그대로, 1구역 서쪽으로 이동 (2구역 동쪽 끝 x=400 → 1구역 서쪽 끝 − LINK, 2구역 중심 z → 문 z)
+DX = x0 - LINK - 400
+DZ = Z1["gate2"][1] - 0
+others = [zone_folder(z) for z in ZONES[1:]]
+g = gates()
+for f in others + [g]:
+    translate(f, DX, DZ)
+g["children"] += gate2_and_link()
+model = {"className": "Model", "children": [zone_folder(ZONES[0])] + others + [g, lobby()]}
+
+# 스튜디오용 지형 스크립트 (하천 + 바닥 빈칸 잔디)
+terrain = ["-- 자동 생성: tools/genmap.py (1구역 바닥 빈칸 잔디 + 양근천·남한강 물)", "local T = workspace.Terrain"]
+for i, (hx, hz) in enumerate(Z1["holes"]):
+    terrain.append(f"T:FillBlock(CFrame.new({hx:.1f}, -3.5, {hz:.1f}), Vector3.new(32, 6, 32), Enum.Material.Grass)")
+    if i % 40 == 39:
+        terrain.append("task.wait()")
+terrain.append(Z1["water_luau"])
+tpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "studio", "terrain_water.luau")
+os.makedirs(os.path.dirname(tpath), exist_ok=True)
+open(tpath, "w", encoding="utf-8").write("\n".join(terrain) + "\n")
+
 here = os.path.dirname(os.path.abspath(__file__))
 out = os.path.join(here, "..", "map", "BaseMap.model.json")
 with open(out, "w", encoding="utf-8") as f:
