@@ -11,6 +11,10 @@ import json
 import math
 import os
 import random
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import town1  # noqa: E402
 
 random.seed(7)
 ID = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
@@ -92,13 +96,13 @@ def tree(name, base, trunk_h, trunk_d, crown_d, crown_color, trunk_color=rgb(110
 
 
 ZONES = [
-    dict(id=1, name="1_양평읍", center=(0, 0, 0), size=(240, 240), color=rgb(185, 185, 180), material="Concrete", k=1),
+    dict(id=1, name="1_양평읍", center=(-180, 0, -80), size=(600, 440), color=rgb(125, 165, 105), material="Grass", k=1),
     dict(id=2, name="2_두물머리", center=(260, 0, 0), size=(280, 280), color=rgb(110, 185, 90), material="Grass", k=3),
     dict(id=3, name="3_용문산", center=(260, 300, 800), size=(400, 400), color=rgb(70, 140, 70), material="Grass", k=6),
     dict(id=4, name="4_밤하늘", center=(260, 800, 1750), size=(500, 500), color=rgb(30, 30, 70), material="SmoothPlastic", k=8),
 ]
 AREAS = {
-    1: ((0, 500, 0), (240, 1100, 240)),
+    1: ((-180, 500, -80), (600, 1100, 440)),
     2: ((260, 500, 0), (280, 1100, 280)),
     3: ((260, 500, 570), (400, 1100, 860)),
     4: ((260, 900, 1500), (500, 1400, 1000)),
@@ -114,7 +118,12 @@ BOSS = {1: (40, -40), 2: (200, 40), 3: (340, 820)}
 WATER = rgb(90, 160, 220)
 
 
+TOWN1 = None  # zone_folder 전에 채움
+
+
 def facility_spots(z):
+    if z["id"] == 1:
+        return TOWN1["spots"]
     cx, top, cz = z["center"]
     sx, sz = z["size"]
     return dict(hoop=(cx - 0.3 * sx, cz + 0.3 * sz), bar=(cx + 0.3 * sx, cz + 0.3 * sz),
@@ -127,23 +136,9 @@ def decorations(z):
     top = z["center"][1]
     out, avoid = [], []
     if zid == 1:
-        out.append(deco("NamhanRiver", (0, top + 0.1, -110), (240, 0.4, 20), WATER, "Glass", transparent=0.3,
-                        collide=False))
-        out.append(sign("RiverSign", (60, top + 4, -98), (16, 4, 0.5), "남한강", rgb(40, 90, 150)))
-        out.append(deco("YangpyeongStation", (0, top + 10, 98), (60, 20, 16), rgb(235, 235, 240), "Concrete"))
-        out.append(deco("StationRoof", (0, top + 21, 98), (66, 2, 20), rgb(60, 90, 150), "Metal"))
-        out.append(sign("StationSign", (0, top + 16, 89.7), (30, 5, 0.5), "양평역", rgb(30, 60, 140)))
-        avoid.append((-35, 35, 85, 112))
-        stalls = []
-        roofs = [rgb(230, 80, 70), rgb(70, 140, 230), rgb(250, 200, 60), rgb(90, 190, 110)]
-        for i, sz_ in enumerate(range(-40, 40, 16)):
-            for j, sx_ in enumerate((-100, -60)):
-                stalls.append(deco(f"Stall{i}{j}", (sx_, top + 2, sz_), (10, 4, 10), rgb(170, 120, 70), "Wood"))
-                stalls.append(deco(f"Awning{i}{j}", (sx_, top + 7, sz_), (12, 1, 12), roofs[(i + j) % 4], "Fabric"))
-        out.append(folder("MulmalgeunMarket", stalls))
-        out.append(sign("MarketSign", (-80, top + 14, 46), (40, 6, 1), "물맑은시장", rgb(200, 60, 50),
-                        faces=("Front", "Back")))
-        avoid += [(-110, -50, -50, 50), (-20, 52, -75, -65), (-10, 10, 30, 50)]
+        t = TOWN1
+        out += t["parts"]
+        avoid += t["avoid"]
     elif zid == 2:
         out.append(deco("NamhanRiver", (260, top + 0.1, -126), (280, 0.4, 28), WATER, "Glass", transparent=0.3,
                         collide=False))
@@ -200,6 +195,12 @@ def decorations(z):
                             cname + " (1번부터 순서대로!)", rgb(40, 40, 90), text_color=rgb(255, 240, 150),
                             faces=("Front", "Back")))
     else:
+        # 정상 아래로 계단식 산 몸통 (시내에서 보면 저 멀리 용문산)
+        lumps = [((260, 100, 800), 400, rgb(70, 125, 60)), ((150, 40, 720), 260, rgb(78, 135, 66)),
+                 ((380, 30, 870), 260, rgb(66, 118, 58)), ((280, 20, 660), 220, rgb(82, 140, 70)),
+                 ((200, 10, 930), 220, rgb(74, 128, 62)), ((400, 0, 700), 200, rgb(80, 132, 66))]
+        for i, (pos, d, col) in enumerate(lumps):
+            out.append(deco(f"Mountain{i}", pos, (d, d, d), col, "Grass", shape="Ball"))
         out.append(sign("SummitSign", (260, top + 14, 640), (50, 10, 1), "용문산 정상 1,157m", rgb(90, 70, 50),
                         faces=("Front", "Back")))
         out.append(folder("Yongmunsa", [
@@ -249,6 +250,9 @@ def zone_folder(z):
     pad = 14 * k
     avoid += [(hx - pad, hx + pad + 10 * k, hz - pad, hz + pad + 10 * k), (bx - pad, bx + pad, bz - pad, bz + pad),
               (ex - pad, ex + pad, ez - pad, ez + pad), (cx - 8, cx + 8, cz - 8, cz + 8)]
+    if zid == 1:
+        rx, rz = TOWN1["rain"]
+        avoid.append((rx - 8, rx + 8, rz - 8, rz + 8))
     if zid in BOSS:
         bsx, bsz = BOSS[zid]
         avoid.append((bsx - 12 * k, bsx + 12 * k, bsz - 12 * k, bsz + 12 * k))
@@ -268,7 +272,8 @@ def zone_folder(z):
         sensor(f"FoodSpawn{i + 1}", (x, top + 2 * k, zz), (2 * k, 2 * k, 2 * k), "FoodSpawn", zid)
         for i, (x, zz) in enumerate(foods)
     ]))
-    kids.append(sensor("MilkRainSpot", (cx, top + 1, cz), (4, 1, 4), "MilkRainSpot", zid))
+    rx, rz = TOWN1["rain"] if zid == 1 else (cx, cz)
+    kids.append(sensor("MilkRainSpot", (rx, top + 1, rz), (4, 1, 4), "MilkRainSpot", zid))
     if zid in BOSS:
         kids.append(sensor("BossSpawn", (bsx, top + 0.5, bsz), (4, 1, 4), "BossSpawn", zid))
 
@@ -335,18 +340,35 @@ def gates():
 
 
 def lobby():
-    board = part("GlobalBoard", (0, 10, -70), (30, 16, 1), rgb(30, 30, 45), tags=["GlobalBoard"])
-    weekly = part("WeeklyBoard", (34, 10, -70), (30, 16, 1), rgb(45, 30, 45), tags=["WeeklyBoard"])
+    (bx1, by1, bz1), (bx2, by2, bz2) = TOWN1["boards"]
+    sx, sz = TOWN1["spawn"]
+    # 광장 서쪽 가장자리에서 광장 쪽(동쪽)을 바라보게 90° 돌림
+    face_east = [[0, 0, -1], [0, 1, 0], [1, 0, 0]]
+    board = part("GlobalBoard", (bx1, by1 + 1, bz1), (26, 13, 0.8), rgb(30, 35, 60), tags=["GlobalBoard"],
+                 orient=face_east)
+    weekly = part("WeeklyBoard", (bx2, by2 + 1, bz2), (26, 13, 0.8), rgb(60, 35, 60), tags=["WeeklyBoard"],
+                  orient=face_east)
+    frames = []
+    for i, (bx, by, bz) in enumerate(((bx1, by1 + 1, bz1), (bx2, by2 + 1, bz2))):
+        frames.append(deco(f"BoardFrame{i}", (bx - 0.6, by, bz), (1, 14.4, 27.4), rgb(150, 105, 65), "Wood"))
+        for dz in (-11, 11):
+            frames.append(deco(f"BoardPost{i}{dz}", (bx - 0.6, (by - 7) / 2, bz + dz), (1.2, by - 7, 1.2),
+                               rgb(120, 85, 55), "Wood"))
     spawn = {
         "name": "SpawnLocation", "className": "SpawnLocation",
         "properties": {
             "Anchored": True, "Size": [12, 1, 12],
-            "CFrame": {"CFrame": {"position": [0, 0.5, 40], "orientation": ID}},
+            # 180° 돌려서 역(북쪽)을 바라보며 시작
+            "CFrame": {"CFrame": {"position": [sx, 0.5, sz], "orientation": [[-1, 0, 0], [0, 1, 0], [0, 0, -1]]}},
             "Color": rgb(255, 255, 255), "Material": "Neon", "Duration": 0, "TopSurface": "Smooth",
         },
     }
-    return folder("Lobby", [board, weekly, spawn])
+    return folder("Lobby", [board, weekly, spawn] + frames)
 
+
+TOWN1 = town1.build({"part": part, "deco": deco, "sign": sign, "tree": tree, "folder": folder,
+                     "surface_text": surface_text, "rgb": rgb, "CYL_UP": CYL_UP})
+BOSS[1] = TOWN1["boss"]
 
 model = {"className": "Model", "children": [zone_folder(z) for z in ZONES] + [gates(), lobby()]}
 here = os.path.dirname(os.path.abspath(__file__))
