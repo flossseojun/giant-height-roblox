@@ -56,7 +56,7 @@ def test_part_budget(model):
     z1 = next(c for c in model["children"] if c["name"] == "1_양평읍")
     n = [0]
     walk(z1, lambda x: n.__setitem__(0, n[0] + 1) if x.get("className") in ("Part", "WedgePart") else None)
-    assert n[0] <= 8000, n[0]
+    assert n[0] <= 13000, n[0]  # 건물 스타일 디테일로 8000→13000 (Ruling)
 
 
 def test_spawn_faces_station(model):

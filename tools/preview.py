@@ -28,7 +28,8 @@ def load_parts(path):
             size = np.array(p["Size"], float)
             tr = p.get("Transparency", 0)
             if tr < 0.95:
-                parts.append((pos, rot, size, np.array(p.get("Color", [0.7, 0.7, 0.7])), tr, p.get("Shape", "Block")))
+                shape = "Wedge" if n.get("className") == "WedgePart" else p.get("Shape", "Block")
+                parts.append((pos, rot, size, np.array(p.get("Color", [0.7, 0.7, 0.7])), tr, shape))
             for ch in n.get("children", []):
                 if ch.get("className") == "SurfaceGui":
                     txt = ch["children"][0]["properties"]["Text"]
@@ -54,6 +55,11 @@ def box_tris(pos, rot, size, shape):
             faces += [(i, j, n + j), (i, n + j, n + i)]
         for i in range(1, n - 1):
             faces += [(0, i + 1, i), (n, n + i, n + i + 1)]
+    elif shape == "Wedge":  # Roblox WedgePart: 뒤(+Z) 위가 높고 앞(-Z) 아래로 경사
+        verts = [(sx, -hy, -hz) for sx in (-hx, hx)] + [(sx, -hy, hz) for sx in (-hx, hx)] + \
+                [(sx, hy, hz) for sx in (-hx, hx)]
+        # 0,1 앞-아래 / 2,3 뒤-아래 / 4,5 뒤-위
+        faces = [(0, 2, 3), (0, 3, 1), (2, 4, 5), (2, 5, 3), (0, 1, 5), (0, 5, 4), (0, 4, 2), (1, 3, 5)]
     elif shape == "Ball":
         r = size / 2
         verts, faces = [], []

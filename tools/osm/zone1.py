@@ -59,6 +59,30 @@ class Obstacles:
         return False
 
 
+def _nearest_on_seg(px, pz, x0, z0, x1, z1):
+    dx, dz = x1 - x0, z1 - z0
+    L2 = dx * dx + dz * dz or 1.0
+    t = max(0.0, min(1.0, ((px - x0) * dx + (pz - z0) * dz) / L2))
+    return x0 + dx * t, z0 + dz * t
+
+
+def street_ctx(way, segs, main_w=10.0):
+    """건물 → {"street": 가장 가까운 도로 위 점, "downtown": 폭 main_w 이상 큰길가(가장자리 12스터드 이내)}"""
+    cx, cz = centroid(way.pts)
+    xs = [p[0] for p in way.pts]
+    zs = [p[1] for p in way.pts]
+    rad = max(max(xs) - min(xs), max(zs) - min(zs)) / 2
+    best, best_d, down = None, 1e18, False
+    for x0, z0, x1, z1, wd in segs:
+        nx, nz = _nearest_on_seg(cx, cz, x0, z0, x1, z1)
+        dd = math.hypot(nx - cx, nz - cz)
+        if dd < best_d:
+            best, best_d = (nx, nz), dd
+        if wd >= main_w and dd - rad - wd / 2 < 12:
+            down = True
+    return {"street": best if best_d < rad + 40 else None, "downtown": down}
+
+
 def spec_to_node(spec, h, prefix=""):
     """PartSpec → genmap part() 노드 (표지판 글씨·투명도·충돌 포함)"""
     children = None
@@ -90,10 +114,11 @@ def build_zone1(h):
     st_c = centroid(station.pts)
 
     groups = {"Buildings": [], "Roads": [], "Railway": [], "Platforms": []}
+    segs = road_segments(roads)
     for w in blds:
         if kind[w.id] == "station":
             continue  # 역 건물은 랜드마크 작업에서 상세 제작 (자리 표시용 기단만)
-        groups["Buildings"] += [spec_to_node(s, h, f"B{w.id}_") for s in building_parts(w)]
+        groups["Buildings"] += [spec_to_node(s, h, f"B{w.id}_") for s in building_parts(w, street_ctx(w, segs))]
     for w in roads:
         for s in road_parts(w):
             if inb(s["pos"][0], s["pos"][2], 10):
