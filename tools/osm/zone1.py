@@ -6,6 +6,7 @@ from osm.project import load, classify, to_studs, SCALE
 from osm.buildings import building_parts
 from osm.roads import road_parts, road_segments
 from osm.rail_water import rail_parts, platform_parts, water_cuts, water_luau
+from osm import landmarks as LM
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "..", "data", "yangpyeong_station.osm")
 BBOX = (37.4880, 127.4855, 37.4975, 127.4985)  # 남, 서, 북, 동
@@ -59,10 +60,15 @@ class Obstacles:
 
 
 def spec_to_node(spec, h, prefix=""):
-    """PartSpec → genmap part() 노드"""
+    """PartSpec → genmap part() 노드 (표지판 글씨·투명도·충돌 포함)"""
+    children = None
+    if spec.get("label"):
+        text, face, fg, ppu = spec["label"]
+        children = [h["surface_text"](text, face, list(fg), ppu=ppu)]
     return h["part"](prefix + spec["name"], spec["pos"], spec["size"], list(spec.get("color", (0.7, 0.7, 0.7))),
-                     spec.get("material", "SmoothPlastic"), cls=spec.get("cls", "Part"), orient=spec["rot"],
-                     shape=spec.get("shape"), extra={"CanQuery": True})
+                     spec.get("material", "SmoothPlastic"), transparent=spec.get("transparency", 0),
+                     collide=spec.get("collide", True), cls=spec.get("cls", "Part"), orient=spec["rot"],
+                     shape=spec.get("shape"), extra={"CanQuery": spec.get("collide", True)}, children=children)
 
 
 def build_zone1(h):
@@ -77,6 +83,9 @@ def build_zone1(h):
     plats = [w for w in ways if kind[w.id] == "platform"]
     waters = [w for w in ways if kind[w.id] == "water"]
     obstacles = Obstacles([w.pts for w in blds])
+
+    def named(name):
+        return next((w for w in ways if w.tags.get("name") == name), None)
     station = next(w for w in ways if kind[w.id] == "station")
     st_c = centroid(station.pts)
 
@@ -93,13 +102,6 @@ def build_zone1(h):
         if inb(s["pos"][0], s["pos"][2]):
             groups["Railway"].append(spec_to_node(s, h))
     groups["Platforms"] = [spec_to_node(s, h) for s in platform_parts(plats)]
-    # 역 건물 자리: 윤곽대로 1층 기단 (랜드마크 스크립트가 위를 채움)
-    from osm.geom import min_rect
-    cx, cz, w_, d_, yaw = min_rect(station.pts[:-1])
-    c, s = math.cos(-yaw), math.sin(-yaw)
-    groups["Station"] = [h["part"]("StationBase", (cx, 7, cz), (w_, 14, d_), [0.85, 0.86, 0.88], "Concrete",
-                                   orient=[[c, 0, s], [0, 1, 0], [-s, 0, c]])]
-
     # 바닥: 하천과 겹치는 칸은 비우고, 줄마다 이어진 칸을 하나로 합침
     cuts = [c_ for c_ in water_cuts(waters)]
     holes = []
@@ -145,11 +147,42 @@ def build_zone1(h):
     # 스폰 = 정류장 A, 역을 바라봄
     sx, sz = STOP_A_M[0] * SCALE, -STOP_A_M[1] * SCALE
     spawn_yaw = math.atan2(st_c[1] - sz, st_c[0] - sx)
+    # 랜드마크
+    m2s = lambda e, n: (e * SCALE, -n * SCALE)  # 역 기준 동·북 미터 → 스터드
+    rb = next(w for w in ways if w.id == 587644188)
+    rbc = centroid(rb.pts)
+    def unit_dir(a, b):
+        (ax, az), (bx, bz) = m2s(*a), m2s(*b)
+        L = math.hypot(bx - ax, bz - az)
+        return ((bx - ax) / L, (bz - az) / L)
+    approaches = [(unit_dir((-78.4, -38.5), (-151.2, -82.7)), 14 * SCALE),
+                  (unit_dir((-71.9, -25.6), (-79.2, -13.9)), 7 * SCALE),
+                  (unit_dir((-78.4, -38.5), (-53.6, -77.2)), 6 * SCALE)]
+    road_dir = approaches[0][0]
+    side = (-road_dir[1], road_dir[0])
+    road_pt = m2s(-111.2, -58.4)
+    if (road_pt[0] - sx) * side[0] + (road_pt[1] - sz) * side[1] < 0:
+        side = (-side[0], -side[1])
+    ostar_w = named("현대성우오스타코아루아파트")
+    lm = []
+    lm += [dict(s_, name="Station_" + s_["name"]) for s_ in LM.station(station.pts, rbc)]
+    lm += [dict(s_, name="BusStopA_" + s_["name"]) for s_ in LM.bus_stop(sx, sz, road_dir, side)]
+    lm += [dict(s_, name="Roundabout_" + s_["name"]) for s_ in LM.roundabout(rbc[0], rbc[1], approaches)]
+    lm += [dict(s_, name="Ostar_" + s_["name"]) for s_ in LM.ostar(ostar_w.pts, (sx, sz))]
+    lm += [dict(s_, name="Market_" + s_["name"]) for s_ in LM.market([(-74, 518), (-60, 526), (37, 591), (102, 636)])]
+    groups["Landmarks"] = [spec_to_node(s_, h) for s_ in lm]
+
+    # 스폰은 정류장의 역 쪽 끝 바로 앞, 역을 바라봄. 순위판은 정류장 뒤편에서 도로 쪽을 봄
+    to_st = (-road_dir[0], -road_dir[1]) if (st_c[0] - sx) * -road_dir[0] + (st_c[1] - sz) * -road_dir[1] > 0 \
+        else road_dir
+    stop_x, stop_z = sx, sz
+    sx, sz = stop_x + to_st[0] * 13 + side[0] * 1, stop_z + to_st[1] * 13 + side[1] * 1
+    spawn_yaw = math.atan2(st_c[1] - sz, st_c[0] - sx)
+    boards_override = [(stop_x - side[0] * 12 - to_st[0] * k, 9, stop_z - side[1] * 12 - to_st[1] * k) for k in (8, 38)]
+    board_yaw_override = math.atan2(side[1], side[0])
+
     # 우유 비 = 로터리와 역 건물 사이
     rain = ((-60 * SCALE), (15 * SCALE))
-
-    def named(name):
-        return next((w for w in ways if w.tags.get("name") == name), None)
 
     def free_point_in(poly, clearance):
         xs, zs = [p[0] for p in poly], [p[1] for p in poly]
@@ -175,7 +208,7 @@ def build_zone1(h):
     # 순위판·출처 안내판: 정류장 앞(역 방향) 30스터드, 좌우로
     fx, fz = math.cos(spawn_yaw), math.sin(spawn_yaw)
     rx, rz = -fz, fx
-    boards = [(sx + fx * 30 + rx * k, 9, sz + fz * 30 + rz * k) for k in (-18, 18)]
+    boards = boards_override
 
     # 2구역 문: 서쪽 가장자리와 만나는 가장 넓은 도로
     gate = None
@@ -196,7 +229,7 @@ def build_zone1(h):
         "rain": rain,
         "spawn": (sx, sz, spawn_yaw),
         "boards": boards,
-        "board_yaw": spawn_yaw + math.pi,
+        "board_yaw": board_yaw_override,
         "gate2": gate,
         "food": food,
         "water_luau": water_luau(waters),

@@ -5,3 +5,4 @@ build/
 sourcemap.json
 rojo.exe
 rojo.zip
+__pycache__/
