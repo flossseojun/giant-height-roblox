@@ -95,13 +95,20 @@ function Hud.start()
 	end)
 
 	-- "+N cm" 팝업
-	remotes:WaitForChild("Gained").OnClientEvent:Connect(function(amount: number, _source: string)
+	-- 음식 id → 이름 ("+3cm 호떡")
+	local foodNames = { golden_milk = "황금 우유", rainmilk = "우유 비" }
+	for _, z in Config.ZONES do
+		for _, f in z.foods do
+			foodNames[f.id] = f.name
+		end
+	end
+	remotes:WaitForChild("Gained").OnClientEvent:Connect(function(amount: number, source: string)
 		local p = label(gui, {
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			Position = UDim2.new(0.5 + (math.random() - 0.5) * 0.2, 0, 0.45, 0),
 			Size = UDim2.new(0, 160, 0, 40),
 			TextColor3 = Color3.fromRGB(130, 255, 140),
-			Text = Format.gain(amount),
+			Text = Format.gain(amount) .. (if foodNames[source] then " " .. foodNames[source] else ""),
 		})
 		local tw = TweenService:Create(p, TweenInfo.new(0.9), {
 			Position = p.Position - UDim2.new(0, 0, 0.12, 0),

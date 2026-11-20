@@ -15,6 +15,7 @@ local order = {
 	"ShopClient",
 	"Cosmetics",
 	"FoodVisuals",
+	"JuiceFx",
 }
 
 for _, name in order do
