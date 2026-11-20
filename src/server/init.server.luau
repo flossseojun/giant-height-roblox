@@ -3,6 +3,7 @@ local Services = script.Services
 
 local order = {
 	"HeightService",
+	"CoinService",
 	"FoodService",
 	"ZoneService",
 	"MilkRainService",

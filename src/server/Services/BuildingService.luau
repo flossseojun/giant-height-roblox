@@ -7,6 +7,7 @@ local Smash = require(ReplicatedStorage.Shared.Logic.Smash)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local HeightService = require(script.Parent.HeightService)
+local CoinService = require(script.Parent.CoinService)
 local Remotes = require(script.Parent.Remotes)
 local Util = require(script.Parent.Util)
 
@@ -177,6 +178,7 @@ local function smash(b: Building, player: Player)
 	brokenRemote:FireAllClients(b.cframe, b.size, b.color)
 	local zoneCfg = Config.ZONES[b.zone] or Config.ZONES[1]
 	HeightService.add(player, Smash.reward(Zones.bestGain(zoneCfg), b.floors), "smash")
+	CoinService.add(player, Config.COINS.smashPerFloor * b.floors, "smash")
 	task.delay(S.respawn, tryRestore, b)
 end
 

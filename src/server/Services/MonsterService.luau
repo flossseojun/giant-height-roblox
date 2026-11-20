@@ -10,6 +10,7 @@ local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local HeightService = require(script.Parent.HeightService)
 local PetService = require(script.Parent.PetService)
+local CoinService = require(script.Parent.CoinService)
 local Remotes = require(script.Parent.Remotes)
 local Util = require(script.Parent.Util)
 
@@ -250,6 +251,7 @@ local function kill(mon: Monster, killer: Player?)
 	if killer and killer.Parent then
 		local zoneCfg = Config.ZONES[mon.zone] or Config.ZONES[1]
 		HeightService.add(killer, Zones.bestGain(zoneCfg) * mon.gainMult, "monster")
+		CoinService.add(killer, Config.COINS.monster * mon.zone, "monster")
 		Remotes.sfx(killer, "bossHit")
 		local sp = SPECIES[mon.kind]
 		if sp.tameChance and MonsterCombat.tameRoll(sp.tameChance, math.random()) then

@@ -6,6 +6,7 @@ local Config = require(ReplicatedStorage.Shared.Config)
 local Quests = require(ReplicatedStorage.Shared.Logic.Quests)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local HeightService = require(script.Parent.HeightService)
+local CoinService = require(script.Parent.CoinService)
 local DataService = require(script.Parent.DataService)
 local Remotes = require(script.Parent.Remotes)
 
@@ -54,10 +55,12 @@ function QuestService.record(player: Player, kind: string, amount: number?)
 	for _, i in finished do
 		Remotes.notify(player, "미션 완료: " .. list[i].name .. "!")
 		HeightService.add(player, rewardBase(player) * Config.QUESTS.reward, "quest")
+		CoinService.add(player, Config.COINS.quest, "quest")
 	end
 	if not wasAll and Quests.allDone(st, list) then
 		Remotes.notify(player, "오늘의 미션 모두 완료! 보너스!")
 		HeightService.add(player, rewardBase(player) * Config.QUESTS.allBonus, "quest")
+		CoinService.add(player, Config.COINS.questAll, "quest")
 		Remotes.sfx(player, "victory")
 	end
 	push(player)

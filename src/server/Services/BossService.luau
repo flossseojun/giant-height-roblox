@@ -10,6 +10,7 @@ local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local BossFight = require(ReplicatedStorage.Shared.Logic.BossFight)
 local HeightService = require(script.Parent.HeightService)
 local PetService = require(script.Parent.PetService)
+local CoinService = require(script.Parent.CoinService)
 local MonsterCombat = require(ReplicatedStorage.Shared.Logic.MonsterCombat)
 local Remotes = require(script.Parent.Remotes)
 local Util = require(script.Parent.Util)
@@ -315,6 +316,7 @@ local function runBoss(spawn: BasePart)
 							if BossFight.canReward(lastReward[uid], now, Config.BOSS.rewardCooldown) then
 								lastReward[uid] = now
 								HeightService.add(pl, reward, "boss")
+								CoinService.add(pl, Config.COINS.boss * zone, "boss")
 								Remotes.notify(pl, "보스 처치 보상!")
 							else
 								Remotes.notify(pl, "이 보스 보상은 10분에 한 번이에요")
