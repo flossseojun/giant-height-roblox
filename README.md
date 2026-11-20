@@ -6,6 +6,14 @@
 - 테스트 체크리스트: [docs/PLAYTEST.md](docs/PLAYTEST.md)
 - 설계서 / 계획: `docs/superpowers/`
 
+## 펫과 몬스터
+
+펫은 최대 3마리까지 팀으로 데리고 다녀요. 음식을 먹거나 몬스터를 잡으면 경험치가 오르고, 15·35레벨에 진화해요.
+구역마다 야생 몬스터(시장 비둘기, 양근천 오리, 두물머리 잉어·왜가리, 용문산 멧돼지·까마귀, 별똥별 정령)가 돌아다니고,
+펫이 자동으로 싸워요. 몬스터를 터치하면 집중 공격, 펫 카드의 버튼은 필살기, 높이서 떨어져 착지하면 밟기.
+잡은 몬스터는 가끔 길들일 수 있고, 보스를 잡으면 보스 펫을 받아요. 숫자는 `src/shared/Config.luau`의
+`PET`, `PET_SPECIES`, `MONSTER`에 있어요.
+
 ## 개발자용
 - 순수 로직 테스트: `luau tests/run.luau`
 - 기본 맵 만들기: `python3 tools/genmap.py && rojo build map.project.json -o map/BaseMap.rbxm` (검사: `python3 tools/map_check.py`)
