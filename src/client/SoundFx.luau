@@ -101,10 +101,9 @@ local function footsteps()
 				local ratio = s / me
 				local dist = (root.Position - myRoot.Position).Magnitude
 				local reach = 40 * s
-				if p == player then
-					shake(0.05 * s, 0.12)
-				elseif ratio >= 2 and dist < reach then
-					shake(0.25 * math.min(ratio, 6) * (1 - dist / reach), 0.25)
+				-- 내 발걸음으로는 흔들지 않음(계속 떨려서 어지러움). 훨씬 큰 남이 가까이 걸을 때만, 약하게
+				if p ~= player and ratio >= 2 and dist < reach then
+					shake(math.min(0.15 * math.min(ratio, 6), 0.6) * (1 - dist / reach), 0.3)
 				end
 			end
 		end
@@ -115,9 +114,13 @@ local function footsteps()
 		if not hum then
 			return
 		end
-		if os.clock() < shakeUntil then
-			local m = shakePower
-			hum.CameraOffset = Vector3.new((math.random() - 0.5) * m, (math.random() - 0.5) * m, (math.random() - 0.5) * m)
+		local now = os.clock()
+		if now < shakeUntil then
+			-- 매 프레임 무작위 대신 부드러운 노이즈 + 끝으로 갈수록 약해짐
+			local left = math.clamp((shakeUntil - now) / 0.3, 0, 1)
+			local m = shakePower * left
+			local t = now * 18
+			hum.CameraOffset = Vector3.new(math.noise(t, 0.1) * m, math.noise(0.3, t) * m, 0)
 		elseif hum.CameraOffset ~= Vector3.zero then
 			hum.CameraOffset = Vector3.zero
 		end

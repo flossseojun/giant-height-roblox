@@ -51,6 +51,9 @@ local function applyBody(player: Player, force: boolean?)
 	hum.WalkSpeed = stats.walkSpeed
 	hum.JumpPower = stats.jumpPower
 	player.CameraMaxZoomDistance = math.max(stats.maxZoom, 30)
+	player.CameraMinZoomDistance = math.min(stats.minZoom, player.CameraMaxZoomDistance)
+	-- 건물이 빽빽해서 기본 카메라는 벽에 부딪히면 캐릭터 앞으로 확 당겨짐 → 가리는 건물을 반투명하게
+	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
 end
 
 local function refreshDisplay(player: Player)

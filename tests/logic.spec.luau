@@ -26,6 +26,8 @@ describe("Growth", function()
 		expect(s.walkSpeed).toBeCloseTo(32)
 		expect(s.jumpPower).toBeCloseTo(100)
 		expect(s.maxZoom).toBeCloseTo(120)
+		expect(s.minZoom).toBeCloseTo(16) -- 거인일 때 카메라가 몸 안으로 들어가지 않게
+		expect(Growth.moveStats(1).minZoom).toBeCloseTo(0.5) -- 평소엔 1인칭까지 허용
 	end)
 end)
 
