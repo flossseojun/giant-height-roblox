@@ -137,7 +137,96 @@ def _sign_style(rnd):
     return bg, fg, SHOP_WORDS[rnd.randrange(len(SHOP_WORDS))]
 
 
-def _shop(F, n, rnd, street, parts):
+SHOP_TYPES = ["karaoke", "pcbang", "cafe", "chicken", "mart", "pharmacy", "salon", "snack", "academy", "flower"]
+# 가게 종류별 간판 띠 색 (글씨 없음)
+SHOP_BAND = {"karaoke": rgb(120, 40, 160), "pcbang": rgb(25, 35, 80), "cafe": rgb(120, 80, 50),
+             "chicken": rgb(250, 200, 30), "mart": rgb(245, 245, 245), "pharmacy": rgb(240, 245, 240),
+             "salon": rgb(245, 245, 245), "snack": rgb(200, 40, 40), "academy": rgb(30, 60, 130),
+             "flower": rgb(70, 150, 80)}
+UP_ROT = [[0, -1, 0], [1, 0, 0], [0, 0, 1]]
+NEON_PINK, NEON_BLUE = rgb(255, 80, 200), rgb(60, 160, 255)
+
+
+def _prop(F, name, sf, along, y0, out, w, h, d, color, material="SmoothPlastic", shape=None):
+    """가게 앞면 기준 장식: along=가로 위치, out=벽에서 떨어진 거리(앞쪽), w/h/d=가로/높이/깊이"""
+    q = F.on_face(name, sf, along, y0, h, w, d, color, material, out=out)
+    if shape == "Ball":
+        q["shape"] = "Ball"
+    elif shape == "CylUp":  # 세로 원기둥
+        q["shape"] = "Cylinder"
+        q["size"] = (h, w, w)
+        q["rot"] = UP_ROT
+    return q
+
+
+def _deco(t, F, sf, a, uw, parts, rich, k):
+    """가게 한 칸(a: 칸 중심, uw: 칸 폭)에 종류별 생김새"""
+    P = lambda *args, **kw: parts.append(_prop(F, f"Deco{k}_" + args[0], sf, *args[1:], **kw))
+    top = FLOOR * 0.63 + FLOOR * 0.17  # 간판 띠 가운데 높이
+    if t == "karaoke":
+        P("NeonTop", a, FLOOR * 0.6, 1.7, uw - 0.6, 0.25, 0.25, NEON_PINK, "Neon")
+        P("MicStick", a - uw * 0.25, top - 1.0, 0.5, 0.35, 1.6, 0.35, rgb(40, 40, 45), shape="CylUp")
+        P("MicHead", a - uw * 0.25, top + 0.4, 0.5, 0.9, 0.9, 0.9, rgb(200, 200, 210), "Metal", shape="Ball")
+        if rich:
+            P("MirrorBall", a + uw * 0.15, FLOOR * 0.38, 0.8, 1.3, 1.3, 1.3, rgb(220, 220, 255), "Neon", shape="Ball")
+            P("NeonSide", a + uw / 2 - 0.5, 0.2, 1.7, 0.25, FLOOR * 0.4, 0.25, NEON_BLUE, "Neon")
+    elif t == "pcbang":
+        n_mon = 3 if rich else 1
+        for i in range(n_mon):
+            off = (i - (n_mon - 1) / 2) * (uw / (n_mon + 0.5))
+            P(f"Monitor{i}", a + off, 1.8, 0.9, min(2.2, uw / (n_mon + 1)), 1.4, 0.2, NEON_BLUE, "Neon")
+        P("LedStrip", a, FLOOR * 0.62, 0.45, uw - 0.6, 0.2, 0.2, NEON_BLUE, "Neon")
+        if rich:
+            P("Chairs", a, 0.2, 0.4, uw * 0.6, 1.2, 0.5, rgb(30, 30, 35))
+    elif t == "cafe":
+        P("CupBody", a - uw * 0.3, top - 0.6, 0.5, 1.1, 1.3, 1.1, rgb(245, 245, 240), shape="CylUp")
+        P("CupHandle", a - uw * 0.3 + 0.75, top - 0.3, 0.5, 0.35, 0.6, 0.35, rgb(245, 245, 240))
+        P("TableTop", a + uw * 0.15, 2.0, 3.2, 2.2, 0.2, 2.2, rgb(150, 100, 60), "Wood", shape="CylUp")
+        if rich:
+            P("TableLeg", a + uw * 0.15, 0, 3.2, 0.25, 2.0, 0.25, rgb(60, 60, 60), shape="CylUp")
+            P("Parasol", a + uw * 0.15, 4.6, 3.2, 4.5, 0.3, 4.5, rgb(240, 240, 235), "Fabric", shape="CylUp")
+    elif t == "chicken":
+        P("Awning", a, FLOOR * 0.58, 0.9, uw - 0.4, 0.3, 1.8, rgb(220, 50, 40), "Fabric")
+        P("Drumstick", a + uw * 0.28, top - 0.1, 0.6, 1.3, 1.1, 1.0, rgb(190, 110, 40), shape="Ball")
+        P("Bone", a + uw * 0.28 + 0.9, top - 0.1, 0.6, 0.9, 0.3, 0.3, rgb(245, 240, 230))
+        if rich:
+            P("Table", a - uw * 0.15, 0.2, 1.0, 2.0, 1.4, 1.0, rgb(150, 100, 60), "Wood")
+    elif t == "mart":
+        P("StripeG", a, FLOOR * 0.63 + 0.25, 0.5, uw - 0.6, 0.35, 0.1, rgb(40, 160, 80))
+        P("StripeB", a, FLOOR * 0.63 + 0.75, 0.5, uw - 0.6, 0.35, 0.1, rgb(40, 90, 200))
+        P("Shelf", a, 0.2, 0.7, uw * 0.7, 2.6, 0.6, rgb(230, 230, 230))
+        if rich:
+            P("Goods", a, 1.4, 1.05, uw * 0.6, 0.6, 0.15, rgb(250, 160, 60))
+    elif t == "pharmacy":
+        P("CrossV", a + uw * 0.3, top - 0.9, 0.5, 0.6, 1.8, 0.3, rgb(40, 220, 90), "Neon")
+        P("CrossH", a + uw * 0.3, top - 0.3, 0.5, 1.8, 0.6, 0.3, rgb(40, 220, 90), "Neon")
+        if rich:
+            P("Shelf", a - uw * 0.1, 0.2, 0.7, uw * 0.5, 2.4, 0.5, rgb(235, 240, 235))
+    elif t == "salon":
+        for i, c in enumerate((rgb(220, 40, 40), rgb(245, 245, 245), rgb(40, 80, 200))):
+            P(f"Pole{i}", a + uw / 2 - 0.7, 0.8 + i * 1.0, 0.6, 0.7, 1.0, 0.7, c, "Neon" if i != 1 else "SmoothPlastic",
+              shape="CylUp")
+        if rich:
+            P("Mirror", a - uw * 0.1, 1.4, 0.6, uw * 0.4, 1.8, 0.1, rgb(200, 220, 235), "Glass")
+    elif t == "snack":
+        P("Lantern", a - uw * 0.3, FLOOR * 0.55, 1.0, 0.9, 1.1, 0.9, rgb(230, 40, 40), "Neon", shape="Ball")
+        P("Pot", a + uw * 0.15, 0.2, 0.9, 1.4, 1.2, 1.4, rgb(70, 70, 75), "Metal", shape="CylUp")
+        if rich:
+            P("Steam", a + uw * 0.15, 1.6, 0.9, 1.2, 1.2, 1.2, rgb(245, 245, 245), shape="Ball")
+    elif t == "academy":
+        P("Board", a, 1.6, 0.25, uw * 0.6, 1.6, 0.1, rgb(40, 100, 60))
+        if rich:
+            P("Desks", a, 0.2, 1.0, uw * 0.6, 1.0, 0.5, rgb(170, 130, 90), "Wood")
+    elif t == "flower":
+        n_pot = 3 if rich else 2
+        for i in range(n_pot):
+            off = (i - (n_pot - 1) / 2) * 1.8
+            P(f"Pot{i}", a + off, 0, 2.6, 1.0, 0.9, 1.0, rgb(170, 90, 60), shape="CylUp")
+            P(f"Flower{i}", a + off, 0.9, 2.6, 1.3, 1.3, 1.3, [rgb(240, 80, 120), rgb(250, 200, 40), rgb(160, 80, 220)][i % 3],
+              shape="Ball")
+
+
+def _shop(F, n, rnd, street, parts, force_type=None):
     h = n * FLOOR
     wall = SHOP_WALL[rnd.randrange(len(SHOP_WALL))]
     parts.append(box("Body", F.cx, 0, F.cz, F.w, h, F.d, F.yaw, wall))
@@ -147,20 +236,22 @@ def _shop(F, n, rnd, street, parts):
                          "SmoothPlastic"))
     sf = street
     hd, fl = F.face_geo(sf)
-    # 1층: 통유리 가게 + 간판 띠 + 차양
+    # 1층: 어두운 가게 안쪽 벽 + 칸마다 (앞으로 나온 반투명 유리, 종류 색 간판 띠, 종류별 장식)
     parts.append(F.on_face("Storefront", sf, 0, 0.2, FLOOR * 0.62, fl - 2, 0.3, GLASS_DARK, "Glass"))
-    # 1층을 가게 여러 칸으로 나눠 칸마다 간판 (글씨가 간판 폭에 맞게 크게 보이도록)
     units = max(1, round(fl / 13))
     uw = fl / units
     for ui in range(units):
-        bg, fg, word = _sign_style(rnd)
-        along = -fl / 2 + uw * (ui + 0.5)
-        parts.append(_labeled(F.on_face("SignBand" if ui == 0 else f"SignBand{ui}", sf, along, FLOOR * 0.63,
-                                        FLOOR * 0.34, uw - 0.6, 0.4, bg, out=0.05), word, sf, fg, ppu=8))
+        t = force_type or SHOP_TYPES[rnd.randrange(len(SHOP_TYPES))]
+        a = -fl / 2 + uw * (ui + 0.5)
+        parts.append(F.on_face(f"ShopGlass{ui}", sf, a, 0.2, FLOOR * 0.6, uw - 0.8, 0.2, rgb(180, 210, 230), "Glass",
+                               out=1.6, transparency=0.45))
+        parts.append(F.on_face("SignBand" if ui == 0 else f"SignBand{ui}", sf, a, FLOOR * 0.63, FLOOR * 0.34,
+                               uw - 0.6, 0.4, SHOP_BAND[t], out=0.05))
+        _deco(t, F, sf, a, uw, parts, rich=uw >= 9, k=ui)
         if units > 1 and ui:
-            parts.append(F.on_face(f"ShopDivider{ui}", sf, -fl / 2 + uw * ui, 0, FLOOR * 0.97, 0.6, 0.5, wall,
+            parts.append(F.on_face(f"ShopDivider{ui}", sf, -fl / 2 + uw * ui, 0, FLOOR * 0.97, 0.6, 1.9, wall,
                                    out=0.05))
-    # 위층: 층마다 관통 창 2~3칸 + 간판
+    # 위층: 층마다 관통 창 2~3칸, 2·3층엔 가게 종류 빛(노래방 분홍 네온, PC방 파란 빛, 학원 흰 빛)
     segs = 3 if max(F.w, F.d) > 22 else 2
     long_faces = "Z" if sf[1] == "Z" else "X"
     span = (F.w if long_faces == "Z" else F.d)
@@ -171,16 +262,10 @@ def _shop(F, n, rnd, street, parts):
             uo = (sgi - (segs - 1) / 2) * span / segs
             parts.append(_through(F, f"Win{f}_{sgi}", y, FLOOR * 0.45, long_faces, 0, GLASS_DARK, u_off=uo,
                                   seg_w=seg_w))
-        if f <= 2 and rnd.random() < 0.8:
-            bg, fg, word = _sign_style(rnd)
-            sw = min(fl * 0.6, 11)
-            along = (fl / 2 - sw / 2 - 1) * (1 if f % 2 else -1)
-            parts.append(_labeled(F.on_face(f"FloorSign{f}", sf, along, f * FLOOR + FLOOR * 0.74, FLOOR * 0.3,
-                                            sw, 0.4, bg, out=0.25), word, sf, fg, ppu=9))
-    if n >= 3 and rnd.random() < 0.5:  # 모서리 세로 간판
-        bg, fg, word = _sign_style(rnd)
-        parts.append(_labeled(F.on_face("VSign", sf, fl / 2 - 1.5, FLOOR * 1.1, FLOOR * (n - 1.4), 2.2, 0.5, bg,
-                                        out=0.6), "\n".join(word), sf, fg, ppu=9))
+        if f <= 2 and rnd.random() < 0.7:
+            glow = [NEON_PINK, NEON_BLUE, rgb(250, 250, 240)][rnd.randrange(3)]
+            parts.append(F.on_face(f"FloorGlow{f}", sf, 0, y + FLOOR * 0.45, 0.35, fl * 0.85, 0.25, glow, "Neon",
+                                   out=0.1))
     _rooftop(F, h + 0.8, rnd, wall, parts)
 
 

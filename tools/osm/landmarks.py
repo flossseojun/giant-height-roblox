@@ -306,6 +306,23 @@ def _cyl_h(name, x, yc, z, thick, dia, yaw, color, material="SmoothPlastic"):
             "material": material, "collide": False}
 
 
+# 시장 가게 간판 장식: (모양, 색, 크기) 목록. SHOP_NAMES 순서와 같음
+MARKET_ICON = [
+    [("block", rgb(250, 250, 245), 1.4), ("block", rgb(240, 150, 180), 1.4)],  # 떡집
+    [("ball", rgb(70, 60, 55), 2.0)],  # 국밥(뚝배기)
+    [("ball", rgb(230, 50, 40), 1.4), ("ball", rgb(250, 160, 30), 1.4), ("ball", rgb(250, 220, 60), 1.4)],  # 과일
+    [("ball", rgb(80, 170, 60), 1.6), ("block", rgb(240, 120, 40), 1.2)],  # 채소
+    [("ball", rgb(150, 80, 50), 1.8)],  # 족발
+    [("block", rgb(230, 60, 40), 1.4), ("block", rgb(250, 230, 200), 1.4)],  # 분식(떡볶이·튀김)
+    [("ball", rgb(200, 190, 170), 1.8)],  # 방앗간(곡식 자루)
+    [("block", rgb(170, 130, 90), 1.6), ("block", rgb(150, 110, 70), 1.2)],  # 건어물
+    [("ball", rgb(70, 40, 40), 1.3), ("ball", rgb(70, 40, 40), 1.3)],  # 순대
+    [("block", rgb(90, 160, 70), 1.2), ("block", rgb(220, 80, 50), 1.2), ("block", rgb(240, 220, 150), 1.2)],  # 반찬
+    [("block", rgb(200, 50, 50), 1.8)],  # 정육점
+    [("ball", rgb(80, 130, 200), 1.6)],  # 생선
+]
+
+
 def market(street_pts):
     """street_pts: 장터 길 중심선(서→동).
     0..n-2 구간: 지붕 덮인 '시장1길' 아케이드(양 끝 문) — 상점 간판 + 노점.
@@ -353,9 +370,17 @@ def market(street_pts):
                     t += 1
                     face = face_toward(yaw, (-n[0] * s, -n[1] * s))
                     px, pz = at(u, s * (STREET_W / 2 + 0.6))
-                    out.append(labeled(box(f"ShopSign{t}", px, 10, pz, 10, 3, 0.4, yaw,
-                                           SHOP_COLORS[t % len(SHOP_COLORS)], "SmoothPlastic"),
-                                       SHOP_NAMES[t % len(SHOP_NAMES)], face, ppu=10))
+                    # 글씨 대신 파는 물건 모양 (떡·국밥·과일·채소·족발·분식·방앗간·건어물·순대·반찬·정육·생선)
+                    out.append(box(f"ShopSign{t}", px, 10, pz, 10, 3, 0.4, yaw,
+                                   SHOP_COLORS[t % len(SHOP_COLORS)], "SmoothPlastic"))
+                    icon = MARKET_ICON[t % len(MARKET_ICON)]
+                    for j, (shape, color, sz) in enumerate(icon):
+                        ix, iz = at(u + (j - (len(icon) - 1) / 2) * 2.4, s * (STREET_W / 2 + 0.6 - 0.9))
+                        spec = box(f"ShopIcon{t}_{j}", ix, 11.5 - sz / 2, iz, sz, sz, sz * 0.8, yaw, color,
+                                   "SmoothPlastic", collide=False)
+                        if shape == "ball":
+                            spec["shape"] = "Ball"
+                        out.append(spec)
                     px, pz = at(u, s * (STREET_W / 2 - 1.2))
                     out.append(box(f"Awning{t}", px, 8, pz, 10, 0.3, 3, yaw, [rgb(220, 60, 60), rgb(240, 240, 240),
                                                                                rgb(40, 110, 200)][t % 3], "Fabric",

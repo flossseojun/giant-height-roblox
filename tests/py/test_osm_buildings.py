@@ -42,13 +42,26 @@ def test_l_is_wedges():
     assert b and all(p["cls"] == "WedgePart" for p in b)
 
 
-def test_downtown_shop_has_storefront_and_sign():
-    w = Way(11, {"building": "yes"}, [(0, 0), (20, 0), (20, 14), (0, 14), (0, 0)], True)
-    parts = building_parts(w, {"street": (10, -20), "downtown": True})
+def test_downtown_shop_has_storefront_no_text_and_deco():
+    w = Way(11, {"building": "yes"}, [(0, 0), (30, 0), (30, 14), (0, 14), (0, 0)], True)
+    parts = building_parts(w, {"street": (15, -20), "downtown": True})
     names = [p["name"] for p in parts]
-    assert "Storefront" in names and "SignBand" in names
-    sign = next(p for p in parts if p["name"] == "SignBand")
-    assert sign["label"][1] == "Front" and sign["pos"][2] < 0  # 도로(-Z) 쪽 면
+    assert "Storefront" in names
+    assert not any("label" in p for p in parts)  # 글씨 간판 없음
+    assert any(n.startswith("Deco") for n in names)  # 가게 생김새 장식
+    glass = [p for p in parts if p["name"].startswith("ShopGlass")]
+    assert glass and all(p["pos"][2] < -1.5 for p in glass)  # 도로(-Z) 쪽으로 1.6 앞에
+
+
+def test_every_shop_type_builds():
+    from osm.buildings import SHOP_TYPES, _shop, Frame
+    import random
+    for t in SHOP_TYPES:
+        parts = []
+        _shop(Frame(0, 0, 20, 14, 0), 3, random.Random(1), "-Z", parts, force_type=t)
+        assert any(p["name"].startswith("Deco") for p in parts), t
+        assert not any("label" in p for p in parts), t
+
 
 
 def test_house_has_windows_every_floor_and_no_extra_body():

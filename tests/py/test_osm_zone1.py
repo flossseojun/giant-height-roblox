@@ -56,7 +56,7 @@ def test_part_budget(model):
     z1 = next(c for c in model["children"] if c["name"] == "1_양평읍")
     n = [0]
     walk(z1, lambda x: n.__setitem__(0, n[0] + 1) if x.get("className") in ("Part", "WedgePart") else None)
-    assert n[0] <= 13000, n[0]  # 건물 스타일 디테일로 8000→13000 (Ruling)
+    assert n[0] <= 15000, n[0]  # 건물 디테일 8000→13000, 가게 생김새로 →15000 (Ruling)
 
 
 def test_spawn_faces_station(model):
@@ -112,3 +112,29 @@ def test_buildings_are_breakable_models(model):
     walk(model, lambda n: bad.append(n["name"]) if n.get("name", "").startswith(("Station_", "BusStopA_", "Market_", "Roundabout_"))
          and "Breakable" in n.get("properties", {}).get("Tags", []) else None)
     assert not bad
+
+
+def test_zone1_budget_and_no_shop_text(model):
+    cnt = [0]
+    walk(model, lambda n: cnt.__setitem__(0, cnt[0] + 1) if n.get("className") in ("Part", "WedgePart") else None)
+    assert cnt[0] <= 15000, cnt[0]
+    texts = []
+    def check(n):
+        if n.get("name", "").startswith("Building_"):
+            walk(n, lambda c: texts.append(c["name"]) if c.get("className") == "SurfaceGui" else None)
+    walk(model, check)
+    # 아파트 동 번호(DongNo)와 오스타 이름판만 글씨 허용
+    bad = []
+    def find_bad(n):
+        if n.get("className") in ("Part", "WedgePart") and any(c.get("className") == "SurfaceGui" for c in n.get("children", [])):
+            if "_DongNo" not in n["name"] and not n["name"].startswith("Ostar_"):
+                bad.append(n["name"])
+    def scan(n):
+        if n.get("name", "").startswith("Building_"):
+            walk(n, find_bad)
+    walk(model, scan)
+    assert not bad, bad[:5]
+    mk = []
+    walk(model, lambda n: mk.append(n["name"]) if n.get("name", "").startswith("Market_ShopSign")
+         and any(c.get("className") == "SurfaceGui" for c in n.get("children", [])) else None)
+    assert not mk, mk[:3]
