@@ -97,6 +97,16 @@ Config.PET = {
 	zoneK = { 1, 4, 15, 40 }, -- 구역별 몬스터 체력·공격 배율
 }
 
+Config.MONSTER = {
+	respawn = 20, -- 처치 후 다시 나오기까지(초)
+	perSpawn = 3, -- 출현 지점당 최대
+	zoneCap = { 24, 12, 12, 12 }, -- 구역당 동시 최대
+	wanderSpeed = 5, -- 스터드/초 (구역 크기 배율 곱함)
+	sizeK = { 1, 3, 6, 8 }, -- 구역별 몬스터 크기 배율 (맵 배율과 같음)
+	aggroTime = 5, -- 마지막으로 맞은 뒤 이 시간 동안 때린 펫에게 반격
+	stompCooldown = 0.8,
+}
+
 local function sp(t)
 	return t
 end

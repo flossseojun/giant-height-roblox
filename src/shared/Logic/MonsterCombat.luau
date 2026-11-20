@@ -3,7 +3,6 @@ local MonsterCombat = {}
 local P: any = nil
 
 export type PetState = { hp: number, maxHp: number, reviveAt: number? }
-type Mon = { id: any, pos: any, hp: number }
 
 function MonsterCombat.setConfig(cfg: any)
 	P = cfg
@@ -19,7 +18,7 @@ local function dist(a: any, b: any): number
 	return math.sqrt(dx * dx + dz * dz)
 end
 
-function MonsterCombat.pickTarget(monsters: { Mon }, origin: any, range: number, focusId: any?): any?
+function MonsterCombat.pickTarget(monsters: { any }, origin: any, range: number, focusId: any?): any?
 	if focusId ~= nil then
 		for _, m in monsters do
 			if m.id == focusId and m.hp > 0 and dist(m.pos, origin) <= range * cfg().focusMult then
@@ -75,7 +74,7 @@ function MonsterCombat.skillReady(last: number?, cooldown: number, now: number):
 end
 
 -- → 몬스터별 데미지, 팀 회복 비율
-function MonsterCombat.skillEffect(kind: string, atk: number, target: any?, monsters: { Mon }, origin: any): ({ [any]: number }, number)
+function MonsterCombat.skillEffect(kind: string, atk: number, target: any?, monsters: { any }, origin: any): ({ [any]: number }, number)
 	local out = {}
 	if kind == "burst" then
 		for _, m in monsters do
@@ -96,7 +95,7 @@ function MonsterCombat.skillEffect(kind: string, atk: number, target: any?, mons
 end
 
 -- 거인 밟기: 반경 3·scale 안의 살아 있는 몬스터에 damage
-function MonsterCombat.stomp(monsters: { Mon }, at: any, scale: number, damage: number): { [any]: number }
+function MonsterCombat.stomp(monsters: { any }, at: any, scale: number, damage: number): { [any]: number }
 	local out = {}
 	for _, m in monsters do
 		if m.hp > 0 and dist(m.pos, at) <= 3 * scale then

@@ -11,6 +11,7 @@ local order = {
 	"BedService",
 	"LeaderboardService",
 	"PetService",
+	"MonsterService",
 	"BossService",
 	"HighFiveService",
 	"ConstellationService",
