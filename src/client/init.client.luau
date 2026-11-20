@@ -13,6 +13,7 @@ local order = {
 	"Panels",
 	"SmashFx",
 	"ShopClient",
+	"Cosmetics",
 }
 
 for _, name in order do
