@@ -5,6 +5,7 @@ local RunService = game:GetService("RunService")
 
 local Config = require(ReplicatedStorage.Shared.Config)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
+local Juice = require(ReplicatedStorage.Shared.Logic.Juice)
 local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local Format = require(ReplicatedStorage.Shared.Logic.Format)
 local Boost = require(ReplicatedStorage.Shared.Logic.Boost)
@@ -27,17 +28,8 @@ local function scaleFor(h: number): number
 end
 
 -- 몸 크기를 바꾸면서 발이 땅에 묻히지 않게 위로 올려 준다
-local function applyBody(player: Player, force: boolean?)
-	local char = player.Character
-	local hum = char and char:FindFirstChildOfClass("Humanoid")
-	if not (char and hum and char.PrimaryPart) then
-		return
-	end
-	local h = heights[player] or Config.START_HEIGHT
-	local s = scaleFor(h)
-	if not force and not Growth.shouldRescale(appliedScale[player] or 1, s) then
-		return
-	end
+-- 몸 크기 한 번 바꾸기 (발이 땅에 붙어 있게 높이 보정, 이동 능력치 갱신)
+local function scaleOnce(player: Player, char: Model, hum: Humanoid, s: number)
 	local cf0, size0 = char:GetBoundingBox()
 	local bottom0 = cf0.Position.Y - size0.Y / 2
 	char:ScaleTo(s)
@@ -54,6 +46,39 @@ local function applyBody(player: Player, force: boolean?)
 	player.CameraMinZoomDistance = math.min(stats.minZoom, player.CameraMaxZoomDistance)
 	-- 건물이 빽빽해서 기본 카메라는 벽에 부딪히면 캐릭터 앞으로 확 당겨짐 → 가리는 건물을 반투명하게
 	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
+end
+
+local growToken: { [Player]: number } = {}
+
+-- force(리스폰·환생 등)면 바로, 아니면 크게 변할 때 0.3초에 걸쳐 5단계로 부드럽게
+local function applyBody(player: Player, force: boolean?)
+	local char = player.Character
+	local hum = char and char:FindFirstChildOfClass("Humanoid")
+	if not (char and hum and char.PrimaryPart) then
+		return
+	end
+	local h = heights[player] or Config.START_HEIGHT
+	local s = scaleFor(h)
+	local from = appliedScale[player] or 1
+	if not force and not Growth.shouldRescale(from, s) then
+		return
+	end
+	local token = (growToken[player] or 0) + 1
+	growToken[player] = token
+	local steps = if force or s < from then { s } else Juice.scaleSteps(from, s, 5, 0.05)
+	if #steps == 1 then
+		scaleOnce(player, char, hum, s)
+		return
+	end
+	task.spawn(function()
+		for _, step in steps do
+			if growToken[player] ~= token or player.Character ~= char or not char.Parent then
+				return -- 더 새로운 크기 변화가 왔거나 캐릭터가 바뀜
+			end
+			scaleOnce(player, char, hum, step)
+			task.wait(0.06)
+		end
+	end)
 end
 
 local function refreshDisplay(player: Player)

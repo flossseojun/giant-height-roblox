@@ -33,18 +33,25 @@ function FoodService.isMarketDay(): boolean
 	return Market.isMarketDay(Market.kstDay(os.time()))
 end
 
+-- 먹은 사람에게 먹기 연출용 알림 (시작할 때 만들어 둠)
+local ateRemote = Remotes.get("Ate")
+
 local folder = Instance.new("Folder")
 folder.Name = "Foods"
 folder.Parent = workspace
 
 -- 음식 파트 하나 만들기 (우유 비에서도 씀)
 function FoodService.makeFoodPart(food, size: number): Part
+	-- 서버는 보이지 않는 히트박스만, 진짜 모양은 각자 화면(FoodVisuals)이 그림
 	local p = Instance.new("Part")
 	p.Name = food.name
 	p.Shape = Enum.PartType.Ball
 	p.Size = Vector3.new(size, size, size)
 	p.Color = COLORS[food.id] or Color3.new(1, 1, 1)
-	p.Material = if food.golden then Enum.Material.Neon else Enum.Material.SmoothPlastic
+	p.Material = Enum.Material.SmoothPlastic
+	p.Transparency = 1
+	p:SetAttribute("FoodId", food.id)
+	p:SetAttribute("Golden", food.golden == true)
 	p.CanCollide = false
 	p.CanTouch = true
 	p.CanQuery = false
@@ -80,8 +87,11 @@ function FoodService.makeEdible(p: BasePart, food, slot, onEaten: (Player) -> ()
 			return
 		end
 		edible[p] = nil
+		ateRemote:FireClient(player, food.id, p.Position, p.Size.X)
 		HeightService.add(player, food.gain, food.id)
-		Remotes.sfx(player, if food.golden then "golden" else "eat")
+		if food.golden then
+			Remotes.sfx(player, "golden") -- 일반 음식 소리는 먹기 연출(콤보 음높이)에서 냄
+		end
 		onEaten(player)
 	end
 	edible[p] = eat
