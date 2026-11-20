@@ -77,3 +77,21 @@ def test_spawn_faces_station(model):
 def test_map_check_passes(model):
     r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "map_check.py")], capture_output=True, text=True)
     assert r.returncode == 0, r.stdout
+
+
+def test_monster_spawns(model):
+    d = load(DATA)
+    blds = [w.pts for w in d.ways if classify(w) in ("building", "station")]
+    sp = tagged(model, "MonsterSpawn")
+    z1 = [n for n in sp if n["attributes"]["Zone"] == 1]
+    kinds = [n["attributes"]["Species"] for n in z1]
+    assert kinds.count("pigeon") >= 4 and kinds.count("duck") >= 3, kinds
+    for n in z1:
+        x, _, z = pos(n)
+        assert not any(point_in_poly(x, z, b) for b in blds), (x, z)
+    want = {2: {"carp", "heron"}, 3: {"boar", "crow"}, 4: {"star"}}
+    for zone, species in want.items():
+        got = [n["attributes"]["Species"] for n in sp if n["attributes"]["Zone"] == zone]
+        assert len(got) >= 2 and set(got) == species, (zone, got)
+    for n in sp:
+        assert 8 <= n["attributes"]["Radius"] <= 30

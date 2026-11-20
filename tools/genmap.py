@@ -276,6 +276,18 @@ def zone_folder(z):
         sensor(f"FoodSpawn{i + 1}", (x, top + 2 * k, zz), (2 * k, 2 * k, 2 * k), "FoodSpawn", zid)
         for i, (x, zz) in enumerate(foods)
     ]))
+    # 몬스터 출현 지점 (1구역은 OSM에서, 나머지는 음식 자리 옆)
+    if zid == 1:
+        mspots = Z1["monster_spawns"]
+    else:
+        kinds = {2: ["carp", "heron"], 3: ["boar", "crow"], 4: ["star"]}[zid]
+        mspots = [(fx + 6 * k, fz, kinds[i % len(kinds)], min(30, 10 + 2 * k)) for i, (fx, fz) in enumerate(foods[:4])]
+    kids.append(folder("MonsterSpawns", [
+        part(f"MonsterSpawn{i + 1}", (x, top + 1, zz), (3, 1, 3), rgb(255, 255, 255), transparent=1, collide=False,
+             tags=["MonsterSpawn"], attrs={"Zone": zid, "Species": kind, "Radius": r},
+             extra={"CanTouch": False, "CanQuery": False})
+        for i, (x, zz, kind, r) in enumerate(mspots)
+    ]))
     rx, rz = Z1["rain"] if zid == 1 else (cx, cz)
     kids.append(sensor("MilkRainSpot", (rx, top + 1, rz), (4, 1, 4), "MilkRainSpot", zid))
     if zid in BOSS:

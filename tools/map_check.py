@@ -30,6 +30,11 @@ expected.update({("BossSpawn", z): 1 for z in (1, 2, 3)})
 expected.update({("ZoneGate", 2): 1, ("ZoneGate", 3): 1, ("ZoneGate", 4): 1, ("GlobalBoard", None): 1,
                  ("WeeklyBoard", None): 1, ("StarPoint", 4): 19})
 
+# 몬스터 출현 지점은 개수가 정확히 정해지지 않음: 최소 개수만 확인
+MIN = {("MonsterSpawn", 1): 7, ("MonsterSpawn", 2): 2, ("MonsterSpawn", 3): 2, ("MonsterSpawn", 4): 2}
+for k, lo in MIN.items():
+    expected[k] = max(lo, count.get(k, 0))
+
 bad = [(k, v, count.get(k, 0)) for k, v in expected.items() if count.get(k, 0) != v]
 extra = [k for k in count if k not in expected]
 for k, want, got in bad:

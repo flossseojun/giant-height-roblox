@@ -609826,6 +609826,650 @@
      ]
     },
     {
+     "name": "MonsterSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "MonsterSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -67,
+           1,
+           522
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -30,
+           1,
+           546
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           10,
+           1,
+           572
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           70,
+           1,
+           613
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn5",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -96.0,
+           1,
+           24.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn6",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -126.0,
+           1,
+           49.0
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "pigeon",
+        "Radius": 12
+       }
+      },
+      {
+       "name": "MonsterSpawn7",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           863.9129794563138,
+           1,
+           195.47660457830685
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "duck",
+        "Radius": 14
+       }
+      },
+      {
+       "name": "MonsterSpawn8",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           678.1302767427992,
+           1,
+           172.60753730504604
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "duck",
+        "Radius": 14
+       }
+      },
+      {
+       "name": "MonsterSpawn9",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           677.4653824449127,
+           1,
+           38.88777491231893
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "duck",
+        "Radius": 14
+       }
+      },
+      {
+       "name": "MonsterSpawn10",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           539.2103688671408,
+           1,
+           28.809983747806093
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "duck",
+        "Radius": 14
+       }
+      },
+      {
+       "name": "MonsterSpawn11",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           294.3125639750618,
+           1,
+           112.10393614957242
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 1,
+        "Species": "duck",
+        "Radius": 14
+       }
+      }
+     ]
+    },
+    {
      "name": "MilkRainSpot",
      "className": "Part",
      "properties": {
@@ -613577,6 +614221,244 @@
        },
        "attributes": {
         "Zone": 2
+       }
+      }
+     ]
+    },
+    {
+     "name": "MonsterSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "MonsterSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1145.213892725611,
+           1,
+           -693.9180332493897
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2,
+        "Species": "carp",
+        "Radius": 16
+       }
+      },
+      {
+       "name": "MonsterSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1260.025195884441,
+           1,
+           -660.2445109080098
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2,
+        "Species": "heron",
+        "Radius": 16
+       }
+      },
+      {
+       "name": "MonsterSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1167.4544257380926,
+           1,
+           -638.1808025007773
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2,
+        "Species": "carp",
+        "Radius": 16
+       }
+      },
+      {
+       "name": "MonsterSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1150.5171733640454,
+           1,
+           -502.8536612042449
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 2,
+        "Species": "heron",
+        "Radius": 16
        }
       }
      ]
@@ -617472,6 +618354,244 @@
        },
        "attributes": {
         "Zone": 3
+       }
+      }
+     ]
+    },
+    {
+     "name": "MonsterSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "MonsterSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1188.706466975578,
+           301,
+           225.26377461644245
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3,
+        "Species": "boar",
+        "Radius": 22
+       }
+      },
+      {
+       "name": "MonsterSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1262.4328167853237,
+           301,
+           45.6996270573361
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3,
+        "Species": "crow",
+        "Radius": 22
+       }
+      },
+      {
+       "name": "MonsterSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1225.6221551608985,
+           301,
+           237.95688834064777
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3,
+        "Species": "boar",
+        "Radius": 22
+       }
+      },
+      {
+       "name": "MonsterSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1219.2968198497083,
+           301,
+           181.7022175624113
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 3,
+        "Species": "crow",
+        "Radius": 22
        }
       }
      ]
@@ -625598,6 +626718,244 @@
        },
        "attributes": {
         "Zone": 4
+       }
+      }
+     ]
+    },
+    {
+     "name": "MonsterSpawns",
+     "className": "Folder",
+     "children": [
+      {
+       "name": "MonsterSpawn1",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1236.0102271591682,
+           801,
+           1057.4241784619508
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4,
+        "Species": "star",
+        "Radius": 26
+       }
+      },
+      {
+       "name": "MonsterSpawn2",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1021.5871958665339,
+           801,
+           1122.2822964660147
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4,
+        "Species": "star",
+        "Radius": 26
+       }
+      },
+      {
+       "name": "MonsterSpawn3",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1162.6122906469006,
+           801,
+           1169.0646197922608
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4,
+        "Species": "star",
+        "Radius": 26
+       }
+      },
+      {
+       "name": "MonsterSpawn4",
+       "className": "Part",
+       "properties": {
+        "Anchored": true,
+        "Size": [
+         3,
+         1,
+         3
+        ],
+        "CFrame": {
+         "CFrame": {
+          "position": [
+           -1178.159749323539,
+           801,
+           1090.9593020482782
+          ],
+          "orientation": [
+           [
+            1,
+            0,
+            0
+           ],
+           [
+            0,
+            1,
+            0
+           ],
+           [
+            0,
+            0,
+            1
+           ]
+          ]
+         }
+        },
+        "Material": "SmoothPlastic",
+        "Transparency": 1,
+        "CanCollide": false,
+        "TopSurface": "Smooth",
+        "BottomSurface": "Smooth",
+        "Color": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "Tags": [
+         "MonsterSpawn"
+        ],
+        "CanTouch": false,
+        "CanQuery": false
+       },
+       "attributes": {
+        "Zone": 4,
+        "Species": "star",
+        "Radius": 26
        }
       }
      ]

@@ -244,7 +244,33 @@ def build_zone1(h):
             if z0 + 200 < z < z1 - 200 and (gate is None or wd > gate[2]):
                 gate = (x0, z, wd, math.atan2(d - b, c_ - a))
 
+    # 몬스터 출현 지점: 비둘기 = 시장 골목·역 광장, 오리 = 양근천 물가(물 가장자리 밖 땅)
+    monster_spawns = []
+    for x, z in [(-67, 522), (-30, 546), (10, 572), (70, 613), (rain[0], rain[1]), (rain[0] - 30, rain[1] + 25)]:
+        if inb(x, z) and not obstacles.hit(x, z, 3):
+            monster_spawns.append((x, z, "pigeon", 12))
+    streams = [w for w in waters if w.tags.get("waterway") == "stream" and w.tags.get("name") == "양근천"]
+
+    def near_water(x, z, d):
+        return any(seg_dist(x, z, a[0], a[1], b[0], b[1]) < d for w in waters for a, b in zip(w.pts, w.pts[1:]))
+    ducks = []
+    for w in streams:
+        for a, b in zip(w.pts, w.pts[1:]):
+            L = math.hypot(b[0] - a[0], b[1] - a[1])
+            if L < 1:
+                continue
+            mx, mz = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
+            nx, nz = -(b[1] - a[1]) / L, (b[0] - a[0]) / L
+            for sgn in (1, -1):
+                x, z = mx + nx * 42 * sgn, mz + nz * 42 * sgn
+                if (inb(x, z, -40) and not obstacles.hit(x, z, 4) and not near_water(x, z, 38)
+                        and all(math.hypot(x - dx, z - dz) > 120 for dx, dz, _, _ in ducks)):
+                    ducks.append((x, z, "duck", 14))
+                    break
+    monster_spawns += ducks[:5]
+
     return {
+        "monster_spawns": monster_spawns,
         "groups": groups,
         "zone_area": (((x0 + x1) / 2, 500, (z0 + z1) / 2), (x1 - x0, 1100, z1 - z0)),
         "bounds": (x0, x1, z0, z1),
