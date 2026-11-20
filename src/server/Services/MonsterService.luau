@@ -17,6 +17,8 @@ MonsterCombat.setConfig(Config.PET)
 
 local SPECIES = Config.PET_SPECIES
 local MC = Config.MONSTER
+-- 클라이언트가 미리 연결할 수 있게 시작할 때 만들어 둠
+local tameOfferRemote = Remotes.get("TameOffer")
 
 local LOOK = {
 	pigeon = { body = Color3.fromRGB(150, 155, 170), accent = Color3.fromRGB(90, 160, 140), beak = Color3.fromRGB(240, 180, 60) },
@@ -253,7 +255,7 @@ local function kill(mon: Monster, killer: Player?)
 		if sp.tameChance and MonsterCombat.tameRoll(sp.tameChance, math.random()) then
 			local offerId = (offers[killer] and offers[killer].id or 0) + 1
 			offers[killer] = { id = offerId, kind = mon.kind, expires = os.clock() + Config.PET.tameWindow }
-			Remotes.get("TameOffer"):FireClient(killer, offerId, mon.kind, sp.name, Config.PET.tameWindow)
+			tameOfferRemote:FireClient(killer, offerId, mon.kind, sp.name, Config.PET.tameWindow)
 		end
 	end
 end
