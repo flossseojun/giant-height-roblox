@@ -1,0 +1,50 @@
+local H = require("./harness")
+local Config = require("../src/shared/Config")
+local Smash = require("../src/shared/Logic/Smash")
+local Quests = require("../src/shared/Logic/Quests")
+local describe, it, expect = H.describe, H.it, H.expect
+Smash.setConfig(Config.SMASH)
+
+local function B(id, x, h, until_)
+	return { id = id, x = x, z = 0, radius = 5, heightCm = h, brokenUntil = until_ }
+end
+local O = { X = 0, Z = 0 }
+
+describe("Smash", function()
+	it("heightCm", function()
+		expect(Smash.heightCm(4)).toBe(1200)
+	end)
+	it("breaks only shorter buildings in reach, nearest first, max 3", function()
+		local bs = { B(1, 6, 600), B(2, 2, 600), B(3, 7, 600), B(4, 4, 600), B(5, 3, 5000), B(6, 50, 100) }
+		local hit, tall = Smash.targets(bs, O, 1, 1000, 0)
+		expect(#hit).toBe(3)
+		expect(hit[1]).toBe(2)
+		expect(hit[2]).toBe(4)
+		expect(hit[3]).toBe(1)
+		expect(#tall).toBe(1)
+		expect(tall[1]).toBe(5)
+	end)
+	it("skips broken until restored", function()
+		expect(#Smash.targets({ B(1, 0, 100, 30) }, O, 1, 1000, 10)).toBe(0)
+		expect(#Smash.targets({ B(1, 0, 100, 30) }, O, 1, 1000, 31)).toBe(1)
+	end)
+	it("equal height does not break", function()
+		expect(#Smash.targets({ B(1, 0, 1000) }, O, 1, 1000, 0)).toBe(0)
+	end)
+	it("reach grows with scale", function()
+		expect(#Smash.targets({ B(1, 20, 100) }, O, 1, 1000, 0)).toBe(0)
+		expect(#Smash.targets({ B(1, 20, 100) }, O, 5, 1000, 0)).toBe(1)
+	end)
+	it("reward", function()
+		expect(Smash.reward(3, 4)).toBe(60)
+	end)
+	it("canRestore", function()
+		expect(Smash.canRestore({ x = 0, z = 0, radius = 5 }, { { X = 3, Z = 0 } })).toBe(false)
+		expect(Smash.canRestore({ x = 0, z = 0, radius = 5 }, { { X = 9, Z = 0 } })).toBe(true)
+	end)
+	it("smash source is not food", function()
+		expect(Quests.kindOf("smash")).toBe("smash")
+	end)
+end)
+
+return nil

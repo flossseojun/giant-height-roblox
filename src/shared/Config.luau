@@ -91,6 +91,19 @@ Config.PET = {
 	zoneK = { 1, 4, 15, 40 }, -- 구역별 몬스터 체력·공격 배율
 }
 
+-- 건물 부수기 (착지로, 내 키 > 건물 키일 때)
+Config.SMASH = {
+	cmPerFloor = 300, -- 건물 1층 = 3m
+	maxPerStomp = 3,
+	rewardPerFloor = 5, -- 보상 = 그 구역 최고 음식 × 층수 × 5
+	respawn = 60, -- 초 뒤 다시 생김
+	restoreRetry = 3, -- 그 자리에 사람이 있으면 이만큼씩 미룸
+	hintCooldown = 5,
+	rubble = 3,
+	debris = 8,
+	cooldown = 0.8,
+}
+
 Config.MONSTER = {
 	respawn = 20, -- 처치 후 다시 나오기까지(초)
 	perSpawn = 3, -- 출현 지점당 최대
