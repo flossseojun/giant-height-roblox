@@ -169,4 +169,15 @@ describe("MonsterCombat", function()
 	end)
 end)
 
+describe("Boss pets", function()
+	it("every boss gives a boss-type species", function()
+		for _, b in Config.BOSSES do
+			local sp = Config.PET_SPECIES[b.pet]
+			expect(sp ~= nil).toBe(true)
+			expect(sp.how).toBe("boss")
+			expect(sp.zone).toBe(b.zone)
+		end
+	end)
+end)
+
 return nil

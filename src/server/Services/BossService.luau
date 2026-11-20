@@ -9,6 +9,8 @@ local Zones = require(ReplicatedStorage.Shared.Logic.Zones)
 local Growth = require(ReplicatedStorage.Shared.Logic.Growth)
 local BossFight = require(ReplicatedStorage.Shared.Logic.BossFight)
 local HeightService = require(script.Parent.HeightService)
+local PetService = require(script.Parent.PetService)
+local MonsterCombat = require(ReplicatedStorage.Shared.Logic.MonsterCombat)
 local Remotes = require(script.Parent.Remotes)
 local Util = require(script.Parent.Util)
 
@@ -272,11 +274,35 @@ local function runBoss(spawn: BasePart)
 		return out
 	end
 
+	-- 펫 참여: 이미 시작된 보스전에서, 보스 근처 플레이어의 살아 있는 팀 펫이 공격
+	local nextPetHit = 0
+	local function petsAttack(now: number)
+		if now < nextPetHit or fight.state(now) ~= "fighting" then
+			return
+		end
+		nextPetHit = now + Config.PET.attackEvery
+		for _, pl in Players:GetPlayers() do
+			local r = Util.root(pl)
+			if r then
+				local scale = Growth.heightToScale(HeightService.get(pl), Config.SCALE_K, Config.MAX_SCALE)
+				if (r.Position - main.Position).Magnitude <= Config.PET.baseRange * scale + 12 * k then
+					for _, m in PetService.team(pl) do
+						if MonsterCombat.alive(m.state) and fight.hit(pl.UserId, m.atk, now) then
+							hitters[pl.UserId] = true
+						end
+					end
+				end
+			end
+		end
+		refreshBar(now)
+	end
+
 	task.spawn(function()
 		local nextAttack = 0
 		while spawn.Parent do
 			task.wait(0.1)
 			local now = os.clock()
+			petsAttack(now)
 			local st = fight.state(now)
 			if st ~= lastState then
 				if st == "defeated" then
@@ -294,6 +320,19 @@ local function runBoss(spawn: BasePart)
 								Remotes.notify(pl, "이 보스 보상은 10분에 한 번이에요")
 							end
 							table.insert(names, pl.DisplayName)
+							-- 보스 펫: 처음 한 번 확정
+							local d = PetService.data(pl)
+							if d and cfg.pet then
+								local has = false
+								for _, e in d.owned do
+									if e.kind == cfg.pet then
+										has = true
+									end
+								end
+								if not has then
+									PetService.addPet(pl, cfg.pet)
+								end
+							end
 						end
 					end
 					Remotes.notifyAll(table.concat(names, ", ") .. " — " .. cfg.name .. " 처치!")

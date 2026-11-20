@@ -163,9 +163,9 @@ Config.PET_SPECIES = {
 
 -- 2차: 구역 보스
 Config.BOSSES = {
-	{ zone = 1, name = "물맑은시장 대왕 호떡", maxHp = 3000, attackEvery = 2.5, shockwave = false },
-	{ zone = 2, name = "남한강 대왕 메기", maxHp = 20000, attackEvery = 2.0, shockwave = true },
-	{ zone = 3, name = "용문산 구름 용", maxHp = 100000, attackEvery = 1.4, shockwave = true },
+	{ zone = 1, name = "물맑은시장 대왕 호떡", maxHp = 3000, attackEvery = 2.5, shockwave = false, pet = "hotteok" },
+	{ zone = 2, name = "남한강 대왕 메기", maxHp = 20000, attackEvery = 2.0, shockwave = true, pet = "catfish" },
+	{ zone = 3, name = "용문산 구름 용", maxHp = 100000, attackEvery = 1.4, shockwave = true, pet = "cloud" },
 }
 Config.BOSS = {
 	timeLimit = 90,
