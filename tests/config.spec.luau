@@ -22,8 +22,8 @@ describe("Config", function()
 		end
 	end)
 
-	it("start height is 150", function()
-		expect(Config.START_HEIGHT).toBe(150)
+	it("start height is 10", function()
+		expect(Config.START_HEIGHT).toBe(10)
 	end)
 end)
 

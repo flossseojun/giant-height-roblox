@@ -1,7 +1,7 @@
 -- 게임 숫자 설정 (밸런스는 여기만 고치면 됨)
 local Config = {}
 
-Config.START_HEIGHT = 150 -- cm
+Config.START_HEIGHT = 10 -- cm (개미만 한 크기로 시작)
 Config.MAX_SCALE = 12 -- 몸 크기 상한 (기본 아바타의 12배)
 Config.SCALE_K = 1.5 -- 클수록 몸이 빨리 커짐
 

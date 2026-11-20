@@ -2,8 +2,12 @@
 local Growth = {}
 
 function Growth.heightToScale(height: number, k: number, maxScale: number): number
-	if height ~= height or height <= 150 then
-		return 1
+	if height ~= height or height <= 0 then
+		height = 10
+	end
+	if height < 150 then
+		-- 150cm보다 작으면 몸도 작아짐 (실제 비율보다 덜 줄여서 조작 가능하게: 10cm ≈ 0.3배)
+		return (height / 150) ^ 0.45
 	end
 	local s = 1 + k * math.log10(height / 150)
 	if s ~= s or s > maxScale then

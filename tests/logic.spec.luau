@@ -9,7 +9,11 @@ local Z = Config.ZONES
 describe("Growth", function()
 	it("heightToScale", function()
 		expect(Growth.heightToScale(150, 1.5, 12)).toBeCloseTo(1)
-		expect(Growth.heightToScale(100, 1.5, 12)).toBeCloseTo(1)
+		expect(Growth.heightToScale(100, 1.5, 12)).toBeCloseTo((100 / 150) ^ 0.45)
+		expect(Growth.heightToScale(10, 1.5, 12)).toBeCloseTo(0.296, 0.01) -- 10cm 시작: 작은 몸
+		expect(math.abs(Growth.heightToScale(149.999, 1.5, 12) - 1) < 0.001).toBe(true)
+		expect(Growth.heightToScale(0, 1.5, 12)).toBeCloseTo((10 / 150) ^ 0.45)
+		expect(Config.START_HEIGHT).toBe(10)
 		expect(Growth.heightToScale(1500, 1.5, 12)).toBeCloseTo(2.5)
 		expect(Growth.heightToScale(15000, 1.5, 12)).toBeCloseTo(4)
 	end)
