@@ -79,6 +79,78 @@ Config.PETS = {
 	{ id = "squirrel", name = "용문산 다람쥐", minHeight = 100000, mult = 1.5, radius = 20 },
 }
 
+-- 펫 고도화: 레벨·진화·전투
+Config.PET = {
+	maxLevel = 50,
+	evoLevels = { 15, 35 },
+	evoMult = { 1, 1.5, 2.2 },
+	statPerLevel = 0.12,
+	maxTeam = 3,
+	maxOwned = 30,
+	faintTime = 10,
+	attackEvery = 1,
+	tick = 0.25,
+	baseRange = 14,
+	focusMult = 2,
+	tameWindow = 8,
+	foodXp = 1,
+	zoneK = { 1, 4, 15, 40 }, -- 구역별 몬스터 체력·공격 배율
+}
+
+local function sp(t)
+	return t
+end
+-- how: height(키 해금) / tame(몬스터 길들이기) / boss(보스 처치)
+-- monster: 야생 몬스터일 때 능력치(구역 배율 곱하기 전)
+Config.PET_SPECIES = {
+	cat = sp({ id = "cat", name = "시장 고양이", stages = { "시장 고양이", "시장 대장 고양이", "물맑은 호랑이" }, zone = 1,
+		how = "height", minHeight = 0, atk = 5, hp = 40, mult = 1.1, radius = 8,
+		skill = { kind = "burst", cooldown = 12, name = "할퀴기 연타" } }),
+	otter = sp({ id = "otter", name = "남한강 수달", stages = { "남한강 수달", "물살 수달", "남한강 수달왕" }, zone = 2,
+		how = "height", minHeight = 1000, atk = 7, hp = 50, mult = 1.25, radius = 14,
+		skill = { kind = "aoe", cooldown = 15, name = "물대포" } }),
+	squirrel = sp({ id = "squirrel", name = "용문산 다람쥐", stages = { "용문산 다람쥐", "도토리 대장", "용문산 산신 다람쥐" }, zone = 3,
+		how = "height", minHeight = 100000, atk = 10, hp = 60, mult = 1.5, radius = 20,
+		skill = { kind = "aoe", cooldown = 15, name = "도토리 폭격" } }),
+	pigeon = sp({ id = "pigeon", name = "시장 비둘기", stages = { "시장 비둘기", "광장 비둘기", "구구 대장" }, zone = 1,
+		how = "tame", tameChance = 0.08, atk = 4, hp = 35, mult = 1.05, radius = 10,
+		skill = { kind = "burst", cooldown = 12, name = "부리 쪼기" },
+		monster = { hp = 30, atk = 2, attackEvery = 1.5, xp = 5, gainMult = 3 } }),
+	duck = sp({ id = "duck", name = "양근천 오리", stages = { "양근천 오리", "물장구 오리", "양근천 대장 오리" }, zone = 1,
+		how = "tame", tameChance = 0.03, atk = 5, hp = 55, mult = 1.08, radius = 9,
+		skill = { kind = "heal", cooldown = 18, name = "꽥꽥 응원" },
+		monster = { hp = 50, atk = 3, attackEvery = 1.6, xp = 8, gainMult = 5 } }),
+	carp = sp({ id = "carp", name = "두물머리 잉어", stages = { "두물머리 잉어", "황금 잉어", "두물머리 용잉어" }, zone = 2,
+		how = "tame", tameChance = 0.08, atk = 8, hp = 60, mult = 1.2, radius = 12,
+		skill = { kind = "aoe", cooldown = 16, name = "꼬리 물보라" },
+		monster = { hp = 40, atk = 3, attackEvery = 1.5, xp = 12, gainMult = 3 } }),
+	heron = sp({ id = "heron", name = "두물머리 왜가리", stages = { "왜가리", "큰 왜가리", "두물머리 학" }, zone = 2,
+		how = "tame", tameChance = 0.03, atk = 11, hp = 50, mult = 1.22, radius = 13,
+		skill = { kind = "burst", cooldown = 14, name = "부리 창" },
+		monster = { hp = 55, atk = 4, attackEvery = 1.4, xp = 18, gainMult = 5 } }),
+	boar = sp({ id = "boar", name = "용문산 멧돼지", stages = { "아기 멧돼지", "멧돼지", "용문산 산군 멧돼지" }, zone = 3,
+		how = "tame", tameChance = 0.08, atk = 12, hp = 90, mult = 1.4, radius = 15,
+		skill = { kind = "burst", cooldown = 15, name = "돌진" },
+		monster = { hp = 50, atk = 4, attackEvery = 1.6, xp = 25, gainMult = 3 } }),
+	crow = sp({ id = "crow", name = "용문산 까마귀", stages = { "까마귀", "산까마귀", "용문산 까마귀왕" }, zone = 3,
+		how = "tame", tameChance = 0.03, atk = 14, hp = 60, mult = 1.42, radius = 18,
+		skill = { kind = "aoe", cooldown = 16, name = "깃털 폭풍" },
+		monster = { hp = 45, atk = 5, attackEvery = 1.3, xp = 35, gainMult = 5 } }),
+	star = sp({ id = "star", name = "별똥별 정령", stages = { "별똥별 정령", "유성 정령", "양평 은하 정령" }, zone = 4,
+		how = "tame", tameChance = 0.03, atk = 18, hp = 80, mult = 1.6, radius = 22,
+		skill = { kind = "heal", cooldown = 18, name = "별빛 치유" },
+		monster = { hp = 60, atk = 6, attackEvery = 1.4, xp = 60, gainMult = 5 } }),
+	hotteok = sp({ id = "hotteok", name = "미니 호떡", stages = { "미니 호떡", "꿀 호떡", "황금 대왕 호떡" }, zone = 1,
+		how = "boss", atk = 8, hp = 70, mult = 1.15, radius = 12,
+		skill = { kind = "aoe", cooldown = 14, name = "뜨거운 시럽" } }),
+	catfish = sp({ id = "catfish", name = "미니 메기", stages = { "미니 메기", "수염 메기", "남한강 대왕 메기" }, zone = 2,
+		how = "boss", atk = 13, hp = 90, mult = 1.3, radius = 16,
+		skill = { kind = "burst", cooldown = 14, name = "수염 채찍" } }),
+	cloud = sp({ id = "cloud", name = "미니 구름 용", stages = { "미니 구름 용", "구름 용", "용문산 구름 용왕" }, zone = 3,
+		how = "boss", atk = 18, hp = 110, mult = 1.55, radius = 22,
+		skill = { kind = "heal", cooldown = 16, name = "구름 이불" } }),
+}
+
 -- 2차: 구역 보스
 Config.BOSSES = {
 	{ zone = 1, name = "물맑은시장 대왕 호떡", maxHp = 3000, attackEvery = 2.5, shockwave = false },
