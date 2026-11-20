@@ -1,8 +1,10 @@
 local H = require("./harness")
 local Config = require("../src/shared/Config")
 local PetProgress = require("../src/shared/Logic/PetProgress")
+local PetData = require("../src/shared/Logic/PetData")
 local describe, it, expect = H.describe, H.it, H.expect
 PetProgress.setConfig(Config.PET)
+PetData.setConfig(Config.PET)
 
 describe("PetProgress", function()
 	it("xp curve", function()
@@ -52,6 +54,54 @@ describe("PET_SPECIES", function()
 			end
 		end
 		expect(n).toBe(13)
+	end)
+end)
+
+describe("PetData", function()
+	local S = Config.PET_SPECIES
+	it("migrates old save", function()
+		local d = PetData.migrate({ pet = "otter" }, S, 2000)
+		expect(#d.owned).toBe(2)
+		local t = PetData.teamEntries(d)
+		expect(#t).toBe(1)
+		expect(t[1].kind).toBe("otter")
+	end)
+	it("keeps valid new save, drops broken entries", function()
+		local d = PetData.migrate({
+			pets = {
+				owned = { { uid = 1, kind = "duck", level = 3, xp = 2 }, { uid = 2, kind = "nope", level = 1, xp = 0 } },
+				team = { 1, 2 },
+				nextId = 3,
+			},
+		}, S, 0)
+		expect(#d.owned).toBe(2) -- duck + 키 0에서 열리는 cat
+		expect(PetData.find(d, 2)).toBe(nil)
+		expect(#d.team).toBe(1)
+	end)
+	it("setTeam validates", function()
+		local d = PetData.migrate({}, S, 200000)
+		local a, b, c = d.owned[1].uid, d.owned[2].uid, d.owned[3].uid
+		expect(PetData.setTeam(d, { a, a })).toBe(false)
+		expect(PetData.setTeam(d, { a, 999 })).toBe(false)
+		expect(PetData.setTeam(d, "x")).toBe(false)
+		local x = PetData.add(d, "duck") :: number
+		expect(PetData.setTeam(d, { a, b, c, x })).toBe(false)
+		expect(PetData.setTeam(d, { c, a })).toBe(true)
+		expect(d.team[1]).toBe(c)
+	end)
+	it("add respects cap", function()
+		local d = PetData.migrate({}, S, 0)
+		for _ = 1, 40 do
+			PetData.add(d, "pigeon")
+		end
+		expect(#d.owned).toBe(30)
+		expect(PetData.add(d, "pigeon")).toBe(nil)
+		expect(PetData.add(d, "nope")).toBe(nil)
+	end)
+	it("unlockByHeight adds once", function()
+		local d = PetData.migrate({}, S, 0)
+		expect(#PetData.unlockByHeight(d, S, 1000)).toBe(1)
+		expect(#PetData.unlockByHeight(d, S, 1000)).toBe(0)
 	end)
 end)
 
