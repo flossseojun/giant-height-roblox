@@ -15,6 +15,7 @@ local specs = {
 	"./pets.spec",
 	"./smash.spec",
 	"./gacha.spec",
+	"./juice.spec",
 }
 
 for _, path in specs do
