@@ -14,6 +14,7 @@ local order = {
 	"SmashFx",
 	"ShopClient",
 	"Cosmetics",
+	"FoodVisuals",
 }
 
 for _, name in order do
