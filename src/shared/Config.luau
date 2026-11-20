@@ -91,6 +91,39 @@ Config.PET = {
 	zoneK = { 1, 4, 15, 40 }, -- 구역별 몬스터 체력·공격 배율
 }
 
+-- 코인: 활동으로 벌고 꾸미기 상자에 씀
+Config.COINS = { monster = 2, smashPerFloor = 1, boss = 50, quest = 20, questAll = 50 } -- monster·boss는 × 구역 번호
+
+local function c3(r, g, b)
+	return Color3 and Color3.fromRGB(r, g, b) or nil
+end
+-- 꾸미기 뽑기 (종류별 상자: 날개 / 오라 / 발자국)
+Config.COSMETICS = {
+	price = 100,
+	refund = 50, -- 중복이면 돌려주는 코인
+	pity = 30, -- 같은 상자 30번째는 전설 확정
+	rates = { common = 0.70, rare = 0.25, legendary = 0.05 },
+	kinds = { "wing", "aura", "trail" },
+	kindNames = { wing = "날개", aura = "오라", trail = "발자국" },
+	items = {
+		{ id = "wing_sparrow", kind = "wing", rarity = "common", name = "참새 날개", color = c3(150, 110, 80), color2 = c3(220, 200, 170) },
+		{ id = "wing_crane", kind = "wing", rarity = "common", name = "종이학 날개", color = c3(245, 245, 240), color2 = c3(230, 90, 90) },
+		{ id = "wing_butterfly", kind = "wing", rarity = "rare", name = "나비 날개", color = c3(250, 150, 40), color2 = c3(40, 40, 50) },
+		{ id = "wing_dragonfly", kind = "wing", rarity = "rare", name = "잠자리 날개", color = c3(170, 230, 255), color2 = c3(60, 140, 200) },
+		{ id = "wing_star", kind = "wing", rarity = "legendary", name = "별빛 날개", color = c3(255, 230, 120), color2 = c3(150, 180, 255) },
+		{ id = "aura_sparkle", kind = "aura", rarity = "common", name = "반짝이", color = c3(255, 255, 220), color2 = c3(255, 240, 150) },
+		{ id = "aura_bubble", kind = "aura", rarity = "common", name = "비눗방울", color = c3(200, 230, 255), color2 = c3(255, 200, 250) },
+		{ id = "aura_drop", kind = "aura", rarity = "rare", name = "물방울", color = c3(80, 170, 255), color2 = c3(180, 230, 255) },
+		{ id = "aura_maple", kind = "aura", rarity = "rare", name = "단풍잎", color = c3(230, 80, 40), color2 = c3(250, 170, 40) },
+		{ id = "aura_river", kind = "aura", rarity = "legendary", name = "남한강 물결 오라", color = c3(40, 200, 220), color2 = c3(200, 255, 255) },
+		{ id = "trail_dirt", kind = "trail", rarity = "common", name = "흙 발자국", color = c3(120, 90, 60) },
+		{ id = "trail_snow", kind = "trail", rarity = "common", name = "눈 발자국", color = c3(245, 250, 255) },
+		{ id = "trail_petal", kind = "trail", rarity = "rare", name = "꽃잎 발자국", color = c3(255, 150, 190) },
+		{ id = "trail_star", kind = "trail", rarity = "rare", name = "별 발자국", color = c3(255, 220, 80) },
+		{ id = "trail_fire", kind = "trail", rarity = "legendary", name = "불꽃 발자국", color = c3(255, 110, 30) },
+	},
+}
+
 -- 건물 부수기 (착지로, 내 키 > 건물 키일 때)
 Config.SMASH = {
 	cmPerFloor = 300, -- 건물 1층 = 3m
