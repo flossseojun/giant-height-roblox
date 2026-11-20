@@ -95,3 +95,20 @@ def test_monster_spawns(model):
         assert len(got) >= 2 and set(got) == species, (zone, got)
     for n in sp:
         assert 8 <= n["attributes"]["Radius"] <= 30
+
+
+def test_buildings_are_breakable_models(model):
+    blds = []
+    walk(model, lambda n: blds.append(n) if n.get("name", "").startswith("Building_") else None)
+    assert len(blds) > 500
+    for b in blds:
+        assert b["className"] == "Model"
+        assert "Breakable" in b["properties"].get("Tags", [])
+        a = b["attributes"]
+        assert a["Floors"] >= 1 and a["HeightCm"] == a["Floors"] * 300
+    ostar = [b for b in blds if any(c["name"].startswith("Ostar_") for c in b.get("children", []))]
+    assert len(ostar) == 1 and ostar[0]["attributes"]["Floors"] == 38
+    bad = []
+    walk(model, lambda n: bad.append(n["name"]) if n.get("name", "").startswith(("Station_", "BusStopA_", "Market_", "Roundabout_"))
+         and "Breakable" in n.get("properties", {}).get("Tags", []) else None)
+    assert not bad

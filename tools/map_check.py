@@ -31,7 +31,7 @@ expected.update({("ZoneGate", 2): 1, ("ZoneGate", 3): 1, ("ZoneGate", 4): 1, ("G
                  ("WeeklyBoard", None): 1, ("StarPoint", 4): 19})
 
 # 몬스터 출현 지점은 개수가 정확히 정해지지 않음: 최소 개수만 확인
-MIN = {("MonsterSpawn", 1): 7, ("MonsterSpawn", 2): 2, ("MonsterSpawn", 3): 2, ("MonsterSpawn", 4): 2}
+MIN = {("Breakable", 1): 500, ("MonsterSpawn", 1): 7, ("MonsterSpawn", 2): 2, ("MonsterSpawn", 3): 2, ("MonsterSpawn", 4): 2}
 for k, lo in MIN.items():
     expected[k] = max(lo, count.get(k, 0))
 

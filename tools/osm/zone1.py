@@ -3,7 +3,7 @@ import math
 import os
 
 from osm.project import load, classify, to_studs, SCALE
-from osm.buildings import building_parts
+from osm.buildings import building_parts, floors
 from osm.roads import road_parts, road_segments
 from osm.rail_water import rail_parts, platform_parts, water_cuts, water_luau
 from osm import landmarks as LM
@@ -114,11 +114,19 @@ def build_zone1(h):
     st_c = centroid(station.pts)
 
     groups = {"Buildings": [], "Roads": [], "Railway": [], "Platforms": []}
+    bmodels = {}  # 건물마다 하나의 Model (부술 때 한 번에 숨기기)
     segs = road_segments(roads)
     for w in blds:
         if kind[w.id] == "station":
             continue  # 역 건물은 랜드마크 작업에서 상세 제작 (자리 표시용 기단만)
-        groups["Buildings"] += [spec_to_node(s, h, f"B{w.id}_") for s in building_parts(w, street_ctx(w, segs))]
+        ctx = street_ctx(w, segs)
+        n_fl = floors(w.tags, w.id, ctx["downtown"])
+        bmodel = {"name": f"Building_{w.id}", "className": "Model",
+                  "properties": {"Tags": ["Breakable"]},
+                  "attributes": {"Floors": n_fl, "HeightCm": n_fl * 300, "Zone": 1},
+                  "children": [spec_to_node(s, h, f"B{w.id}_") for s in building_parts(w, ctx)]}
+        bmodels[w.id] = bmodel
+        groups["Buildings"].append(bmodel)
     for w in roads:
         for s in road_parts(w):
             if inb(s["pos"][0], s["pos"][2], 10):
@@ -195,7 +203,9 @@ def build_zone1(h):
     lm += [dict(s_, name="Roundabout_" + s_["name"]) for s_ in LM.roundabout(rbc[0], rbc[1], approaches)]
     lm += [dict(s_, name="Ostar_" + s_["name"]) for s_ in LM.ostar(ostar_w.pts, (sx, sz))]
     lm += [dict(s_, name="Market_" + s_["name"]) for s_ in LM.market([(-74, 518), (-60, 526), (37, 591), (102, 636)])]
-    groups["Landmarks"] = [spec_to_node(s_, h) for s_ in lm]
+    # 오스타 이름판은 오스타 건물 모델 안에 (건물이 부서지면 같이 사라짐)
+    groups["Landmarks"] = [spec_to_node(s_, h) for s_ in lm if not s_["name"].startswith("Ostar_")]
+    bmodels[ostar_w.id]["children"] += [spec_to_node(s_, h) for s_ in lm if s_["name"].startswith("Ostar_")]
 
     # 스폰은 정류장의 역 쪽 끝 바로 앞, 역을 바라봄. 순위판은 정류장 뒤편에서 도로 쪽을 봄
     to_st = (-road_dir[0], -road_dir[1]) if (st_c[0] - sx) * -road_dir[0] + (st_c[1] - sz) * -road_dir[1] > 0 \
