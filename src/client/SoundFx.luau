@@ -127,6 +127,9 @@ local function footsteps()
 	end)
 end
 
+-- 다른 모듈(건물 무너짐 등)에서도 화면을 흔들 수 있게
+SoundFx.shake = shake
+
 function SoundFx.start()
 	local remotes = ReplicatedStorage:WaitForChild("Remotes")
 	local sfxRemote = remotes:WaitForChild("Sfx") :: RemoteEvent

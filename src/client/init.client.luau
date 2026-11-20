@@ -11,6 +11,7 @@ local order = {
 	"World",
 	"Tutorial",
 	"Panels",
+	"SmashFx",
 }
 
 for _, name in order do
