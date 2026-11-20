@@ -1,7 +1,6 @@
 local H = require("./harness")
 local Config = require("../src/shared/Config")
 local Boost = require("../src/shared/Logic/Boost")
-local Pets = require("../src/shared/Logic/Pets")
 local BossFight = require("../src/shared/Logic/BossFight")
 local HighFive = require("../src/shared/Logic/HighFive")
 local describe, it, expect = H.describe, H.it, H.expect
@@ -11,21 +10,6 @@ describe("Boost", function()
 		expect(Boost.multiplier(1.25, 0, 100)).toBeCloseTo(1.25)
 		expect(Boost.multiplier(1.25, 130, 100)).toBeCloseTo(2.5)
 		expect(Boost.multiplier(1, 100, 100)).toBeCloseTo(1) -- 끝난 순간은 아님
-	end)
-end)
-
-describe("Pets", function()
-	it("unlock by zone height", function()
-		local P = Config.PETS
-		expect(Pets.isUnlocked(P[1], 150)).toBe(true)
-		expect(Pets.isUnlocked(P[2], 999)).toBe(false)
-		expect(Pets.isUnlocked(P[2], 1000)).toBe(true)
-		expect(Pets.isUnlocked(P[3], 100000)).toBe(true)
-	end)
-	it("find and fallback", function()
-		expect(Pets.find(Config.PETS, "otter").name).toBe("남한강 수달")
-		expect(Pets.find(Config.PETS, "nope")).toBe(nil)
-		expect(Pets.bestUnlocked(Config.PETS, 5000).id).toBe("otter")
 	end)
 end)
 

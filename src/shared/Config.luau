@@ -73,12 +73,6 @@ Config.BAR = { minRate = 4, maxRate = 12 }
 Config.BED = { period = 5, mult = 0.5 }
 
 -- 2차: 펫 (구역 키를 넘으면 해금)
-Config.PETS = {
-	{ id = "cat", name = "시장 고양이", minHeight = 0, mult = 1.1, radius = 8 },
-	{ id = "otter", name = "남한강 수달", minHeight = 1000, mult = 1.25, radius = 14 },
-	{ id = "squirrel", name = "용문산 다람쥐", minHeight = 100000, mult = 1.5, radius = 20 },
-}
-
 -- 펫 고도화: 레벨·진화·전투
 Config.PET = {
 	maxLevel = 50,

@@ -100,7 +100,7 @@ function PetService.publish(player: Player)
 			stage = PetProgress.stage(m.entry.level),
 			hp = math.ceil(m.state.hp),
 			maxHp = math.ceil(m.state.maxHp),
-			skillReadyAt = if m.skillAt then m.skillAt + m.species.skill.cooldown else 0,
+			skillLeft = if m.skillAt then math.max(0, m.skillAt + m.species.skill.cooldown - os.clock()) else 0,
 		})
 	end
 	local owned = {}
@@ -116,10 +116,6 @@ function PetService.publish(player: Player)
 	end
 	player:SetAttribute("PetTeam", HttpService:JSONEncode(team))
 	player:SetAttribute("PetOwned", HttpService:JSONEncode(owned))
-	player:SetAttribute("PetServerTime", workspace:GetServerTimeNow())
-	-- 예전 화면(첫 펫만 그림)과의 호환
-	local first = team[1]
-	player:SetAttribute("Pet", first and first.kind or nil)
 end
 
 function PetService.giveXp(player: Player, uids: { number }?, amount: number)
